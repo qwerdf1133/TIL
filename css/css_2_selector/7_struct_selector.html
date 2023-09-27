@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구조 선택자</title>
+    <style>
+        div#wrap{
+            width: 260px;
+            height: 300px;
+            background-color: skyblue;
+        }
+
+        div.box{
+            /* 배치 방향을 변경하는 style 속성 */
+            float: left;
+            width: 30px;
+            height: 30px;
+            /* 외곽선 두께 style 색상 */
+            border: 1px solid black;
+            /*     top right bottom left */
+            margin: 0   5px    5px   0;
+        }
+
+        /* 첫번째 요소 */
+        .box:first-child{
+            color: red;
+        }
+
+        /* 마지막 요소 */
+        .box:last-child{
+            color:  blue;
+        }
+
+        /* 홀수번째 요소 */
+        .box:nth-child(2n+1){
+            color: violet;
+        }
+
+        /* 짝수 요소 */
+        .box:nth-child(2n){
+            color: beige;
+        }
+
+        /* 7번째 날마다 배경 색상을 red로 표현-일요일 */
+        .box:nth-child(7n){
+            background-color: red;
+        }
+
+        /* 7번째 날의 그전날 마다 배경색상을 blue로 표현 */
+        .box:nth-child(7n-1){
+            background-color: blue;
+        }
+
+        /* 가상 선택지 */
+        .before:before{
+            content:"구조선택자를 이용한 " ;
+            color:  red;
+        }
+
+        .after::after{
+            content: "가상선택자를 이용하여 content 추가";
+            color: blue;
+        }
+
+        p::first-line{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- div#wrap>div.box{$$}*31 -->
+    <h1 class="before">달력</h1>
+    <h2 class="after">구조선택자</h2>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi magni esse, asperiores itaque, repudiandae illo, eum quam aliquid sequi vero nam. Inventore enim soluta deserunt quibusdam quasi pariatur, neque asperiores!
+    </p>
+    <div id="wrap">
+        <div class="box">01</div>
+        <div class="box">02</div>
+        <div class="box">03</div>
+        <div class="box">04</div>
+        <div class="box">05</div>
+        <div class="box">06</div>
+        <div class="box">07</div>
+        <div class="box">08</div>
+        <div class="box">09</div>
+        <div class="box">10</div>
+        <div class="box">11</div>
+        <div class="box">12</div>
+        <div class="box">13</div>
+        <div class="box">14</div>
+        <div class="box">15</div>
+        <div class="box">16</div>
+        <div class="box">17</div>
+        <div class="box">18</div>
+        <div class="box">19</div>
+        <div class="box">20</div>
+        <div class="box">21</div>
+        <div class="box">22</div>
+        <div class="box">23</div>
+        <div class="box">24</div>
+        <div class="box">25</div>
+        <div class="box">26</div>
+        <div class="box">27</div>
+        <div class="box">28</div>
+        <div class="box">29</div>
+        <div class="box">30</div>
+        <div class="box">31</div>
+    </div>
+</body>
+</html>

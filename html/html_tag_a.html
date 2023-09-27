@@ -1,0 +1,35 @@
+<!-- html_tag.a.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        절대 경로
+        http:// ~ 외부 URL 주소를 이용하여 페이지 이동
+    -->
+    <a href="https://www.naver.com">네이버</a>
+    <br>
+    <!-- tag 가 작성된 파일의 드스크 부터 검색 -->
+    <a href="../html/html_tag_word.html">word</a>
+
+    <!-- 
+        상대경로
+        작성된 파일을 기준으로 상대적으로 위치를 검색
+        ./ 현재 폴더
+        ../ 상위 폴더
+     -->
+     <hr>      
+     <!--  
+            target 속성에 _blank 페이지를 새 창에 출력
+            target 속성에 _self 페이지를 현재창에 출력 (기본값)
+      -->
+     <a href="index.html" target="_blank">index</a> <br/>
+     <a href="./default.html">default 2</a> <br/>
+     <a href="../html/html_tag_word.html" target="_self">word 3</a> <br/>
+     <br/>
+</body>
+</html>

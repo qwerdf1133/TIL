@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
+    <style>      
+        .font{
+            font-size: 40px;
+            font-weight: bold;
+            font-weight: normal;
+        /* 
+            lighter     normal      bold    bloder
+number      100,200,300,400,500,600,700,800,900
+        */
+            font-family: Arial, Times, sans-serif;
+        }
+
+        .child{
+            font-weight: bolder;
+        }
+
+        .third{
+            font-weight: lighter;
+        }
+
+        .inner_span{
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        span{
+            /* deafault text size in browser is 16px */
+            /* 
+                web
+                72dpi(dot per inch) == 1inch당 pixel 72개
+                1 inch == 2.54cm
+                1/72 \\ 0.01388888888889 * 2.54 == 0.0352777777778 * 10 == 0.353mm
+
+                windows
+                96dpi 
+                1/96 == 0.0104166666667 == 0.0264583333333 * 10
+                == 0.265mm
+
+                기본 폰트 사이즈 == 16px == 4.24mm
+            */
+
+            font-size: 16px;
+            font-size: 12pt;
+            font-size: 1em;
+        }
+
+        .inner_span{
+            font-size: 2em;
+        }
+
+        .third_span{
+            font-size: 2em;
+            font-size: 200%;
+        }
+
+        .box{
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            /* 내부 컨텐츠의 수평 정렬 */
+            /* left right center */
+            text-align: right;
+            text-align: center;      
+            /*  줄간격
+                한개의 라인 컨텐츠만 존재 할때
+                부모의 높이와 줄간격 높이가 일치하면
+                수직 정렬이 cneter로 이루어짐
+            */
+            line-height: 150px;                
+        }
+
+        .content{
+            font-family: 'Noto Sans KR', sans-serif;
+            /* 글자 간격 */
+            letter-spacing: 10px;
+            /* 단어 간격 */
+            word-spacing: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="font">
+        HELLO HTML
+        <div class="child">
+            hello html
+            <div class="third">
+                hello html
+            </div>
+        </div>
+    </div>
+    <span> 폰트 <span class="inner_span">글자<span class="third_span">폰트</span>확인</span>
+    </span>
+    <br/><hr/>
+    <div class="box">
+        <span class="content">Content Space</span> <br/>
+        <span class="content">Content Space</span> <br/>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성 선택자</title>
+    <style>
+        [target]{
+            font-size:35px;
+        }
+    
+        a[target=_blank]{
+            color:red
+        }
+        /* back space 좌측 shift + 원화 표시 | (파이프) */
+        /* orange로 시작하는 모든 요소 */
+        a[class |= orange]{
+            color:orange;
+            text-decoration: none;
+        }
+        /* class 속성에 공백을 기준으로 banana가 존재하는 요소 */
+        a[class~=banana]{
+            color:yellow;
+        }
+
+        /* class속성값이 dummy로 시작하는 모든 요소 */
+        div[class^=dummy]{
+            background-color: red;
+            color: white;
+        }
+
+        /* div 요소중 class속성값이 end로 끝나는 모든 요소 */
+        div[class$=end]{
+            background-color: blue;
+        }
+        
+        /* class속성에 grape가 포함되었으면 모두 선택 */
+        /* 영문 대소문자 구별 */
+        div[class*=grape]{
+            color: red;
+        }
+        
+    </style>
+</head>
+<body>
+    <a href="#" target="_blank">link</a><br/>
+    <a href="#" target="_self">self link</a><br/>
+    <a href="#">none target link</a><br/>
+    <br/><hr/>
+
+    <h3>orange class를 가지고 있거나 orange-으로 시작하는 모든 요소</h3>
+    <h4>[class|=orange]</h4>
+    <a href="#" class="orange">orange</a> <br/>
+    <a href="#" class="red orange">red orange</a> <br/>
+    <a href="#" class="red-orange">red-orange</a> <br/>
+    <a href="#" class="orange-red">orange-red</a> <br/>
+    <a href="#" class="orange_red">orange_red</a> <br/>
+    <hr/>
+    <h3>banana 속성을 가지고 있는 모든 요소</h3>
+    <h4>[class~=banana]</h4>
+    <a href="#" class="banana">banana</a><br/>
+    <a href="#" class="monkey banana">banana</a><br/>
+    <a href="#" class="banana-monkey">banana</a><br/>
+    <hr/>
+    <h3>class 속성값이 dummy로 시작하는 모든 요소</h3>
+    <h4>[class^=dummy]</h4>
+    <div class="dummy">dummy</div>
+    <div class="dummy test">dummy</div>
+    <div class="dummy-test">dummy</div>
+    <div class="test dummy">dummy</div>
+    <div class="test-dummy">dummy</div>
+    <hr/>
+    <h3>속성값이 end로 끝나는 모든 요소</h3>
+    <h4>[class&=end]</h4>
+    <div class="end">end</div>
+    <div class="start end">end</div>
+    <div class="ok_end">end</div>
+    <div class="end bye">end</div>
+    <hr/>
+    <h4>class 속성값이 어떻게 조합되든 상관없이 grape만 완성되면 선택</h4>
+    <h4>[class*=grape]</h4>
+    <div class="grape">grape</div>
+    <div class="tasty grape">grape</div>
+    <div class="grape-tasty">grape</div>
+    <div class="tastygrape">grape</div>
+    <div class="tastyGrape">grape</div>
+</body>
+</html>

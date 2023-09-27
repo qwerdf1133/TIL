@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+            un order list 순서가 없는 리스트
+            li - list item - 항목
+            type : disc | circle | square
+     -->
+     <h3>오늘의 점심</h3>
+    <ul type="square">
+        <li>라면</li>
+        <li>돈까스</li>
+        <li>햄버거</li>
+        <li>칼국수</li>
+    </ul>
+
+    <h3>square</h3>
+    <ul type="square">
+        <li>라면</li>
+        <li type="disc">돈까스</li>
+        <li type="circle">햄버거</li>
+        <li type="none">칼국수</li>
+    </ul>
+    <hr/>
+    <h3>순서가 있는 list</h3>
+    <h4>게임 인기 순위</h4>
+    <!-- 1|a|A|i|I default 1 -->
+    <ol>
+        <li>로스트 아크</li>
+        <li>LOL</li>
+        <li>POE</li>
+        <li>메이플 스토리</li>
+    </ol>
+    <!-- reversed - 역순으로 -->
+    <ol type="1" start="40" reversed>
+        <li>로스트 아크</li>
+        <li>LOL</li>
+        <li>
+            <ul>
+                <li>아리</li>
+                <li>바루스 </li>
+                <li>이즈리얼</li>
+            </ul>
+        </li>
+        <li>POE</li>
+        <li>메이플 스토리</li>
+    </ol>
+
+    <!-- definition list(정의형 목록) -->
+    <dl>
+        <dt>제목</dt>
+        <dd>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. In facere sed soluta voluptatibus minus, ducimus culpa alias ipsam placeat rerum dolores praesentium? Nam repellat magni accusamus explicabo aperiam fuga aliquid!
+        </dd>
+        <dt>제목 2</dt>
+        <dd>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa nesciunt facere provident.
+        </dd>
+    </dl>
+</body>
+</html>

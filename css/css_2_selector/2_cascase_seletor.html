@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SELETEOR</title>
+    <style>
+        h1{
+            color: red;
+        }
+
+        *{
+            color: greenyellow;
+        }
+
+        /* 
+            id 속성 = #아이디값
+            class 속성 = .class속성값
+        */
+
+        #bg{
+            background-color: skyblue;
+        }
+        
+        #color{
+            color: blue;
+        }
+        
+        .size{
+            /* 글자 크기 px로 지정 */
+            font-size: 50px;
+        }
+
+        .color{
+            color:pink;
+        }
+
+        /* 
+            선택자에 따른 style 적용 우선순위
+            Inline > id 선택자 > class 선택자 > type 선택자
+        */
+        h2{
+            color: orange;
+        }
+
+        #color{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>TYPE 선택자</h1>
+    <h2 id="bg">선택자 적용</h2>
+    <!-- 아이디 속성에 부여되는 값은 하나만 가능 -->
+    <h2 id="color">선택자 적용</h2>
+    <h2 class="color">선택자 적용</h2>
+    <!-- class는 별칭과 같이 여러개의 값을 동시에 적용 가능 -->
+    <h2 class="size color">선택자 적용</h2>
+    <h2 style="color: black;" id="color" class="size color">선택자 적용</h2>
+</body>
+</html>

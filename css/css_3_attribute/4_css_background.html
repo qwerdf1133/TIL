@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background</title>
+    <style>
+        body{
+            background-image: url(../../img/rice.png);
+            background-repeat: repeat;
+
+            /* background-repeat: repeat-x;
+            background-repeat: repeat-y;
+            background-repeat: no-repeat; */
+
+            /* top bottom left right center */
+            background-position: center ;
+            background-position: top right ;
+            height: 1700px;
+            /* scroll(기본값-deafault) or fixed */
+            background-attachment: scroll;
+            background-attachment: fixed;
+            background-size: 150px 50px;
+        }
+
+        .bg{
+            background-color: rgba(100, 30, 50, 0.5);
+            width: 300px;
+            height: 300px;
+        }
+
+        .img{
+            background-image: url(../../img/intro/logo.png);
+            background-repeat: no-repeat;
+            background-size: 300px;
+            width: 30%;
+            background-size: contain;       
+            background-size: cover;    
+
+            background:pink url(../../img/intro/lion.png) no-repeat top 50% right 50% / 70px;   
+            /* background-color: rgba(255,192,203,0.5); */
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <img src="../../img/bonobono.jpg" width="200" height="200" alt="보노보노 이미지"/>
+    </div>
+    <div class="img bg">
+        <h1>CONTENT SPACE</h1>
+    </div>
+
+</body>
+</html>
