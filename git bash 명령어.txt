@@ -1,0 +1,157 @@
+# Git Bash
+
+- pwd : 현재 폴더 위치 확인
+- ls -a : 현재 폴더 파일 목록 확인 (-a 숨김도 표시)
+- cd : 홈 폴더로 이동 (C:/Users/사용자명/)
+- mkdir <새폴더 이름> : 현재 폴더 아래에 새 폴더 생성
+
+- git status 워킹트리의 상태 보기
+- git init -b main : git 저장소 생성 + main 브랜치 초기화
+
+- git config --global <옵션명>: 전역 옵션 확인
+- git config --global "<새로운값>": 전역 옵션 설정
+- git config --global <옵션명> "<새로운값>": 전역 옵션 설정
+- git config --global --unset <옵션명> : 전역 옵션 삭제
+
+- git config --local <옵션명>: 지역 옵션 확인
+- git config --local "<새로운값>": 지역 옵션 설정
+- git config --local <옵션명> "<새로운값>": 지역 옵션 설정
+- git config --local --unset <옵션명> : 지역 옵션 삭제
+
+- git config --list : 현재 프로젝트의 모든 옵션 확인
+- 지역 옵션이 전역 옵션을 우선한다 (lcal을 통해서 프로젝트 별 다른 옵션 설정 가능
+
+## 깃 코어 에디터 변경
+git config --global "\"C:\Users\admin\AppData\Local\Programs\Microsoft VS Code\Code.exe\" --wait"
+
+## 깃 색깔 추가
+git config --global color.ui auto
+
+## git log
+- git log : 자세한 기록을 보고 싶을 때 (HEAD관련된 커밋만)
+- git log --oneline : 간단한 커밋해시와 제목만 보고 싶을 때
+- git log --oneline --graph --decorate : 커밋 그래프 보고 싶을 때
+- git log --oneline --graph --decorate --all : 모든 브랜치를 보고 싶을 때
+- git log --oneline -n<보고싶은 최신 커밋의 갯수>
+
+## git 명령어 축약하기
+git config --global alias.<축약해서 실행할 명령> "<축약할 명령어>"
+git config --global alias.l "log --oneline --graph --decorate --all"
+
+git remote add <원격저장소 이름> <원격저장소 주소>
+
+- 원격 저장소를 추가합니다.
+- 여러개의 원격 저장소를 추가할 수도 있다.
+- 통상적으로 첫번째 원격 저장소 이름은 origin으로 한다.
+
+- git remote -v
+  #원격 저장소 확인
+
+-저장소 클론하기
+git clone <저장소주소><폴더명(생략할 경우 저장소이름)>
+
+-브랜치 확인하기
+git branch 
+- 브랜치 만들기
+git branch <브랜치이름>
+- 브랜치 변경하기
+git switch <브랜치이름>
+- 브랜치 변경하면서 만들기
+git switch -c <브랜치이름>
+- 브랜치 합치기 (현재 브랜치 기준으로 대상브랜치 합침)
+git merge <브랜치이름>
+
+- 브랜치 되돌리기
+git reset --hard <이동할커밋>
+커밋 해시코드를 타이핑하는 대신 HEAD 기준으로 옮길 수 있다
+HEAD~<숫자> : HEAD로부터 숫자(n)번 만큼 떨어진 커밋으로 
+
+`git reset --hard HEAD ~2`
+
+- Fast Foward 상황에서 rebase
+- 빨리감기일 때는 merge 명령어 처럼 동작
+
+- `git rebase <브랜치명>`
+- 현재 기준 브랜치, 빨리감기 대상 브랜치
+
+- 브랜치 삭제
+- git branch -d <브랜치명>
+
+- 태그 달기 (릴리즈)
+- git tag -a -m "<주석>" <태그 이름>
+
+- 태그는 별도로 원격 저장소로 푸시해야 한다.
+- 태그 push 하기
+- git push <원격 저장소 이름> <태그 이름>  
+
+## 3-way Merge
+
+1. 오류가 없는 버전에서 브랜치 생성
+2. 개발 브랜치, hotfix 브랜치
+3. 소스 코드를 수정하고 테스트 완료
+4. 빨리감기 병합 후 배포
+5. 개발 브랜치 병합 (충돌이 발생할 확률이 있다.)
+
+*  5 : 3way merge 발생
+| \		
+*  * 2, <- HEAD (hotfix, main) 3,4
+| /
+* 1,
+
+- Conflict
+  - 양쪽 브랜치가 같은 내용을 수정 했다면, 소스코드를 수동으로 수정
+  - 수정한 파일을 스테이징 (add)
+  - commit (병합 커밋 메시지 자동생성)
+
+## 3-way 상황에서 rebase
+  1. git rebase <대상브랜치> 
+  2. 충돌이 발생할 경우
+  3. 수동으로 파일 수정하고 저장
+  4. 스테이징 git add <파일>
+  5. git rebase --continue
+
+- 3 way 병합
+  1. 병합 커밋을 생성
+  2. 한번만 충돌 발생
+  3. 트리가 지저분하게 남는다
+- 리베이스
+  1. 현재 커밋을 수정하고, 대상 브랜치 위로 재배치함.
+  2. 깔끔한 한 줄 커밋 히스토리
+  3. 충돌이 여러번 발생할 수 있다.
+(rebase --continue)
+
+## 임시 브랜치에서 테스트 작업
+- 기준이 되는 브랜치에서 
+- git branch <test> <기준브랜치>
+- git switch test
+
+- 테스트 브랜치에서 작성한 다양한 실험은, test 브랜치 삭제와 동시에 모든 기록을 깔끔하게 삭제할 수 있다.
+
+- 원 branch로 복귀 후
+- `git branch -d <test>`
+
+# git clean
+- untracked 추적이 안된 (스테이징이 한번도 되지 않은 파일들을) 없애고 싶을 때 사용
+`git clean -f -d <파일 또는 폴더 이름>
+
+# git reflog
+- git log로 찾을 수 없는 커밋을 되살리기 위해서 로컬 저장소에서 작업한 모든 이력을 확인하는 명령어
+- `git reflog`
+- `git reset --hard HEAD@{<reflog에서 확인한 숫자>}
+
+- 하드 리셋을 통해 되살려낼 수 있다.
+- 유효범위 : 로컬 저장소
+
+## git commit --amend
+- 마지막 커밋 수정하기
+
+## git cherry-pick
+- 원하는 것만 현재 브랜치로 가지고 오고 싶을 때
+- git cherry-pick <커밋id>
+- 원하는 커밋만 현재 브랜치로 복사가 됨.
+
+
+
+
+
+
