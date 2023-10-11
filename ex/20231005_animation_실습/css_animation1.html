@@ -1,0 +1,52 @@
+<!-- css_animation1.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        div{
+            width:100px;
+            height:100px;
+            background-color:red;
+            /* margin-left:100px; */
+            /* transform:translateX(100px); */
+            position:relative;
+            /* left:100px; */
+            animation:2s myAnim;
+            animation-iteration-count: infinite;
+            /* ease - 천천히 시작 해서 빨라졌다가 마지막에 다시 천천히 */
+            animation-timing-function: ease;
+            animation-direction: normal;
+        }
+
+        @keyframes myAnim{
+            0%{
+                left: 0px;
+            }
+
+            25%{
+                left:100px;
+            }
+
+            50%{
+                left:200px;
+            }
+
+            75%{
+                left:100px;
+            }
+
+            100%{
+                left:0px;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+     <div></div>
+</body>
+</html>

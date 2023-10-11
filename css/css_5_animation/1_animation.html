@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .anim{
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            /* 태그 요소에 애니메이션 frame 적용 */
+            animation-name: changestyle;
+            /* 얼마만한 시간에 걸쳐 효과를 출력 할 것인가 */
+            animation-duration: 3s;
+            /* 반복 횟수 */
+            animation-iteration-count: 3;
+            /* infinite - 무한 반복 */
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+            /* 
+                animation 효과 진행 방향
+                alternate : 정해진 순서대로 진행 했다가 반대로 진행
+                alternate-reverse : 반대순서로 진행 했다가 정해진 순서대로 진행
+                reverse : 반대 방향으로 진행
+                normal : 지정한 순서대로 진행
+            */
+            animation-direction: normal;
+            animation-direction: alternate;
+
+            animation:changeOpacity 3s infinite ease alternate;
+        }
+
+        @keyframes changeOpacity{
+            from{
+                opacity:1;
+            }
+
+            to{
+                opacity:0;
+            }
+        }
+
+        /*  애니메이션 효과 지정 */
+            @keyframes changestyle{
+                0%{
+                    width: 100px;
+                }
+
+                50%{
+                    width: 300px;
+                    background-color: pink;
+                    transform:rotate(360deg)
+                }
+
+                100%{
+                    width: 200px;
+                    background-color: purple;
+                }
+
+            }
+    </style>
+</head>
+<body>
+    <div class="anim"></div>
+</body>
+</html>

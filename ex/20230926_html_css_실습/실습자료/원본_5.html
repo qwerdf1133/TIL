@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<HTML>
+ <HEAD>
+  <TITLE> FLEX </TITLE>
+  <META charset="utf-8">
+	<style>
+		#wrap{
+			width: 1000px; height: 800px;
+			border: 1px solid red;
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: row;
+			justify-content: left;
+		}
+		header h1{
+			display: flex;
+			justify-content: center;			
+		}
+		#wrap #menus{
+			width: 900px; height: 700px;
+			padding: 5px;
+			float: inline-start;
+           
+		}
+		
+		#menu1{
+			background-image: url(../실습자료/img/dish1.jpg);
+			
+			width: 300px; height: 150px;
+		
+		}
+		#menu2{
+			background-image: url(../실습자료/img/dish2.jpg);
+			width: 300px; height: 150px;
+		}
+		#menu3{
+			background-image: url(../실습자료/img/dish3.jpg);
+			width: 300px; height: 150px;
+		}
+		#menu4{
+			background-image: url(../실습자료/img/dish4.jpg);
+			width: 300px; height: 150px;
+		}
+		#menu5{
+			background-image: url(../실습자료/img/dish5.jpg);
+			width: 60%; height: 150px;
+		}
+		#wrap footer{
+			background-color: black;
+			width: 100%; height: 100px;
+			color: white;
+			text-align: center;
+			padding: auto;
+			font-size: 12px;
+			align-self: flex-end;
+		}
+	</style>	
+</HEAD>
+ <BODY>
+	<div id="wrap">
+		<header>
+			<h1>솔로의 식탁</h1>
+		</header>
+		<article>
+			<div id="menus">
+				<div id="menu1">					
+				</div>
+				<div id="menu2">					
+				</div>
+				<div id="menu3">					
+				</div>
+				<div id="menu4">					
+				</div>
+				<div id="menu5">					
+				</div>
+			</div>
+		</article>
+		<footer>
+			<p>솔로의 식탁</p>
+		</footer>
+	</div>
+ </BODY>
+</HTML>
+<script>
+</script>

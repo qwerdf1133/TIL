@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<HTML>
+ <HEAD>
+  <TITLE> FLEX </TITLE>
+  <META charset="utf-8">
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+
+		#wrap{
+			border:1px solid red;
+			width:96%;
+			height:930px;
+			margin:0 auto;
+			display:flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		header{
+			height:100px;
+			display:flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		footer{
+			background-color:black;
+		}
+
+		footer p{
+			color:#eee;
+			text-align:center;
+			line-height:200px;
+		}
+
+		#menus{
+			display:flex;
+			flex-wrap:wrap;
+			justify-content: space-between;
+			height:620px;
+		}
+
+		#menus div{
+			width:33%;
+			height:300px;
+			border:1px solid black;
+			box-sizing:border-box;
+			background-size:cover;
+		}
+
+		#menus div:last-child{
+			width:66.5%;
+		}
+
+		#menu1{
+			background:url(실습자료/img/dish1.jpg) no-repeat center;
+		}
+
+		#menu2{
+			background:url(실습자료/img/dish2.jpg) no-repeat center;
+		}
+
+		#menu3{
+			background:url(실습자료/img/dish3.jpg) no-repeat center;
+		}
+
+		#menu4{
+			background:url(실습자료/img/dish4.jpg) no-repeat center;
+		}
+
+		#menu5{
+			background:url(실습자료/img/dish5.jpg) no-repeat center;
+		}
+	</style>	
+</HEAD>
+ <BODY>
+	<div id="wrap">
+		<header>
+			<h1>솔로의 식탁</h1>
+		</header>
+		<article>
+			<div id="menus">
+				<div id="menu1">					
+				</div>
+				<div id="menu2">					
+				</div>
+				<div id="menu3">					
+				</div>
+				<div id="menu4">					
+				</div>
+				<div id="menu5">					
+				</div>
+			</div>
+		</article>
+		<footer>
+			<p>솔로의 식탁</p>
+		</footer>
+	</div>
+ </BODY>
+</HTML>
+<script>
+</script>

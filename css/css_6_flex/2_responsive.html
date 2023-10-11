@@ -1,0 +1,192 @@
+<!-- 2_responsive.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 
+        viewport - 현재 보고 있는 화면의 영역
+        content : meta tag의 내용
+        - width: 컨텐츠를 표현할 넓이(deivce-width: 기기의 크기에 맞춤)
+        - initial-scale : 초기 크기 설정(1.0  1:1 꽉찬 화면)
+        - minimum-scale : 최소 크기 설정(0.25 ~ 10.0)
+        - maximum-scale : 최대 크기 설정(0 ~ 10.0)
+        - user-scalable : 사용자 단말의 확대 기능 사용 유무(yes/no)
+     -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 웹</title>
+
+    <style>
+        .flex-container{
+            display:flex;
+            height:100px;
+            background-color:lightgray;
+            flex-direction: column;
+            flex-direction:row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .flex-item{
+            background-color:bisque;
+            border:1px solid red;
+            width:40px;
+            height:50px;
+        }
+
+        /* 그리드 레이아웃 예제 */
+        .wrapper{
+            display:grid;
+            /*
+                열의 개수 및 크기 : grid-template-columns
+                행의 개수 및 크기 : grid-template-rows
+            */
+            /* fr - fracion : 분수 
+            요소의 크기의 비율에 따라 여백을 조정 하는 수치 
+            */
+            grid-template-columns:1fr 1fr 1fr;
+            grid-template-rows:100px 100px;
+            /* 요소간의 간격 설정 */
+            grid-gap:10px;
+        }
+
+        .wrapper div{
+            background-color:beige;
+            border:2px solid rgb(147,130,243);
+            padding:10px ;
+            border-radius:5px;
+        }
+
+        .box1{
+            grid-row:2;
+            grid-column:2;
+        }
+
+        .box2{
+            grid-row:1;
+            grid-column:3;
+            grid-column-start:2;
+            grid-column-end:4;
+        }
+
+        .box3{
+            grid-column:1;
+            grid-row:3/1;
+            /*
+            grid-row-start:1;
+            grid-row-end:3;
+            */
+        }
+
+        @media screen and (max-width:600px) and (orientation:landscape){
+            body{
+                background-color:aquamarine;
+                color:white;
+            }
+        }
+
+        @media screen and (min-width:960px) and (orientation:portrait){
+
+            body{
+                background-color:skyblue;
+                color:#c4c4c4;
+            }
+
+        }
+
+        @media screen and (min-width:601px) and (max-width:959px){
+            body{
+                background-color:pink;
+                color:white;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>반응형 웹 이란</h1>
+    <ul>
+        <li>웹 사이트의 내용을 그대로 유지하면서 다양한 화면의 크기에 맞춰 웹사이트를 표시하는 방법</li>
+        <li>화면의 크기에 반응해 화면 요소들을 자동으로 바꾸어 사이트를 구현 하는 것</li>
+        <li>가로 모드에 맞춘 레이아웃 변경 가능</li>
+        <li>사이트 유지보수가 용이</li>
+    </ul>
+    <h3>반응형 웹 구현을 위한 기술</h3>
+    <ul>
+        <li>플렉스 박스 레이아웃
+            <ul>
+                <li>그리드 레이아웃을 기본으로, 플렉스 박스를 원하는 위치에 배치</li>
+                <li>여유공간에 따라 너비나 높이, 위치를 자유롭게 변경할 수 있다.</li>
+            </ul>
+        </li>
+        <hr/>
+    </ul>
+    <hr/>
+    <h3>플렉스 박스</h3>
+    <div class="flex-container">
+        <!-- div.flex-item{$}*3   -->
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+    </div>
+
+    <hr/>
+    <ul>
+        <li>
+            그리드 레이아웃
+            <ul>
+                <li>화면을 여러개의 열(column)으로 나누어, 필요할 때 마다 컬럼들을 묶어서 배치하는 방법</li>
+                <li>
+                    column : 열 <br/>
+                    row : 행
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <hr/>
+    <h3> 그리드 레이아웃 예제 </h3>
+    <div class="wrapper">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
+        <div>F</div>
+        <div>G</div>
+    </div>
+    <hr/>
+    <div class="wrapper">
+        <!-- div.box${box$}*3 -->
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+    </div>
+    <hr/>
+    <ul>
+        <li>미디어 쿼리
+            <ul>
+                <li>접속하는 장치(미디어)에 따라 특정한 css스타일을 사용하도록 지정하는 쿼리</li>
+                <li>
+                    기본형태 : <br/>
+                    @media [only | not] 미디어 유형 [and 조건] * [and 조건]
+                </li>
+                <li>
+                    only : 특정 웹브라우저(미디어 쿼리를 지원하는)에서만 조건을 인식하게 한다. <br/>
+                    not : 지정한 미디어유형은 제외하고 적용
+                </li>
+                <li>
+                    미디어 유형 : <br/>
+                    all : 모든 미디어 유형
+                    print : 인쇄 장치
+                    <strong>screen : 장치의 화면</strong> 
+                    tv : 음성과 영상이 동시에 출력되는 tv 
+                    projector : 프로젝터 
+                </li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
+
+
+

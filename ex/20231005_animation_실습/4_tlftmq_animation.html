@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .circle1{
+            position: absolute;
+            bottom: 100px;
+            width: 100px;
+            height: 100px;
+            border-width: medium;
+            border-style: solid;
+            border-color: black;
+            border-radius: 100px;
+            background-color: red;
+            animation-name: updown;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-out;
+            animation-direction: normal;
+        }
+
+        @keyframes updown{
+
+    50%{
+      
+      transform: translateY(-300px);
+
+    }
+
+    100%{        
+      
+       transform: translateY(0px);
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="circle1"></div>
+</body>
+</html>

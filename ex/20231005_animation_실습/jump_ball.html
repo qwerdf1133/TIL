@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .ball{
+            width: 50px;
+            height: 50px;
+            background-color: skyblue;
+            border: 1px solid black;
+            float: left;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            margin: 0px 5px;
+            animation: animationName 1s infinite ease-in-out alternate;
+            opacity: 0.2;
+
+        }
+
+        .ball:nth-child(2){
+            animation-delay: 0.2s;
+        }
+
+        .ball:nth-child(3){
+            animation-delay: 0.3s;
+        }
+
+        .ball:nth-child(4){
+            animation-delay: 0.4s;
+        }
+
+        .ball:nth-child(5){
+            animation-delay: 0.5s;
+        }
+
+        .ball:hover{
+            cursor: wait;
+            animation-play-state: running;
+            animation-play-state: paused;
+        }
+
+        @keyframes animationName{
+            0%{
+                margin: 0px 5px;
+            }
+
+            70%{
+                margin: 200px 5px;
+                opacity: 0.7;
+            }
+
+            100%{
+                margin: 180px 5px;
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+</body>
+</html>

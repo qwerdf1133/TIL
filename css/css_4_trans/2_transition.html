@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            transition - css속성이 변경 될때 시간에 따른 속도를 조절하는 방법을 제공하는 속성
+        */
+
+        .trans{
+            width: 300px;
+            height: 300px;
+            background-color: skyblue;
+            transition-property: width height ;
+            /* s - second , ms millis second(1/1000) */
+            /* 1s == 1000ms */
+            transition-duration: 3s;
+            /* 0.5s == 500ms */
+            transition-delay: 500ms;
+            transition-timing-function: linear;
+        }
+
+        .trans:hover{
+            width: 600px;
+            height: 400px;
+            background-color: pink;
+        }
+
+        .stick{
+            width: 20px;
+            height: 20px;
+            margin: 10px 0;
+            background-color: pink;
+            transition-duration: 4s;
+            transition-property: all;
+        }
+
+        .stick1{
+            transition-timing-function: ease;
+        }
+
+        .stick2{
+            transition-timing-function: linear;
+        }
+
+        .stick3{
+            transition-timing-function: ease-in;
+        }
+
+        .stick4{
+            transition-timing-function: ease-out;
+        }
+
+        .stick5{
+            transition-timing-function: ease-in-out;
+        }
+
+        .stick6{
+            transition-timing-function: step-start;
+        }
+
+        .stick7{
+            transition-timing-function: step-end;
+        }
+
+        .stick8{
+            transition-timing-function: steps(3,start);
+        }
+
+        .stick9{
+            transition-timing-function: steps(3,end);
+        }
+        /* + */
+        input[type="checkbox"]:checked ~ .stick{
+            width: 100%;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="trans"></div>
+    <br/><hr/>
+    <input type="checkbox" /> 체크!
+    <p>ease</p>
+    <div class="stick stick1"></div>
+    <p>linear</p>
+    <div class="stick stick2"></div>
+    <p>ease-in</p>
+    <div class="stick stick3"></div>
+    <p>ease-out</p>
+    <div class="stick stick4"></div>
+    <p>ease-in-out</p>
+    <div class="stick stick5"></div>
+    <p>step-start</p>
+    <div class="stick stick6"></div>
+    <p>step-end</p>
+    <div class="stick stick7"></div>
+    <p>steps(3,start)</p>
+    <div class="stick stick8"></div>
+    <p>steps(3,end)</p>
+    <div class="stick stick9"></div>
+</body>
+</html>

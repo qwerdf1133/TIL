@@ -1,0 +1,128 @@
+<!-- 1_display_flex.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- https://flexboxfroggy.com -->
+    <!-- http://flexboxdefense.com -->
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            height:100%;
+        }
+        /**
+            display:flex; 
+            box 모델 내부에 배치된 자식 요소를 배치하는 형식 제공
+            컨테이너가 Flex의 영향을 받는 전체 공간이고, 
+            설정된 속성에 따라 각각의 아이템들이 어떤 형태로 배치되는 것
+        */
+        .wrapper{
+            height:100%;
+            background-color:#ccc;
+            display:flex;
+            /*
+                어떤 축을 기준으로 아이템을 배치 할지 결정하는 속성
+                row(기본값), column, column-reverse, row-reverse
+            */
+            flex-direction:column-reverse;
+            flex-direction: row;
+
+            /*
+                flex-wrap
+                너비(row)나 높이(column)에 따라 크기를 압축 또는 줄바꿈 할지 결정하는 속성
+                nowrap(기본값-줄바꿈 하지 않음),
+                wrap(줄바꿈)
+            */
+            flex-wrap:wrap;
+
+            /* 수평 정렬 */
+            justify-content: center;
+            /* 기본값 시작 지점으로 정렬(left) */
+            justify-content: flex-start;
+            /* right으로 정렬(순서는 유지) */
+            justify-content: flex-end;
+            /* 동일한 간격으로 여백을 제공 좌우 끝 여백도 동일 */
+            justify-content: space-around;
+            /* 동일 간격으로 여백을 제공하되 좌우 일정하게 배치 */
+            justify-content: space-between;
+            /* 동일한 간격으로 여백(좌우여백 포함)을 제공하되 좌우 일정하게 배치 */
+            justify-content: space-evenly;
+
+            /* 수직 정렬 */
+            /* align-items:baseline; */
+            /* align-items: stretch; */
+            align-items: center;
+            align-items: flex-start;
+            align-items: flex-end;
+        }
+
+        .item{
+            width:80px;
+            height:80px;
+            display: flex;
+            /* 수평 정렬 */
+            justify-content: center;
+            /* 수직정렬 */
+            align-items: center;
+        }
+
+        .item01{
+            background-color:rgb(235, 214, 55);
+        }
+
+        .item02{
+            background-color:rgb(37, 255, 230);
+        }
+
+        .item03{
+            background-color:rgb(255, 72, 160);
+        }
+
+        .item04{
+            background-color:rgb(130, 46, 255);
+        }
+
+        .item05{
+            background-color:rgb(166, 255, 89);
+        }
+
+        .item06{
+            background-color:rgb(243, 150, 255);
+        }
+
+        .item07{
+            background-color:rgb(119, 0, 78);
+        }
+
+        .item08{
+            background-color:rgb(57, 252, 255);
+        }
+
+        .item09{
+            background-color:rgb(255, 0, 162);
+        }
+
+        .item10{
+            background-color:rgb(255, 23, 23);
+        }
+    </style>
+</head>
+<body>
+    <!-- div.wrapper>div.item.item$${$$}*10 -->
+    <div class="wrapper">
+        <div class="item item01">01</div>
+        <div class="item item02">02</div>
+        <div class="item item03">03</div>
+        <div class="item item04">04</div>
+        <div class="item item05">05</div>
+        <div class="item item06">06</div>
+        <div class="item item07">07</div>
+        <div class="item item08">08</div>
+        <div class="item item09">09</div>
+        <div class="item item10">10</div>
+    </div>
+</body>
+</html>

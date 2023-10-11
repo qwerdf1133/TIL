@@ -1,0 +1,104 @@
+<!-- 7_css_text.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text</title>
+    <style>
+        h2{
+            width:100%;
+            border:1px solid black;
+            /* text에 그림자 속성 부여 */
+            /*           우  하  흐림도 색상 */
+            text-shadow:5px 5px 5px black;
+            /* box에 그림자 효과 부여 */
+            box-shadow:-5px -5px 5px red;
+            /* height:50px; */
+            /* visible scroll auto hidden */
+            overflow: visible;
+            overflow: hidden;
+        }   
+        
+        /*
+            white-space 속성 키워
+                    스페이스와탭     줄바꿈     자동줄바꿈
+            normal      병합          병합         O
+            nowrap      병합          병합         X
+            pre         보존          보존         X
+            pre-wrap    보존          보존         O
+            pre-line    병합          보존         O
+        */
+        /* pre - preformat 형식유지 */
+        h2.normal{
+            white-space: normal;        
+        }
+
+        h2.nowrap{
+            white-space:nowrap;
+            /* clip 기본값  */
+            /* ellipsis 말줄임 표시로 그 외에 컨텐츠가 존재한다는걸 표현 */
+            text-overflow: ellipsis;
+        }
+
+        h2.pre{
+            white-space:pre;
+        }
+
+        h2.pre_wrap{
+            white-space:pre-wrap;
+        }
+
+        h2.pre_line{
+            white-space:pre-line;
+        }
+
+        a{
+            text-decoration: line-through;
+            text-decoration: none;
+            color:black;
+        }
+    </style>
+</head>
+<body>
+    <!-- h2{BLOCK 요소 길게~~~~~~~~~~~~ 표현 ~~~~~~~ 하자 ~~~~~~~~}*5 -->
+    <h2 class="normal">
+        BLOCK 요소 길게~~~~~~~~~~~~ 
+        표현 ~~~~~~~ 
+        하자 ~~~~~~~~
+    </h2>
+    <h2 class="nowrap">
+        BLOCK 요소 길게~~~~~~~~~~~~ 
+        표현 ~~~~~~~ 
+        하자 ~~~~~~~~
+    </h2>
+    <h2 class="pre">
+        BLOCK 요소 길게~~~~~~~~~~~~ 
+        표현 ~~~~~~~ 
+        하자 ~~~~~~~~
+    </h2>
+    <h2 class="pre_wrap">
+        BLOCK 요소 길게~~~~~~~~~~~~ 
+        표현 ~~~~~~~ 
+        하자 ~~~~~~~~
+    </h2>
+    <h2 class="pre_line">
+        BLOCK 요소 길게~~~~~~~~~~~~ 
+        표현 ~~~~~~~ 
+        하자 ~~~~~~~~
+    </h2>
+    <pre>
+        BLOCK 요소 길게~~~~~~~~~~~~ 
+        표현 ~~~~~~~ 
+        하자 ~~~~~~~~
+    </pre>
+    <p>
+        BLOCK 요소 길게~~~~~~~~~~~~ 
+        표현 ~~~~~~~ 
+        하자 ~~~~~~~~
+    </p>
+    <br/>
+    <hr/>
+    <a href="https://flukeout.github.io">참고</a>
+</body>
+</html>

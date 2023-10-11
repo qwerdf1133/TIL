@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform</title>
+    <style>
+        .original{
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            background: url(../../img/transform_rotate.png);
+        }
+        /* 
+            transform (변형)은 좌표공간을 변형함으로써
+            일반적인 문서의 흐름을 방해하지 않고 컨텐츠의
+            형태와 위치를 변경하는 속성
+            - 박스 모델(block 요소)만 transform 속성 적용 가능
+        */
+        /* 
+            transform:rotate(deg or rad or turn) 해당 요소를 주인 각도 만큼 시계 방향이나 반시계 방향으로 회전 
+            
+            360deg = 2rad = 1turn
+        */
+        .rotate:hover{
+            transform: rotateX(45deg);
+            transform: rotateY(45deg);
+            transform: rotate(-180deg);
+            transform: rotate(-0.5turn);
+            transform: rotate(-1.57rad);
+        }
+
+        /* 
+            scale() 해당 요소의 크기를 주어진 배율만큼 늘리거나 줄임.
+            기본값은 1에서 배율 만큼 증가 또는 감소    
+        */
+        .scale:hover{
+            margin: 200px 0 200px;
+            transform: scaleX(2);
+            transform: scaleY(2);
+            /*               X,Y */
+            transform: scale(2,2);
+        }
+        /* 
+            skewX() 해당 요소를 주어진 각도 만큼 x축 방향으로 기울인다.
+            skewY() 해당 요소를 주어진 각도 만큼 y축 방향으로 기울인다.
+            skew()  해당 요소를 주어진 각도 만큼 각각 x축과 y축으로 기울인다.
+        */
+        .skew{
+            background-color: skyblue;
+            background-image: url(../../img/transform_skew.png);
+            background-image: no-repeat;
+            height: 400px;
+        }
+
+        .skew:hover{
+            transform: skewX(45deg);
+            transform: skewY(45deg);
+            transform: skew(10deg,20deg);
+        }
+        /* 
+            translate() 현재 위치에서 해당 요소를 주어진 좌표의 거리만큼 이동
+        */
+        .translate:hover{
+            /* 현재 위치에서 100px 만큼 x좌표 증가  */
+            transform: translateX(100px);
+            /* 현재 위치에서 100px 만큼 y좌표 증가  */
+            transform: translateY(100px);
+            /*                    x   y           */
+            transform: translate(100px,200px);
+        }
+    </style>
+</head>
+<body>
+    <div class="original"></div>
+    <div class="original rotate"></div>
+    <div class="original scale"></div>
+    <div class="original skew"></div>
+    <div class="original translate"></div>
+</body>
+</html>

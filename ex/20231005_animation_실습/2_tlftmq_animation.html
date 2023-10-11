@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .circle1{
+            position: absolute;
+            bottom: 100px;
+            width: 100px;
+            height: 100px;
+            border-width: medium;
+            border-style: solid;
+            border-color: black;
+            border-radius: 100px;
+            background-color: skyblue;
+            animation-name: updownopacity;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+            animation-direction: normal;
+        }
+            
+        .circle2{
+            position: absolute;
+            animation-delay: 0.1s;
+            left: 130px;
+            bottom: 100px;
+            width: 100px;
+            height: 100px;
+            border-width: medium;
+            border-style: solid;
+            border-color: black;
+            border-radius: 100px;
+            background-color: skyblue;
+            animation-name: updownopacity;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+            animation-direction: normal;
+        }
+        
+        .circle3{
+            position: absolute;
+            animation-delay: 0.2s;
+            left: 260px;
+            bottom: 100px;
+            width: 100px;
+            height: 100px;
+            border-width: medium;
+            border-style: solid;
+            border-color: black;
+            border-radius: 100px;
+            background-color: skyblue;
+            animation-name: updownopacity;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+            animation-direction: normal;
+        }
+        
+        .circle4{
+            position: absolute;
+            animation-delay: 0.3s;
+            left: 390px;
+            bottom: 100px;
+            width: 100px;
+            height: 100px;
+            border-width: medium;
+            border-style: solid;
+            border-color: black;
+            border-radius: 100px;
+            background-color: skyblue;
+            animation-name: updownopacity;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+            animation-direction: normal;
+        }
+
+        .circle5{
+            position: absolute;
+            animation-delay: 0.4s;
+            left: 520px;
+            bottom: 100px;
+            width: 100px;
+            height: 100px;
+            border-width: medium;
+            border-style: solid;
+            border-color: black;
+            border-radius: 100px;
+            background-color: skyblue;
+            animation-name: updownopacity;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+            animation-direction: normal;
+            
+        }
+
+        @keyframes updownopacity{
+
+            25%{
+                opacity: 0.2;
+                transform: translateY(-300px);
+
+            }
+
+            50%{
+                opacity: 0.7;
+                transform: translateY(0px);
+        }
+
+            75%{
+                opacity: 1;
+                transform: translateY(-50px);
+            }
+
+            100%{
+                opacity: 0.2;
+                transform: translateY(0px);
+            }
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+    <div class="circle3"></div>
+    <div class="circle4"></div>
+    <div class="circle5"></div>
+        
+    
+  
+
+</body>
+</html>

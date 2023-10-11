@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            color: white;
+        }
+
+        div.wrapper{
+            width: 900px;
+            margin: 0 auto;
+        }
+
+        header, footer, nav, aside, section{
+            border: 1px solid gray;
+            margin: 5px;
+            padding: 10px;
+
+        }
+
+        header{
+            background-color: skyblue;
+            height: 50px;
+        }
+
+        nav, section, aside{
+            float: left;
+            height: 500px;
+            background-color: pink;
+        }
+
+        nav, aside{
+            width: 100px;
+
+        }
+
+        section{
+            background-color: lightgreen;
+            width: 600px;
+        }
+
+        footer{
+            clear: both;
+            height: 50px;
+            background-color: skyblue;
+            
+        }
+
+        article{
+            background-color: gray;
+            width: 90%;
+            margin: 20px;   
+        }
+
+        nav ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        nav ul li{
+            text-align: center;
+            width: 100%;
+        }
+
+        nav ul li a{
+            text-decoration: none;
+            color: black;
+        }
+
+        nav ul li a:hover{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <p>header</p>
+        </header>
+    <!--
+        main 태그는 body 요소의 주 컨텐츠를 정의할 때 사용 
+        하나의 문서 페이지당 하나만 존재해야 함
+    -->
+    <main>
+        <nav>
+            <p>nav</p>
+            <ul>
+                <li><a href="#">menu-1</a></li>
+                <li><a href="#">menu-2</a></li>
+                <li><a href="#">menu-3</a></li>          
+            </ul>
+        </nav>
+        <section>
+            <p>section</p>
+            <article>
+                <p>article</p><br/>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, sunt laudantium? Veritatis ipsa, deserunt debitis nihil vitae ratione tempore rem non eius consectetur asperiores est, incidunt dolores atque dicta rerum!
+                Vero iste dolorum voluptatum? Vitae, architecto consequuntur tempore explicabo natus magni quisquam quae excepturi commodi voluptate aliquam neque, nesciunt dolorum sunt odit facilis incidunt doloribus laudantium nostrum sequi quaerat cumque!
+                Iusto facilis ex impedit? Alias voluptatem architecto ratione vel excepturi earum fugit, magnam impedit dolorem reiciendis pariatur vero, assumenda ab adipisci ex sunt nisi numquam. Incidunt, ipsa ea. Nam, molestias?</p>
+            </article>
+        </section>
+        <aside>
+            <p>aside</p>
+        </aside>
+        <footer>
+            <p>footer</p>
+        </footer>
+    </main>
+    </div>
+</body>
+</html>
