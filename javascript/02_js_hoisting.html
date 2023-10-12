@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            hosting - 상단으로 끌어올리다
+
+            var 변수명; 으로 선언된 변수의 선언부는 script의 최상단부로 이동된다
+            
+            함수(function)의 선언부는 script의 최상단부로 이동되어 script 내부에서 어디서나 호출이 가능하다
+        */
+        test();
+
+        console.log(temp);
+        temp = "천재";
+        console.log(temp);
+        var temp = "최기근";
+        console.log(temp);
+
+        // let
+        // console.log(temp2); // 오류
+        let temp2 = "최기근"; // hoisting이 일어나지 않음
+
+        function test(){
+            alert('test alert');
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

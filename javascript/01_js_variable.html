@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="눌러보세요" onclick="alert('Hello JavaScript');"/>
+
+    <!-- html 문서 내부에 script 태그를 활용하여 javascript 적용 -->
+    <h1>JavaScript(js)의 변수</h1>
+    <script>
+        // html에 경고 메세지창 출력해주는 alert 함수 실행
+        // 한줄 주석
+         // alert("Hello js");
+        /*
+            js에서의
+            여러줄(범위)
+            주석
+        */
+             // variable : 데이터(data)를 저장 할 수 있는 메모리 공간
+        /*
+            선언단계 : 변수 이름을 등록하여 변수 존재를 알림
+            초기화 단계 : 값을 저장하기 위한 메모리 공간을 확보
+            - 변수가 발생되고 최초로 값을 할당하는 것을 초기화 라고 한다
+        */
+        var a;    // a변수 선언
+        // = : 대입연산자 - 오른쪽 항의 값을 왼쪽항에 저장을 시킨다.
+        // javascript consol을 통해 log(값) log안의 값을 출력
+        console.log(a);
+        a = 1;    // a라는 변수를 1이라는 값으로 초기화
+        console.log(a);
+        // 재할당
+        a = 10;
+        console.log(a);
+
+        // 값의 할당 선언 3가지
+        // var - script 태그 내부에서 어디서나 사용 가능한 변수
+        // let - 지정된 블럭{} 내부에서만 사용 가능한 변수
+        // const(consteant) - 한번 값이 할당되면 재할당이 불가능한 상수
+
+        const pi = 3.141592;
+        // 원의 넓이 : 반지름 x 반지름 x 원주율(파이)
+        var radius = 5;
+        // 값의 재할당 불가
+        // pi = 3.14;
+        var result = radius * radius * pi;
+        console.log(result);
+
+        // let - 정해지다
+        // block 사용할 범위를 지정{}
+        {
+            var global = 100;   // 전역번수
+            let local = 200;    // 지역번수
+            console.log(local);
+        }
+
+        console.log(global);
+        // let keyword로 저장된 변수는 블럭 내부에서만 사용가능한 지역 변수가 된다
+        // console.log(local);
+
+        // 변수에 할당 가능한 데이터 타입
+        // boolean 논리 데이터 타입 연산결과의 참 거짓 데이터 저장
+        // true-참 || false-거짓
+        var bool = true;
+        bool - false
+
+        // Number - 수치형 데이터(정수,실수)
+        var Number = 273;
+        number = 3.141592;
+
+        // string : 문자들의 나열(문자들의 집합)- 문자열 데이터 
+        var text = '최기근';
+        text = "천재";
+        text = '123123aaa';
+
+        var temp;
+        // colsole.log(temp);  // undifined
+
+        // 값이 할당 되지 않았다는 것을 의미하는 data type
+        temp = null;
+        console.log(null);
+
+        // 함수형
+        // 함수 선언
+        let func = function sample(){
+            console.log('sample() 호출');
+        }
+
+        // 선언된 함수 호출
+        // sample();
+        func();
+
+        // object - 객체 타입
+        var obj = {
+            name : '최기근',
+            age : 26
+        };
+        console.log(obj);
+        var n = obj.name;
+        console.log(n);
+        var age = obj.age;
+        console.log(age);
+
+        let 한글변수 = "세종대왕 만세"
+        console.log(한글변수);
+
+        // var 123Var = 100;
+        /*
+            식별자 작성 방법 - 문법 오류 - 프로그램 종로
+            javascript의 예약어 - 키워드는 사용 불가
+            특수문자는 _ 또는 $ 기호만 사용 가능
+            숫자로 시작할 수 없음
+            문자열 사이에 공백은 입력할 수 없음
+        */
+        /*
+            식별자 작성 규칙
+            - 지키지 않아도 문법적인 오류는 아니지만 개발자 사이에서 소통을 위해 지켜지는 규칙
+            
+            - 이름만 보더라도 변수, 함수, 객체가 어떤 걸 의미하는지 이해할 수 있도록 명령
+
+            - 표기법
+            1. Camel Case(낙타 표기법) : 두가지 이상 단어의 합성어를 사용할 때 이어지는 두번째 단어의 첫글자를 대문자로 작성
+              - 변수, 함수 명을 지정할 때 사용
+                  ex) myName, firstVar, userId 등등 
+
+            2. underScore Case - Snake Case : 두가지 이상 단어의 합성어를 사용할 때 단어와 단어를 _ 특수문자로 구분하여 연결
+              - 주로 datebase에서 사용 - 연관된 객체에서도 사용
+                  ex) my_name, first_var, user_id
+
+            3. SCREAMING_SNAKE_CASE(대문자 뱀 표기법) : 모든 단어를 대문자로 작성 하되 단어를 _(언더바)로 구분
+              - 주로 상수를 표현 할 때 사용
+                  ex) PI, STUDENT_CLASS, FIRST_VAR, USER_ID
+
+            4. Pascal Case(파스칼 표기법) : Camel Case와 동일하나 첫단어의 첫글자를 대문자로 표시
+              - 주로 객체를 표현
+                  ex) Student, HelloWorld, GuildMember
+
+            -------------------------------------------------------------------
+            5. Kebab Case : 단어와 단어를 소문자로 작성하되 이어지는 단어를 -(하이폰)으로 구분
+                  ex) background-color, background-image
+
+            6. 헝가리언 표기법 : 접두어로 데이터 타입을 사용하는 표기법
+                  ex) strName, bBusy, iNumber, _next;
+        */
+        </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 연산자(좌변과 우변의 연산된 결과를 제공)
+        // 산술연산자(Numneric Operators)
+        // + , - , * , / , % , **(제곱)
+        let two = 2;
+        let three = 3;
+        let result = two + three;   // add
+        console.log(result);
+        result = two - three;       // sustract
+        console.log(result);
+        result = two * three;       // multiply
+        console.log(result);    
+        result = two / three;       // divide
+        console.log(result);  
+        result = two % three;       // rest - 나머지  
+        console.log(result)
+        result = two ** three;      // exponentition - 기하급수적
+        console.log(result);
+        result = two / 0;           // infinity
+        console.log(result);
+
+        // escape 문자 - 시퀀스를 따르는 문자들로서 다음 문자가 특수문자임을 알려주는 \(역슬러쉬)를 이용하여 표현
+        // \t : tab
+        // \n : newline 줄바꿈
+        let str = "'template' \\abs\\ \n \"문자열\"";
+        // template : 문자열
+        console.log(str);
+        
+        // 접합 연산자
+        let suffix = "hello";
+        let prefix = "JavaScript";
+        let strResult = suffix + prefix;
+        console.log(strResult);
+        result = 8;
+        // strResult = "Hello JavaScript"
+        // result : 8;
+        strResult = strResult + result;
+        console.log(strResult);
+        // two : 2, three : 3, strResult : Hello JavaScript8
+        // 연산순서         ->
+        strResult = two + three + strResult;
+        console.log(strResult);
+        // 5Hello JavaScript8 + 2 * 3;
+        // 사칙연산 우선순위
+        // 1순위 * , / , %
+        // 2순위 + , -
+        strResult = (strResult + two) * three;
+        // NaN : Not a Number 접한 연산을 제외한 수치 타입이 아닌 데이터를
+        // - , * , / , % 등의 산술연산을 명령하였을 때 
+        // 제공된 데이터가 수치 타입이 아님을 명시
+        console.log(strResult);
+
+        result = "결과값은 : " + (two + three);
+        console.log(result);
+        let sum = two + three;
+        result = "결과값은 : " + sum + "입니다.";
+        console.log(result);
+        // template 문자열
+        // 백틱(back tick) 
+        result = `결과값은 : ${sum} 입니다.`;
+        console.log(result);
+
+        // 비교연산자
+        // 좌변과 우변의 값을 비교 하여 
+        // 수식의 결과가 참인지 거짓인지를 boolean 타입으로 반환
+        console.log("==========================================");
+        // >=, <= , > , < , == , !=
+        let number1 = 100;
+        let number2 = 200;
+        result = number1 >= number2;
+        console.log(result);
+        result = `논리 부정 : ${!result}`;
+        console.log(result);
+        result = number1 <= number2;
+        console.log(result);
+        result = number1 > number2;
+        console.log(result);
+        result = number1 < number2;
+        console.log(result);
+
+        // 동등 비교 연산자
+        // 좌변과 우변의 값이 동등(같은지)한지 비교하는 연산자
+        // == , != , === , !==
+        const strAge = '26';
+        const numAge = 26;
+        // typeof(strAge); ()안의 데이터가 어떤 자료형인지 반환
+        result = typeof(strAge);        
+        console.log(result);
+        result = typeof(numAge);
+        console.log(result);
+        result = strAge == numAge;
+        console.log(result);
+        result = strAge != numAge;
+        console.log(result);
+        console.log("==========================")
+        result = `strAge === numAge : ${strAge === numAge}`;
+        console.log(result);
+        result = `strAge !== numAge : ${strAge === numAge}`;
+        console.log(result);
+
+
+    </script>
+</body>
+</html>
