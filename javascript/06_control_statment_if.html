@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <title>control statment</title>
+    <script>
+        /*
+            제어문 (Control Statment)
+            조건문                           반복문
+            if, switch                for, while, do while
+
+            1. if문(if,if else(또 다른), else if, else)
+            // if문의 기본형태 : if(조건(표현)식){
+                                조건이 참일 경우 수행되는 수행문
+                                }
+        */
+        let a = 3, b = 5;
+
+        if(a == b){ // a와 b의 값이 같으면 중괄호(블럭)안의 수행문을 실행
+            // 조건이 만족하지 않으므로 실행 x
+            alert("a와 b는 동등합니다.");
+        }
+
+        // if문의 수행문이 하나이면 {} 생략 가능
+        if(a == 3) alert("a는 3입니다.");
+
+        // if esle 문:
+        /*
+            if(조건식){
+                // 참인 경우 수행
+            }else{
+                // 거짓인 경우 수행
+            }    
+        }
+        */
+
+            let user = '관리자';
+            // user라는 변수의 값과 문자열 '회원'이 일치할 경우
+            if(user == '회원'){ // true
+                alert('일반 회원 입니다.');
+            }else{ // 일치하지 않을 경우 : false
+                alert('관리자 입니다.');
+            }
+
+            let confirm_test = confirm("30,000,000원 결제 하시겠습니까?");
+            if(confirm_test){
+                document.write("결제완료 <br/>");
+            }else{
+                document.write("결제취소 다시 요청해주세요 <br/>")
+            }
+            
+            /*
+                else if 문
+                여러 조건을 비교해야 할 때 사용
+                
+                if(조건식1){
+                    조건식 1이 만족할 때 수행될 수행문
+                }else if(조건식2){
+                    조건식 1이 만족하지 않고
+                    조건식 2가 만족할 때 수행될 수행문
+                }else{
+                    조건식 1, 조건식 2 둘 다 만족하지 않을 때 수행될 수행문
+                }
+            */
+
+            if(a > b){
+                alert("a가 b보다 큽니다.");
+            }else if(a == b){
+                alert("a와 b가 같습니다");
+            }else{
+                alert("a가 b보다 작습니다");
+            }
+
+            let x, y, input;
+             input = prompt("정수를 입력해주세요.");
+            x = input;
+            input = prompt("정수를 입력해주세요.");
+             y = input;
+            let result = x + y;
+            document.write("두 수의 합은 : " + result + "입니다.<br/>");
+
+            document.write("isNaN(x) : " + isNaN(x));
+            document.write("-- isNaN(y) : " + isNaN(y)+"<br/>");
+            // 좌항과 우항 둘중에 하나라도 수치형으로 변환될 수 있는 
+             // 값이 아니면 true
+            if(isNaN(x) || isNaN(y)){
+                 alert("연산할 수 없는 값이 표함되어 있습니다.");
+            }else{
+                alert("모두 수치형으로 계산 가능한 값입니다.");
+                 // parseInt(x); x가 수치형으로 변할 수 있는 문자열이면
+                // number type으로 변환
+                x = parseInt(x);
+                y = parseInt(y);
+            }
+
+            result = x + y;
+            console.log(typeof(x));
+            console.log(typeof(y));
+            document.write("두 수의 합은 : " + result + "입니다.<br/>");
+            colsole.log('30'-2);
+
+            
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
