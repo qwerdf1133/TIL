@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<script>
+  
+    let total = 0;
+    let total1 = 0;
+    let total2 = 0;
+    
+    for(a = 0; a <= 100; a++){
+        total += a
+        if(a % 2 == 0){
+            total2 += a
+        }else{
+            total1 += a
+        }      
+    }
+    document.write("홀수 합계 : "+ total1+"<br/>");
+    document.write("짝수 합계 : "+ total2+"<br/>");
+    document.write("전체 합계 : "+ total );
+</script>
+</head>
+<body>
+</body>
+</html>

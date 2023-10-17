@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<script>
+    let a = 50
+    let total = 0
+    let answer = true;
+    
+    while(answer){
+        let input = prompt("1~100까지의 정수를 입력해주세요")
+        if(input > a){
+            total++;
+            alert('높습니다. 추측횟수 : '+total);
+                     
+        }else if(input < a ){
+            total++;
+            alert('낮습니다. 추측횟수 : '+total)
+            
+        }else{
+            total++;
+            alert('성공입니다. 추측횟수 '+total)
+            break;
+            answer = false;
+        }
+    }
+</script>
+</head>
+<body>
+</body>
+</html>

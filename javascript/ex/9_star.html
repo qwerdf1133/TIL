@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<script>
+    let size = prompt("가로길이를 입력하세요")
+
+    /*
+    [1]
+    [1][2]
+    [1][2][3]
+    [1][2][3][4]
+    [1][2][3][4][5]
+    -----------------------
+    [1][2][3][4]
+    [1][2][3]
+    [1][2]
+    [1]
+    
+    */
+    for(let i = 1; i <=size; i++){
+        for(let j = 0; j < i; j++){
+            document.write("*")
+        }
+        document.write("<br/>")
+    }
+
+    for(let i = 1; i < size; i++){
+        for(let j = size; j > i; j--){
+            document.write("*")
+        }
+        document.write("<br/>")
+    }
+    document.write("----------------------------<br/>")
+    // 전체 라인 수 계산
+    let max = size * 2 - 1;
+    // size : 5
+    // max : 9
+    for(let i = 1; i <= max; i++){
+        // i : 1 ~ 9;
+        if(i <= size){
+            // 별 개수 증가
+            // i : 1 ~ 5         
+            for(let j = 1; j <= i; j++){
+                document.write("*")
+            }
+        }else{
+            //별 개수 감소
+            // i : 6 ~ 9
+            // (max - i), 3, 2, 1, 0
+            for(let j = 0; j <= max-i; j++){
+                document.write("*")
+            }
+        }
+        document.write("<br/>")
+    }
+
+
+</script>
+</head>
+<body>
+</body>
+</html>

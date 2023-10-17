@@ -1,59 +1,65 @@
+<!-- 20230922_4.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test 4</title>
+    <title>Document</title>
 </head>
 <body>
-    <!-- table[border=1]>(tr>th[colspan=2])(tr>td*2)*6(tr>th[colspan\2]) -->
-
+    <!-- table[border=1]>(tr>th[colspan=2])(tr>td*2)*6(tr>th[colspan=2]) -->
     <table border="1">
-    <tr>
-        <th colspan="2">회원가입</th>
-    </tr>
-    <tr>
-        <td>이메일</td>
-        <td><input type="text" value="neo@naver.com"/></td>
-    </tr>
-    <tr>
-        <td>이름</td>
-        <td><input type="text" value="네오"/></td>
-    </tr>
-    <tr>
-        <td>비밀번호</td>
-        <td><input type="password" value="12345"/></td>
-    </tr>
-    <tr>
-        <td>비밀번호 확인</td>
-        <td><input type="password" value="12345"></td>
-    </tr>
-    <tr>
-        <td>성별</td>
-        <td><input type="radio" name="gender"/>남성
-            <input type="radio" name="gender" checked/>여성
-        </td>
-    </tr>
-    <tr>
-        <td>나이</td>
-        <td><input type="text" placeholder="숫자를 입력하세요."/></td>
-    </tr>
-    <tr>
-        <th colspan="2"><input type="button" value="제출"/>
-        <input type="submit" value="회원가입완료" />
-        <!-- 
-            button tag는 type이 지정되지 않으면 기본 타입이 submit
-         -->
-        <button type="submit">로그인</button>
-        <button type="button">확인</button>
-
-    </th>
-
-        
-    </tr>
-</table>
-
-
-
+        <tr>
+            <th colspan="2">회원가입</th>
+        </tr>
+        <tr>
+            <td>이메일</td>
+            <td><input type="text" value="neo@naver.com"/></td>
+        </tr>
+        <tr>
+            <td>이름</td>
+            <td>
+                <input type="text" value="네오"/>
+            </td>
+        </tr>
+        <tr>
+            <td>비밀번호</td>
+            <td>
+                <!-- input[type=password value=12345] -->
+                <input type="password" value="12345" />
+            </td>
+        </tr>
+        <tr>
+            <td>비밀번호 확인</td>
+            <td>
+                <input type="password" value="12345" />
+            </td>
+        </tr>
+        <tr>
+            <td>성별</td>
+            <td>
+                <input type="radio" name="gender" /> 남성
+                <input type="radio" name="gender" checked /> 여성
+            </td>
+        </tr>
+        <tr>
+            <td>나이</td>
+            <td>
+                <input type="text" placeholder="숫자를 입력하세요."/>
+            </td>
+        </tr>
+        <tr>
+            <th colspan="2">
+                <input type="button" value="제출"/>
+                <input type="submit" value="회원가입완료"/>
+                <!-- 
+                    button tag는 type이 지정되지 않으면
+                    기본타입이 submit
+                 -->
+                <button type="submit">로그인</button>
+                <button type="button">확인</button>
+            </th>
+        </tr>
+    </table>
 </body>
 </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<script>
+    /*
+        factoral : 사물의 순서를 정할 때 얼마나 많은 방법이 있는지 n개의 물건을 배열하는 방법은 몇개인가를 구할 때 사용하는 수식
+        n! 또는 !n 으로 표현
+        ex) 5! = 5 * 4 * 3 * 2 * 1;
+    */
+    let fac = 1
+    /*;
+    fac = fac * 5;
+    fac = fac * 4;
+    fac = fac * 3;
+    fac = fac * 2;
+    fac = fac * 1;
+    */
+    let input = prompt("결과를 원하는 정수를 입력하세요")
+    for(let i = input; i > 0 ; i--){
+        fac *= i;
+        console.log(`i : ${i} , fac : ${fac}`)
+    }
+    document.write(input+"! 값은 : "+ fac)
+
+
+
+</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>while</title>
+<script>
+    /*
+        while(조건식){
+            반복 실행문...
+        }
+        break; 또는 조건식이 false 가 되면 반복 종료
+    */
+
+   let i = 0;
+   while(i < 10){
+    i++;
+    document.write(i+"<br/> ");
+   }
+
+   document.write("<hr/>")
+   i = 0;
+   while(true){
+    document.write("while문을 이용한 반복문 연습" +i+"<br/>");
+    i = i + 1;
+    if(i == 10){
+        // 반복 수행문을 실행하다가
+        // i 값이 10과 같아지면 반복문을 탈출(종료)
+        break;   
+        }   
+    }
+
+    /*
+        do-while - while과 동일하지만 최초의 한번은 수행문의 실행보장
+        do{수행문}while(조건식);
+    */
+
+        let j = 0;
+        do{
+            document.write("do while test : " + j)
+            j += 1;
+        }while(j < 10)
+
+        // while - 반복횟수가 정해져 있지 않을 때 주로 사용
+        // 가정 - 지정된 아이디와 패스워드로 로그인 요청 처리
+        let choiID = 'id001';
+        let choiPW = 'pw001';
+        let isLogin = true; // 반복문 탈출 flag
+        while(isLogin){
+            let id = prompt('아이디를 입력해주세요')
+            let pw = prompt('비밀번호를 입력해주세요')
+           
+
+            if(id == choiID && pw == choiPW){
+                alert('로그인 성공');
+                break;
+                isLogin = false;
+            }else{
+                alert('정보가 일치하지 않습니다');
+                
+            }
+        }
+</script>
+</head>
+<body>
+</body>
+</html>

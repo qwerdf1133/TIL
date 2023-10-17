@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>if conditinal statement</title>
+<script>
+    // 사용자에게 정수를 입력받아 input 변수에 저장
+    let input = prompt("숫자를 입력해주세요");
+    // 3으로 나눈 나머지가 0이면 나누어 떨어지는 3의 배수
+    if(input % 3 == 0){
+        document.write(input+"은(는) 3의 배수입니다");
+    }else{
+        document.write(input+"은(는) 3의 배수가 아닙니다.");
+    }
+
+    // 반복하면서 사용자에게 값을 입력받아
+    // 3의 배수 인지 아닌지를 출력
+    while(true){
+        input = prompt("정수를 입력해주세요");
+        // 탈출 조건
+        // 취소버튼을 누르거나, 값을 입력하지 않거나,
+        // 수치형 데이터가 아닌 값을 입력했을 때 반복문 종료
+        // 취소버튼 : null
+        // 미입력값 : ""
+        let answer = "숫자가 아닙니다";
+        if(input == null || input == "" || isNaN(input)){
+            alert(answer);
+            break;
+        }
+
+        if (input % 3 == 0){
+            answer = input+"은(는) 3의 배수";
+        }else{
+            answer = input+"은(는) 3의 배수가 아님"
+        }
+        alert(answer);
+    }
+
+</script>
+</head>
+<body>
+</body>
+</html>

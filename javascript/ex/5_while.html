@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<script>
+    let guess = 78; // 정답 숫자
+    let isRun = true; //반복문 탈출 flag
+    let count = 0 // 추측 횟수를 저장할 변수
+    let msg = ""; // 결과 메세지를 저장할 변수
+    do{
+        let input = prompt("1~100까지의 정수를 입력해주세요.")
+        if(input == guess){
+            msg = "성공입니다";
+            isRun = false; // 모든 수행부가 완료된 후 조건식에서 반복 여부 결정
+            // break; // 하단 수행부가 수행되지 않고 즉시 종료
+        }else if(input < guess){
+            msg = "낮습니다.";
+        }else{
+            msg = "높습니다.";
+        }
+        count++;
+        alert(msg+" - 추측 횟수 : "+count)
+    }while(isRun);
+
+</script>
+</head>
+<body>
+</body>
+</html>

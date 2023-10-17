@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<script>
+    let size = prompt("높이를 입력하세요");
+    document.write(`<h1>높이가 ${size}인 삼각형</h1>`);
+
+    for(let j = 0; j < size; j++){
+        // j : 0 1 2 3 4 
+        for(let i = 0; i < j + 1; i++){
+            // i : 0              i < j (0) + 1 = 1 
+            // i : 0 1            i < j (1) + 2 = 2
+            // i : 0 1 2          i < j (2) + 3 = 3
+            // i : 0 1 2 3        i < j (3) + 4 = 4
+            // i : 0 1 2 3 4      i < j (4) + 5 = 5
+            document.write("*");   
+        }
+        document.write("<br/>")
+    }
+</script>
+</head>
+<body>
+</body>
+</html>

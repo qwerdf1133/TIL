@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>tlftmq02</title>
+
+</head>
+<body>
+    <script>
+        let gender = prompt("성별을 입력하세요(남성 또는 남 그리고 여성 또는 여)");
+        switch(gender){
+            case '남자' : case '남' :
+                document.write("남자 화장실은 왼쪽입니다.");
+                break;
+            case '여자' : case '여' :
+                document.write("여자 화장실은 오른쪽입니다.")
+                break;
+            default :gender
+                document.write("화장실을 찾을 수 없습니다.")
+        }
+    </script>
+</body>
+</html>

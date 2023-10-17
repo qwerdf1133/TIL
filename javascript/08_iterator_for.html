@@ -160,7 +160,7 @@
         //  quiz. table tag를 이용하여 구구단 표를 그려보자
         
         document.write("<h1>구구단 표</h1>");
-    document.write("<table border=1>");
+    document.write("<table border='1'>");
         document.write("<tr>")
         document.write("<td>2단</td>")
         document.write("</tr")
@@ -308,10 +308,25 @@
                     }
         document.write("</td>")
         document.write("</tr>")
-    
         document.write("</table>");
 
-       
+
+        document.write("<br/><hr/>");
+
+
+        document.write("<h2>반복문을 이용한 구구단 표</h2>");
+        document.write("<table border='1'>");
+        for(let j = 2; j <= 9; j++){
+            document.write("<tr>");
+                for(let i = 1; i <= 9; i++){
+                    document.write("<td>");
+                    document.write(j+"*"+i+"="+(j*i));
+                    document.write("</td>");
+        }
+        document.write("</tr>");
+        }
+        document.write("</table>");
+
 
 </script>
 </head>
