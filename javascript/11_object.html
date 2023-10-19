@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<script>
+    /*
+        자바스크립트의 객체
+        자바스크립트의 모든 개념들이 객체에 포함된다고 봐도 무방할 정도로 범위가 넓음
+
+        프로퍼티(속성 or 변수)와 
+        method(함수)의 집합체
+
+        객체의 형태 - {}를 JS의 객체로 표현한다.
+
+        let 객체를 저장할 변수 = {프로퍼티이름 : 값,
+        프로퍼티이름:함수, ... } 형식으로 표현
+
+        이렇게 표현하는 방식을 JSON 방식이라고 함
+        (JavaScrpt Object Notatin)
+
+        // 객체 생성과 동시에 초기화하여 변수에 지정
+    */
+    let person = {
+        name : "홍길동", birth : "2023-10-19",
+        bloodType : "A형",
+        pId : 12345,
+        eat : function(food){
+            return this.name+"님이 "+food+"를 먹습니다";
+        }
+    }
+    // 객체 안에 있는 프로퍼티 (속성) 사용
+    // 객체변수, 프로퍼티명;
+    // 객체변수, ['프로퍼티명']
+    console.log("person의 이름 : "+person.name)
+    console.log("person의 이름 : "+person['name'])
+
+    // 객체안에 정의된 메서드(프로퍼티) 사용
+    // 객체이름, 메소드명(인자값); 
+
+    let result = person.eat('칼국수');
+    console.log(result);
+
+    // 함수형 객체 선언
+    function Car(model, speed, color){
+        
+    this.model = model;
+    this.speed = speed;
+    this.color = color;
+
+        this.accel = function(){
+            this.speed += 10;
+        }
+
+        this.break = function(){
+            this.speed -=10;
+        }
+    }
+
+    // 차를 생산
+    let choiCar = new Car("Gv80",0,"white");
+    let parkjCar = new Car ("Benz S class", 0, "black")
+    choiCar.accel();
+    choiCar.model = "마이바흐" ;
+    console.log(choiCar);
+    console.log(parkjCar);
+
+    // 객체의 프로퍼티에 접근하여 데이터 수정
+    let dog = {
+        name :"솜이",family:"비숑",age:4
+    };
+
+    dog.age = 5; // dog의 age라는 속성에 5라는 값을 재할당
+    console.log(dog.age);
+    dog.color = "흰색"; // 속성 추가
+    console.log(dog);
+    //  없는 속성은 read undefined
+    console.log(dog.weight);
+    delete dog.family ; // 속성 삭제
+    console.log(dog);
+
+
+    // 반복문을 이용한 속성 read
+    let foods = {
+        pizza : "피자",
+        chicken : "치킨",
+        pasta : "파스타",
+    }
+
+    for(let key in foods){
+        console.log(`for in을 사용한 객체 속성 읽기 : ${key}`)
+        console.log(foods[key]);
+    }
+</script>
+
+</head>
+<body>
+</body>
+</html>
