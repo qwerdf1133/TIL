@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+</head>
+<body>
+    <p id="p1">
+        this is paragrpah
+
+    </p>
+    <button onclick="changeStyle();">눌러보세요</button>
+    <script>
+        console.log(document.head);
+        console.log(document.body);
+
+        function changeStyle(){
+            let p1 = document.getElementById("p1");
+            // p1 태그 요소 컨텐츠의 text 노드의 색상 변경
+            p1.style.color = "pink";
+            // font-style:italic;
+            p1.style.fontStyle = "italic";
+            // body의 배경색상 background-color를 skyblue로 변경
+            document.body.style.backgroundColor = "skyblue";
+            document.body.style.backgroundImage ="url(../img/poodle.png)";
+            document.body.style.backgroundRepeat = "no-repeat";
+        }
+    </script>
+</body>
+</html>

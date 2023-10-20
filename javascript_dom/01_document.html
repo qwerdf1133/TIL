@@ -1,0 +1,63 @@
+<!-- 01_document.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <title>Document Object Model</title>
+    <script>
+        let id = document.getElementById("selectedId");
+        console.log(id);
+    </script>
+</head>
+<body>
+    <!-- input:text.tagClass#selectedId[value=$ tabindex=$]*5 -->
+    <input type="text" id="selectedId" class="tagClass" value="1" tabindex="1">
+    <input type="text" id="selectedId" class="tagClass" value="2" tabindex="2">
+    <input type="text" id="selectedId" class="tagClass" value="3" tabindex="4">
+    <input type="text" id="selectedId" class="tagClass" value="4" tabindex="3">
+    <input type="text" id="selectedId" class="tagClass" value="5" tabindex="5">
+    <input type="button" value="button" class="tagClass" id="selectedId" onclick="alert('click!!!!');" />
+    <hr/>
+    <script>
+        /*
+            tag 요소 출력 완료
+            출력된 요소는 document(문서 객체)에 등록
+        */
+       // id 속성 값으로 요소를 검색하여 
+       // 제일 먼저 검색된 한개의 요소를 읽어옴.
+       id = document.getElementById("selectedId");
+       console.log(id);
+       id.value = "최기근";
+
+       document.write(`getElementById : ${id.value} <br/>`);
+
+       /*
+            css 선택자와 동일하게 요소를 검색하여 가장 먼저 검색되는 한개의 요소를 읽어옴.
+            type or name : tag이름, class : . , id : #     
+       */
+        let selector = document.querySelector(".tagClass");
+        selector = document.querySelector("input");
+        selector = document.querySelector("#selectedId");
+        document.write(`querySelector : ${selector.value} <br/>`);
+
+        // 태그 이름으로 선택된 모든 태그요소를 배열 형식으로 반환
+        let tagArray = document.getElementsByClassName("input");
+        console.log(tagArray);
+        for(let i = 0; i < tagArray.length; i++){
+            document.write(`${i}번째 tag : ${tagArray[i].value} <br/>`);
+        }
+
+        // class 속성의 값으로 검색된 모든 태그요소를 배열로 반환
+        let classArray = document.getElementsByClassName("tagClass");
+        console.log(classArray);
+
+        // css 선택자로 검색된 모든 요소를 배열로 반환
+        let selectAll = document.querySelectorAll("input[type='text']");
+        console.log(selectAll);
+
+        selectAll[0].onclick = function(){
+            selectAll[0].value="click event로 변경";
+        }
+    </script>
+</body>
+</html>

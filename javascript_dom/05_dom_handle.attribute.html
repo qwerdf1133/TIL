@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+</head>
+<body>
+    <img src="../img/pome.png"
+        data-pome="../img/pome.png"
+        data-poodle="../img/poodle.png"
+        alt="pome 이미지 입니다"
+        id="image" width="120" height="100"/>
+    <input type="button" value="눌러보세여" onclick="changeImage()"/>
+    <input type="button" value="눌러보세여" onclick="changeImg()"/>
+
+    <script>
+        let image = document.getElementById("image");
+        console.log(image.src);
+        console.log(image.width);
+        console.log(image.height);
+
+        function changeImage(){
+            image.src = "../img/poodle.png";
+            image.width = "300";
+            image.height = "400";
+        }        
+
+        // 두번째 버튼
+        function changeImg(){
+            // date-pome
+            console.log(image.dataPome);
+            let pome = image.getAttribute("data-pome");
+            console.log(pome);
+            let poodle = image.getAttribute("data-poodle");
+            console.log(poodle);
+            // image.title = "강아지그림입니다";
+            image.setAttribute("title","강아지그림입니다");
+            image.setAttribute("data-rice","../img/rice.png");
+            // 사용자 정의형 속성을 제어 할 수 있게 제공 되는 속성
+            console.log(image.dataset);
+            console.log(image.dataset.pome);
+            console.log(image.dataset.poodle);
+            console.log(image.dataset.rice);
+
+
+        }
+    </script>
+</body>
+</html>

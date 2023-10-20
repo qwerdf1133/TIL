@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>시간 정보를 다루는 객체</title>
+</head>
+<body>
+    <script>
+        // 컴퓨터 시간 0에서 부터 매초 증가하는 시간의 정보를
+        // millis second 로 저장
+        // 1970-01-01 09:00:00
+        let date = new Date(); // 현재 시간에 대한 정보를 저장하는 객체
+        console.log(date);
+        date = new Date(0);
+        console.log(date);
+
+        date = new Date();
+        // 년도 - 2023
+        let year = date.getFullYear();
+        // 월 - 0 ~ 11 (0 -> 1월 ~ 11 -> 12월)
+        let month = date.getMonth()+1;
+        //일 (1 ~ 31) 월중 날짜
+        let day =date.getDate();
+        // 주중 날짜 - (0 ~ 6 | 0 == 일요일 , 6 == 토요일)
+        let week = date.getDate();
+        // 시간
+        let hour = date.getHours();
+        // 분
+        let minute = date.getMinutes();
+        // 초
+        let second = date.getSeconds();
+        // 밀리세컨 (1/1000 초) 783
+        let millis = date.getMilliseconds();
+        // 저장된 시간의 밀리세컨 타임스탬프
+        let timeMillis = date.getTime();
+
+        console.log(`${year}년 ${month}월 ${day}일`);
+        console.log(`${hour}:${minute}:${second}.${millis}`);
+        console.log(timeMillis);
+        console.log(date.toString());
+        console.log(date.toDateString());
+        console.log(date.toLocaleDateString());
+        
+        // OSI 8601 표준 표시 방식
+        date = new Date("2024/03/18/ 15:30:00");
+        let result = date.toLocaleString();
+        console.log(result);
+        // 월 은 정수로 0 ~ 11로 표현 되기 때문에
+        // +1 한 월로 저장됨으로 지정된 월에서 -1한 값을 전달
+        let date2 = new Date(2000,10,10,10,20,30,40);
+        console.log(date2.toLocaleString());
+        // 현재 시간
+        date2 = new Date();
+
+        let diff = date.getTime() - date2.getTime();
+        diff = diff/1000/60/60/24;
+
+        alert(`남은 교육기간 일수 : ${parseInt(diff)}일 입니다`)
+    </script>
+</body>
+</html>

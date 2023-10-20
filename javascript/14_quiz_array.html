@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<script>
+    /*
+        quiz.  
+        1. 빈값 배열 선언
+        2. prompt를 이용해서 사용자에게 4개의 점수(1~100)를 입력받아 배열에 저장.
+        3. 배열에 저장된 점수들 중 값을 비교하여 최소값, 최대값을 구하시오.
+
+    */
+
+    let englishScores = [10,50,70,40,60];
+    englishScores = [];
+    englishScores = new Array();
+
+    /*
+    let score = prompt("저장할 점수를 입력해주세요");
+    englishScores[0] = socre;
+    let score1 = prompt("저장할 점수를 입력해주세요");
+    englishScores[1] = socre;
+    */
+
+    const STUDEN_NUM = 5;   // 학생 수
+    for(let index = 0; index < STUDEN_NUM; index++){
+        englishScores.push(parseInt(prompt("저장할 변수를 입력해주세요")));
+        /*
+        let score = prompt("저장할 점수를 입력해주세요")
+        englishScores[index] = parseInt(score);
+        */
+    }
+    console.log(englishScores);
+        let max, min;
+        max = min = 0;
+
+    for(let i = 0; i < englishScores.length; i++){
+        if(englishScores[i] > max){
+            max = englishScores[i];
+        }
+
+        if(englishScores[i] < min){
+            min = englishScores[i];
+        }
+    }
+    document.write(`english min score : ${min} <br/>`);
+    document.write(`english max score : ${max} <br/>`);
+</script>
+</head>
+<body>
+</body>
+</html>

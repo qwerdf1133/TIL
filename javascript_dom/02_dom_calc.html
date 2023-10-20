@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<script>
+    function result(){
+        // alert("click 확인");
+        // id 값이 first 인 요소의 value 값과
+        // second인 요소의 value 값을 합하여
+        // result인 요소의 value 값에 출력
+        let first = document.getElementById("first");
+        console.log(first.value);
+        let second = document.querySelector("#second").value;
+        console.log(second);
+
+        let sum = parseInt(first.value) + parseInt(second);
+        
+        document.getElementById("result").value = sum;
+    }
+
+        // 2
+        let input = document.querySelectorAll("input[type=number]");
+        sum = 0;
+        for(let i = 0; i < input.length; i++){
+            sum = sum + parseInt(input[i].value);
+        }
+        console.log(sum);
+</script>
+</head>
+<body>
+    <input type="number" id="first" tabindex="1" autofocus />
+    +    
+    <input type="number" id="second" tabindex="2" />
+    =
+    <input type="text" id="result" readonly />
+    <input type="button" onclick="result();" value="결과 확인" tabindex="3" />
+</body>
+</html>

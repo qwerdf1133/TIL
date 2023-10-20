@@ -1,0 +1,39 @@
+<!-- 03_dom_handle_text.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <title>handle text content</title>
+</head>
+<body>
+    <div id="ex">
+        <b>여기는 div로 선언되었습니다.</b>
+        <script>let a = 10;</script>
+        <style>
+            #ex{
+                color:red;
+            }
+        </style>        
+    </div>
+    <form>
+        <input type="text" name="exName" id="exName" />
+    </form>
+    <a href="#" onclick="get();">div 요소 내용 출력</a> <br/>
+    <a href="#" onclick="set();">div 요소 내용 변경</a>
+
+    <script>
+        function get(){
+            let ex = document.getElementById("ex");
+            // innerHTML, textContent, innerText
+            console.log(ex);
+            console.log("-----------------------------");
+            console.log(ex.innerHTML);
+            console.log("-----------------------------");
+            console.log(ex.innerText);
+            console.log("-----------------------------");
+            console.log(ex.textContent);
+        }
+
+    </script>
+</body>
+</html>
