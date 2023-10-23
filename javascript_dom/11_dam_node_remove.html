@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>요소 삭제</title>
+<style>
+    .target{
+        border:1px solid red;
+        padding: 20px;
+        margin: 10px auto;
+        color: skyblue;
+    }
+</style>
+</head>
+<body>
+    <button onclick="addClass();">class 속성 추가</button>
+    <button onclick="removeClass();">class 속성 삭제</button>
+    <button onclick="removeFirst();">첫번째 요소 삭제</button>
+    <button onclick="removeLast();">마지막 요소 삭제</button>
+    <div id="target">
+        <p id="p1" onclick="rl(this);" class="p1 pClass">1번째 단락</p>
+        <p id="p2" onclick="rl(this);" class="p1 pClass">2번째 단락</p>
+        <p id="p3" onclick="rl(this);" class="p1 pClass">3번째 단락</p>
+        <p id="p4" onclick="rl(this);" class="p1 pClass">4번째 단락</p>
+        <p id="p5" onclick="rl(this);" class="p1 pClass">5번째 단락</p>
+        <p id="p6" onclick="rl(this);" class="p1 pClass">6번째 단락</p>
+        <p id="p7" onclick="rl(this);" class="p1 pClass">7번째 단락</p>
+    </div>
+
+    <script>
+        // target class 속성 추가
+        function addClass(){
+        let target = document.getElementById("target");
+        // 기준 요소 내부의 모든 자식 노드
+        let childrens = target.childNodes;
+        console.log(childrens);
+        // 기준 요소 내부의 자식 요소들 중 태그 요소만 검색
+        childrens = target.children;
+        console.log(childrens);
+        for(let item of childrens){
+            console.log(item.className);
+            // item.className = 'target';
+            // item.className += ' target';
+            console.log(item.classList);
+            item.classList.add('target');
+        }
+
+        }
+
+        // target class 속성 삭제
+        function removeClass(){
+            let elP = document.querySelectorAll("#target > p");
+            for(let item of elP){
+                // item.className = "";
+                // item.classList.remove('target');
+                // 없으면 추가, 있으면 삭제
+                item.classList.toggle('target');
+            }
+        }
+
+        // target 요소의 자식요소들 중 첫번째 요소 삭제
+        function removeFirst(){
+            let parent = document.getElementById("target");
+            //  parent 요소의 자식요소 중 첫번째 자식 Node
+            let child = parent.firstChild;
+            console.log(child);
+            //  parent 요소의 자식요소 중 첫번째 자식 HTML tag Node
+            child = parent.firstElementChild;
+            console.log(child);
+
+            // 부모 요소의 자식요소들 중에 매개변수로 전달받은
+            // 자식 요소를 제거
+            if(child != null){
+                parent.removeChild(child);
+            }
+            
+
+        }
+
+        // target 요소의 자식요소들 중 마지막 요소 삭제
+        function removeLast(){
+            let parent = document.querySelector("#target");
+            let lastChild = parent.lastElementChild;
+            if(lastChild != null){
+                parent.removeChild(lastChild);
+            }
+        }
+
+        // click event가 발생 요소 삭제
+        function rl(elem){
+            // click event가 발생한 p tag 요소
+            console.log(elem);
+            // 해당 요소를 문서에서 삭제
+            elem.remove();
+        }
+
+    </script>
+</body>
+</html>

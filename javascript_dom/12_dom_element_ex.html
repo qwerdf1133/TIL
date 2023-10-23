@@ -1,0 +1,62 @@
+<!-- 12_dom_element_ex.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <title>To Do List</title>
+    <style>
+        .todos{
+            border:1px solid skyblue;
+            color:blue;
+            padding:20px;
+            width:300px;
+            margin-bottom:10px;
+            list-style:none;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="todo" placeholder="할일 작성" />
+    <button onclick="addToDo();">할일 목록에 추가</button>
+    <br/><br/>
+    <button onclick="removeToDo();">할일 목록에서 삭제</button>
+    <!-- 
+        #todo 입력필드에 작성된 값과 일치하는 할일 목록 삭제 
+    -->
+    <button onclick="removeList();">값이 일치하는 할일 목록 삭제 </button>
+
+    <br/>
+    <hr/>
+    <!-- 할일 목록을 저장할 list -->
+    <ul id="toDoList">
+
+    </ul>
+
+    <script>
+        // ul#toDoList
+        let toDoList = document.querySelector("#toDoList");
+        for(let i = 0; i < 5; i ++){
+            let li = document.createElement('li');
+            li.innerText = '할일추가-'+i;
+            li.className = 'todos';
+            toDoList.appendChild(li);
+        }
+
+        // To Do List 추가
+        function addToDo(){
+            let input = document.getElementById("text")
+            addToDo.append(h1);
+        }
+
+        // 첫번째 또는 마지막 할일 목록 아이템 제거
+        function removeTodo(){
+
+        }
+
+        // 입력필드에 작성된 할일 목록과 일치하는 리스트아이템 삭제
+        function removeList(){
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>요소 생성과 추가</title>
+<style>
+    div{
+        font: 20px bold;
+        border: 1px solid red;
+    }
+</style>
+</head>
+<body>
+    <input type="text" id="text" /> <br/>
+    <div id="addElement">요소 추가 클릭</div>
+    <div id="addTextNode">테스트 요소 추가 클릭</div>
+    <hr/>
+    <div id="target">target</div>
+    <script>
+        // h1 tag 요소를 생성
+        let h1 = document.createElement('h1');
+        console.log(h1);
+        h1.innerHTML = "추가된 요소";
+        h1.style.color = "skyblue";
+        console.log(h1);
+
+        let addElement = document.getElementById("addElement");
+        let target = document.querySelector("#target");
+        addElement.onclick = function(){
+            // target 요소에 컨텐츠 추가
+            // target.innerHTML = h1;
+            // 기존 content 뒤에 요소 추가
+            target.append(h1);
+        };
+
+        let addTextNode = document.querySelector("#addTextNode");
+        addTextNode.onclick = function(){
+            // 기존 태그요소의 컨텐츠 이전에 태그 요소 추가
+            // target.prepend(h1);
+
+            // 입력태그에 작성된 value 값을 읽어와서 컨텐츠로 추가
+            let input = document.getElementById("text");
+            let value = input.value;
+
+            // text content가 저장된 Node 객체 생성
+            let textNode = document.createTextNode(value);
+            // target 요소에 textNode content 추가
+            // target.appendChild(생성된 노드 객체만 사용가능)
+            // target.appendChild(textNode)
+            // X :  target.appendChild("<h1>Hello HTML!!!!</h1>");
+            target.append("<h1>Hello HTML!!!!</h1>");
+            console.log('출력 완료');
+            let h2 = document.createElement("h2");
+            let textNode2 = document.createTextNode("Hello");
+            h2.appendChild(textNode2);
+            h2.append("추가추가");
+            target.append(h1,h2);
+            target.append(addElement);
+        };
+    </script>
+</body>
+</html>

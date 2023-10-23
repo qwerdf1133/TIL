@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>Event 등록</title>
+    
+</head>
+<body>
+    <input type="button" onclick="alert('Test!!!')" value="Test" id="test" />
+    <input type="button" value="test Event 제거" id="removeEvent1" />
+    <input type="button" value="확인 버튼" id="btn" />
+    <input type="button" value="listener 확인 버튼" id="btn2" />
+    <input type="button" value="이벤트 제거" id="removeEvent2" />
+    <script>
+        let testBtn = document.getElementById("test");
+        /*
+            callback 함수 - 다른 코드의 인수로 넘겨주는 실행 가능한 코드
+            // 콜백을 넘겨받는 코드는 필요에 따라 즉시 실행 될 수도 있고
+            나중에 실행될 수도 있다.
+        */
+        testBtn.onclick = function(){
+            alert('안녕!!!');
+        }
+
+        let removeEvent1 = document.querySelector("#removeEvent1");
+        removeEvent1.onclick = () =>{
+            console.log("test event 제거");
+            testBtn.onclick = null;
+        };
+
+        function btnEvent(){
+        document.write("btnEvent!!!!");
+        }
+
+        let btn = document.querySelector("#btn");
+        // btn.onclick = btnEvent(); -> badcase - 함수 호출
+        btn.onclick = btnEvent;
+
+        /*
+            enent 등록 3 - EventListener
+        */
+        let btn2 = document.getElementById("btn2");
+        let removeEvent2 = document.querySelector("#removeEvent2");
+
+        // btn2 eventListener 등록
+        btn2.addEventListener('click',btnEvent);
+
+        removeEvent2.ondblclick = function(){
+        console.log("double click!!!!");
+        // btn2.onclick = null;
+        btn2.removeEventListener('click',btnEvent);
+        }
+    </script>
+</body>
+</html>
