@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>key event</title>
+</head>
+<body>
+    <form name="loginform" action="16_dom_event_default.html" target="_blank">
+        ID : <input type="text" name="id" id="id" />
+        <br/>
+        PW : <input type="password" name="pw" id="pw" />
+        <br/>
+        <input type="button" id="btn" value="전송" />
+
+    </form>
+
+    <script>
+        let id = document.getElementById("id");
+        let pw = document.querySelector("#pw");
+        let btn = document.querySelector("#btn");
+
+        // key event
+        id.onkeydown = function(e){
+            // e == keyEvent
+            let keyName = e.key;
+            let keyCode = e.keyCode;
+            console.log(`key : ${keyName} , keyCode : ${keyCode}`);
+            if(keyCode == 13){
+                pw.focus();
+            }
+        };
+
+        pw.onkeydown = function(e){
+            if(e.key == "Enter"){
+                // document.loginform.submit();
+                btn.click();
+            }
+        };
+
+        function checkValue(obj){
+            // obj ==       id || pw
+            console.log(obj.value);
+            console.log(obj.value.length);
+            if(obj.value.length < 8){
+                alert('8자 이상 작성하세요')
+                // 지정 태그 요소로 포커스 이동
+                obj.focus();
+            return false;
+            }
+            return true;
+        }
+
+        btn.onclick = function(){
+            if(checkValue(id) && checkValue(pw)){
+                document.loginform.submit();
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>default</title>
+<script>
+    function query(){
+        let answer = confirm("페이지를 이동하시겠습니까")
+        console.log(answer);
+        return answer;
+    }
+
+    function noAction(e){
+        // event를 전달 요소의 기본 이벤트를 무시한다
+        e.preventDefault();
+    }
+</script>
+</head>
+<body>
+    <a href="https://naver.com" onclick="return query();">네이버로 이동할지 물어봄</a>
+    <br/>
+    <a href="javascript:alert('안가');">이동할 페이지를 자바스크립트로</a>
+    <br/>
+    <a href="https://naver.com" onclick="noAction(event);">안감</a>
+    <!--  -->
+    <form name="myForm" 
+    action="15_dom_event_mouse.html" method="get" target="_blank">
+        
+        <label>
+            <input type="checkbox" name="eat" value="빵"/> 빵
+        </label>
+    <br/>
+        <label>
+            <input type="checkbox" name="eat" value="술" onclick="noAction(event);"/> 술
+        </label>         
+    <br/>
+        <input type="submit" value="실행"/> <br/>
+        <input type="button" value="진짜실행" id="btn"/>
+    </form>
+    <script>
+        document.myForm.onsubmit = function(e){
+            // return false;
+            e.preventDefault();
+            document.querySelector('input[value=빵]').click();
+        }
+
+        let btn = document.getElementById("btn");
+        btn.onclick = function(){
+            // 해당 되는 폼요소의 submit event 강제 발생
+            document.myForm.submit();
+        };
+    </script>
+</body>
+</html>
