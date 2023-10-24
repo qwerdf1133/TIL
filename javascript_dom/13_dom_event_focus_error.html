@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>focus error</title>
+</head>
+<body>
+    <h1>focus blur</h1>
+    <input type="text" onfocus="upper(this);" onblur="lower(this);"/>
+    <br/>
+    <h1>focusin focusout</h1>
+    <input type="text" onfocusin="upper(this);" onfocusout="lower(this);"/>
+    <h1>event 전파, event 버블링</h1>
+    <form 
+        onfocusin="this.style.backgroundColor='pink';"
+        onfocusout="this.style.backgroundColor='skyblue';">
+        <h2>이벤트 처리 - focusin, focusout</h2>
+        <input type="text" />
+    </form>
+    <br/>
+    <hr/>
+    <form 
+        onfocus="this.style.backgroundColor='pink';"
+        onblur="this.style.backgroundColor='skyblue';">
+        <h2>이벤트 처리 - focus, blur</h2>
+        <input type="text" />
+    </form>
+    <br/>
+    <hr/>
+    <h2>error</h2>
+    <h3>image</h3>
+    <img src="../img/banana.png" alt="바나나 이미지입니다"/>
+    <hr/>
+    <img
+        onerror="this.style.display='none';"
+        src="../../../img/apple.png" 
+        alt="사과 이미지입니다"/>
+    <img
+        onerror="this.src='../img/banana.png';"
+        src="../../../img/apple.png" 
+        alt="사과 이미지입니다"/>
+    <script>
+        // blur - 포커스를 잃었을 때
+        function lower(el){
+            let v = el.value;
+            // 문자열의.toLowerCase();
+            // 문자열의 알바펫을 소문자로 변환하여 반환
+            el.value = v.toLowerCase();
+        }
+
+        // focus - 포커스를 얻었을 때
+        function upper(el){
+            let v = el.value;
+            // 문자열.toUpperCase();
+            // 문자열의 알파벳을 대문자로 변환하여 반환
+            el.value = v.toUpperCase();
+        }
+    </script>
+</body>
+</html>

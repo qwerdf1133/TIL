@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>이벤트 버블링 (Event Bubbling)</title>
+<style>
+    #box{
+        background-color: yellow;
+        width: 300px;
+        height: 70px;
+        padding: 20px;
+    }
+</style>
+<script>
+    /*
+    
+    이벤트 전파:이벤트 버블링 (Event Bubbling)
+    특정 화면 요소에서 이벤트가 발생했을 때 해당 이벤트가 상위의
+    화면 요소들로 전달되어가는 특성
+    
+    부모 요소와 자식요소로 구분되어 있는 경우
+    - 이벤트 전파
+    mouseover(), mouseout()
+
+    - 자식요소의 이벤트에 영항을 받지 않음.
+    mouseenter();, mouseleave();
+
+    */
+    function onClick(el){
+        el.style.backgroundColor = 'skyblue';
+    }
+
+    function mouseIn(el){
+        el.style.backgroundColor = 'pink';
+    }
+
+    function mouseOut(el){
+        el.style.backgroundColor = 'yellow';
+    }
+</script>
+    <h1>MouseEnter MouseLeave</h1>
+    <div id="box" 
+        onclick="onClick(this);"
+        onmouseleave="mouseOut(this);">
+        <p>마우스를 이 요소 위로 이동하세요</p>
+    </div>
+    <br/>
+    <h1>MouseOver MouseOut</h1>
+    <div id="box" 
+        onclick="onClick(this);"    
+        onmouseover="mouseIn(this);"
+        onmouseout="mouseOut(this);">
+        <p>마우스를 이 요소 위로 이동하세요</p>
+    </div>
+</head>
+<body>
+</body>
+</html>

@@ -40,23 +40,86 @@
             li.innerText = '할일추가-'+i;
             li.className = 'todos';
             toDoList.appendChild(li);
+            toDoList.prepend(li);
         }
 
         // To Do List 추가
         function addToDo(){
-            let input = document.getElementById("text")
-            addToDo.append(h1);
+            //# toDo 아이디값이 toDo인 입력필드 요소
+            let toDoNode = document.getElementById("todo");
+            // 입력 태그에 입력된 값(text)는 value속성을 통해 읽고 쓰기가 가능
+            console.log(toDoNode.value);
+
+            // li 태그 요소(객체) 생성
+            let li = document.createElement('li');
+            // li 태그요소 내부의 text content로 입력태그에서 작성된 value 지정
+            li.innerText = toDoNode.value;
+            // li 태그 요소에 클래스 속성 todos 부여
+            li.classList.add('todos');
+            // 생성한 li(할일)을 toDoList(목록)에 아이템으로 추가
+            toDoList.prepend(li);
+
         }
 
         // 첫번째 또는 마지막 할일 목록 아이템 제거
-        function removeTodo(){
-
+        function removeToDo(){
+            // toDoList == ul 태그 요소의 자식 요소들 중에 마지막 요소 삭제
+            let removeTarget = toDoList.lastElementChild;
+            if(removeTarget != null){
+                toDoList.removeChild(removeTarget);
+            }else{
+                // 더이상 삭제할 자식 요소가 존재하지 않을 때
+                alert('더 이상 삭제할 할일이 존재하지 않습니다');
+            }
         }
 
         // 입력필드에 작성된 할일 목록과 일치하는 리스트아이템 삭제
         function removeList(){
+            // 입력 필드에 작성된 할일 내용
+            let todoText = document.getElementById("todo").value;
+            console.log(todoText);
 
-        }
+            // 넷 중 아무거나 써도 됨
+            let todos = document.getElementsByClassName("todos");
+            console.log(todos);
+            // todos = document.getElementsByTagName('li');
+            // console.log(todos);
+            // todos = document.querySelectorAll('#toDoList > .todos');
+            // console.log(todos);
+            // todos = toDoList.children
+            // console.log(todos);
+
+            // index [0] [1] [2] [3] [4] ....
+            // todos [li][li][li][li][li]....
+
+            // 삭제할 요소를 저장할 변수
+            let removeTarget = null;
+            
+            for(let i = 0; i < todos.length; i++){
+                console.log('todoText : '+toDoList);
+                console.log('todos innerText : '+todos[i].innerText);
+                if(todoText == todos[i].innerText){
+                    console.log('일치하는 요소');
+                    console.log(todos[i]);
+                    removeTarget = todos[i];
+                    break;
+
+                    /*
+                    // 문서에서 해당 요소 삭제
+                    todos[i].remove();
+                    */
+                }
+            }   //end for
+            console.log('삭제할 대상 : ');
+            console.log(removeTarget)
+
+            if(removeTarget != null){
+                // text가 일치하는 li 요소가 존재
+                removeTarget.remove();
+            }else{
+                alert('동일한 항목이 존재하지 않습니다')
+            }
+        }   // end removeList(function)
     </script>
 </body>
 </html>

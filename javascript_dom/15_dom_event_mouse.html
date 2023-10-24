@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>mouse event</title>
+<style>
+    span{
+        display:inline-block;
+    }
+</style>
+<script>
+    document.oncontextmenu = function(){
+        alert('오른쪽 마우스 클릭(컨텍스트 메뉴 금지)');
+        return false;
+    };
+</script>
+</head>
+<body>
+    <h3>마우스 관련 이벤트</h3>
+    <hr/>
+    <div>
+        <!--
+            mousedown   : 마우스 좌클릭 
+            mouseup     : 마우스 좌클릭 해제
+            wheel       : 마우스 휠 이벤트 감지
+        -->
+        
+        마우스 관련 
+        <!-- wheel(e,this); -->
+        <span 
+        onwheel="wheel(event,this);"
+        onmouseleave="leave(this);"
+        onmouseenter="enter(this);"
+        onmousedown="down(this);"
+        onmouseup="up(this);">
+        이벤트(타겟)</span>
+        가 발생합니다
+    </div>
+    <hr/>
+    <img src="../img/bonobono.jpg" alt="보노보노"/>
+    <script>
+        // 마우스가 눌러졌을 때 (click된 상태)
+        function down(obj){
+            obj.style.fontStyle = "italic";
+        }
+
+        function up(obj){
+            obj.style.fontStyle = "normal";
+        }
+
+        function enter(obj){
+            obj.style.cursor = "pointer";
+            obj.style.border = "1px solid violet";
+        }
+
+        function leave(obj){
+            // borderStyle
+            // borderWidth
+            obj.style.borderColor = "gray";
+        }
+
+        let width = 1;
+        // 마우스 휠 이벤트 감지
+        function wheel(e, obj){
+            // e.wheelDelta == 마우스가 아래쪽으로 굴릴때 음수
+            // e.wheelDelta == 마우스가 위쪽으로 굴릴때 양수
+            console.log(e.wheelDelta);
+            if(e.wheelDelta < 0){
+                width--; // 폭의 크기를 1씩 감소
+                if(width < 0){
+                    width = 0
+                }
+            }else{
+                width++;
+            }
+            obj.style.borderwidth = width+"p x"
+
+        }
+    </script>
+</body>
+</html>
