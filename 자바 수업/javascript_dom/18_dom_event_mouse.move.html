@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>mouse move event</title>
+<script>
+    // 브라우저에 문서가 모두 출력되고
+    // 사용자가 사용할 준비가 완료 되었을 때 발생되는 이벤트
+    window.onload = function(){
+        document.body.onmousemove = function(event){
+            let position = "x : "+event.pageX;
+            position += ", y : "+event.pageY;
+            document.getElementById("pTag").innerHTML = position;
+        }
+    }
+</script>
+</head>
+<body>
+    <p id="pTag"></p>
+    <div style="background-color: yellow; width: 300px; height: 100px;">
+    </div>
+</body>
+</html>

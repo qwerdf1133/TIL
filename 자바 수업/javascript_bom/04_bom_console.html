@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<script>
+    // window.console - 출력 탭
+    window.console.log("기본");
+    let a = "Hello";
+    let b = 3.141592;
+    let c = false;
+    console.log(a + b + c);
+    console.log(a , b , c);
+
+    // pattern
+    console.log("%s는 문자열, %d는 수치형",a ,b);
+    // Hello는 문자열, 3는 수치형
+    
+    console.log("%s는 문자열, %f는 실수",a,b);
+    // Hello는 문자열, 3.141592는 실수
+    
+    console.info("정보 log랑 동일하게 출력");
+    console.warn("경고");
+    console.error("오류");
+    
+    // 콘솔 출력창 청소
+    console.clear();
+
+    // 디버깅 시에 연산에 소비된 시간을 체크
+    console.time("타이머 1");
+    let sum = 0;
+    for(let i =0; i <= 100000; i++){
+        if(i % 2 == 0){
+            sum += i;
+        }
+    }
+    console.timeEnd("타이머 1")
+    console.time("타이머 2")
+    sum = 0;
+    for(let i = 2; i <= 100000; i+=2){
+        sum += i;
+    }
+    console.timeEnd("타이머 2");
+</script>
+</head>
+<body>
+</body>
+</html>

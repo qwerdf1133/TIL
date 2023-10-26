@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>catch box</title>
+<style>
+    #box{
+        position:absolute;
+        top:0;
+        left:0;
+        width: 70px;
+        height: 70px;
+        background-color: darksalmon;
+        color: white;
+    }
+</style>
+</head>
+<body>
+    <div id="box" onclick="catchBox(this);">잡아라</div>
+
+    <script>
+
+        let x = 0, y = 0;
+        let interval = setInterval(function(){
+            let box = document.getElementById("box");
+
+            let top = screen.availHeight;
+            
+            let left = screen.availWidth;
+            /*
+            x += 10;
+            y += 10;
+            */
+            x = parseInt(Math.random() * left);
+            y = parseInt(Math.random() * top);
+
+            console.warn(x);
+            console.warn(y);
+            
+            box.style.top = y+"px";
+            box.style.left = x+"px";
+
+            // 난수 발생
+            // Math = 수학관련된 계산식을 함수로 만들어놓은 객체
+            let num = parseInt(Math.random() * 45) + 1;
+            // Math.random() == 0~1 미만의 실수
+            // 0.000 ... ~ 0.999 ... 까지 
+            console.log(num)
+        },200);
+
+        // 박스가 잡혔을 때
+        function catchBox(box){
+            box.innerHTML = "잡았다";
+            box.style.backgroundColor = "red";
+            clearInterval(interval);
+        }
+
+    </script>
+</body>
+</html>

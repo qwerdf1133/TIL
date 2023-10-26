@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>new Navigator</title>
+<script>
+    console.log(navigator);
+    console.log(window.navigator);
+    for(let key in navigator){
+        let value = navigator[key];
+        let str = key +":"+value;
+        document.write(str+"<br/>");
+    }
+    let userLang = navigator.language;
+    alert(userLang);
+
+    function isMobile(){
+        // toLowerCase(); - 영문 알파벳을 소문자로 변경
+        // toUpperCase(); - 영문 알파벳을 대문자로 변경
+        let user = navigator.userAgent.toLowerCase();    
+        if(user.indexOf('android') > -1 ||
+            user.indexOf('iphone') > -1 ||
+            user.indexOf('ipad') > -1 ||
+            user.indexOf('ipob') > -1){
+            return true;
+        }
+        return false;
+    } 
+
+    let index = "최기근".indexOf('기근');
+    console.log(index);
+    index = "최기근".indexOf('원빈');
+    console.log(index)
+
+    let is_mobile = isMobile();
+    if(is_mobile){
+        alert('모바일 기기로 접속하셨습니다');
+    }else{
+        alert('PC로 접속하셨습니다');
+    }
+</script>
+</head>
+<body>
+</body>
+</html>

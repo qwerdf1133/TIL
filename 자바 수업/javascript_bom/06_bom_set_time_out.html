@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>내장함수</title>
+
+</head>
+<body>
+    <div id="clock"></div>
+    <button onclick="setClock();">Start</button>
+    <button onclick="stop();">STOP</button>
+    <p>
+        버튼을 클릭하면 3초 후에 경고 박스가 화면에 나타납니다
+    </p>
+    <button onclick="showAlert();">눌러보세요</button>
+
+    <script>
+        function showAlert(){
+            // window.setTimeout(지연후 실행될 함수, 지연시간 ms);
+            window.setTimeout(function(){
+                alert('setTimeout을 사용하여 표시됩니다');
+            },3000);
+        }
+
+        // timeout 저장
+        let timeOut;
+
+        function setClock(){
+            // 함수 호출 시점에 현재 시간
+            let now = new Date();
+            let hours = now.getHours();         // 시
+            let minutes = now.getMinutes();     // 분
+            let seconds = now.getSeconds();     // 초
+            let str = hours+":"+minutes+":"+seconds;
+            document.getElementById("clock").innerHTML = str;
+            timeOut = setTimeout(setClock,1000);
+        }
+    
+        setClock();
+        
+        // stop time out 
+        function stop(){
+            window.clearTimeout(timeOut);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!-- 07_bom_interval.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <title>window 내장 함수</title>
+    <script>
+        let interval;
+
+        function changeColor(){
+            interval = window.setInterval(function(){
+                let elem = document.querySelector("#target");
+                let c = elem.style.color;
+            // 삼항 연산자
+            // (조건식) ? 참일때 대입될 값 : 거짓일때 대입될 값;
+            elem.style.color = (c == "red") ? "blue" : "red";
+                /*
+                if(c == 'red'){
+                    elem.style.color = 'blue';
+                }else{
+                    elem.style.color = 'red';
+                }
+                */
+            },500);
+        }
+
+        function stopTextColor(){
+            window.clearInterval(interval);
+        }
+    </script>
+</head>
+<body onload="changeColor();">
+    <div id="target">
+        <p>this is paragraph</p>
+    </div>
+    <button onclick="stopTextColor();">stop</button>
+</body>
+</html>

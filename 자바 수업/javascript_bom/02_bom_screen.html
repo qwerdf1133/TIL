@@ -1,0 +1,51 @@
+<!-- 02_bom_screen.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <title>screen</title>
+    <script>
+        window.onload = function(){
+            // window.screen
+            let widthWin = screen.availWidth;
+            console.log('사용가능한 화면 너비 : ' + widthWin);
+            let heightWin = screen.availHeight;
+            console.log('사용가능한 화면 높이 : ' + heightWin);
+
+            let width = screen.width;
+            let height = screen.height;
+            console.log('화면 너비 : ' + width);
+            console.log('화면 높이 : ' + height);
+
+            width = document.body.clientWidth;
+            height = document.body.clientHeight;
+            console.log('문서의 너비 : ' + width);
+            console.log('문서의 높이 : ' + height);
+        }
+        // 스크롤 이 변경되었을 때 실행 되는 이벤트
+        window.onscroll = function(){
+            let wy = window.scrollY;
+            console.log("y scroll 시작 좌표 : "+wy);
+            let dh = document.body.clientHeight;
+            console.log('문서의 전체 높이 : ' + dh);
+            let wh = window.screen.height;
+            console.log('사용가능한 화면 높이 : ' + wh);
+
+            let scrollHeight = wy + wh;
+            if(scrollHeight >= dh){
+                console.log("body 에 추가");
+                let elem = document.createElement("div");
+                elem.style.height =  "500px";
+                elem.style.border = "1px solid black";
+                elem.innerHTML = "<h1>추가</h1>";
+                document.body.appendChild(elem);
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="05_bom_history.html">history</a>
+    <button onclick="history.forward();">다음</button>
+<div style="height:1600px;width:100%;border:1px solid red"></div>
+</body>
+</html>
