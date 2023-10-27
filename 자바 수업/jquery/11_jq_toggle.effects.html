@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        .page{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <button>toggle</button>
+    <hr/>
+    <div class="page">
+        <h1>lorem</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro quis minima, facilis suscipit nostrum veniam ullam illo laboriosam, odit esse sint ex aperiam, modi nulla earum quisquam fugit voluptates dicta?</p>
+    </div>
+    <div>dummy</div>
+    <script>
+        $(".page").hover(function(){
+            // mouseenter
+            //  400       500        600
+            // 'fast'   'normal'    'slow'
+            // $(this).stop().hide('slow');
+            // $(this).stop().slideUp('slow');
+            $(this).stop().fadeOut('slow');
+        }, function(){
+            // mouseleave
+            // $(this).stop().show(600);
+            // $(this).stop().slideDown('slow');
+            $(this).stop().fadeIn('slow');
+        });
+
+        $("button").click(function(){
+            // slideUp, slideDown
+            // $(".page").stop().slideToggle("slow");
+            // show, hide
+            // $(".page").stop().toggle("slow");
+            // fadeIn, fadeOut
+            $(".page").stop().fadeToggle("slow");
+        });
+    </script>
+</body>
+</html>

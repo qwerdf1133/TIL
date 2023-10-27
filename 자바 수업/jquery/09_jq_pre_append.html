@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+    <a href="https://busanit.ac.kr">부산IT아카데미</a>
+    <hr/>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, rerum. Odit quo enim, est repellendus id itaque minus officiis, recusandae autem aut dolores exercitationem eius, ratione eum nobis quibusdam modi.</p>
+
+    <button id="prepend">prepend</button>
+    <button id="app">append</button>
+    <button id="before">before</button>
+    <button id="after">after</button>
+    <button id="html">html</button>
+
+    <script>
+        $("p").css("border","1px solid black");
+
+        $("#prepend").click(function(){
+            // 해당 태그 요소의 기존 컨텐츠 앞 부분에 추가
+            $("p").prepend('<b>prepend<b/>');
+        });
+
+        $("#app").click(function(){
+            // 해당 태그 요소의 기존 컨텐츠 뒷 부분에 추가
+            $("p").append('<span style="color:red;">append<span/>');
+        });
+
+        $("#before").click(function(){
+            // 선택된 요소 앞에 컨텐츠 추가
+            $("p").before("<b>before</b>");
+        });
+
+        $("#after").click(function(){
+            $("p").after("<b>after</b>");
+        });
+
+        $("#html").click(function(){
+            $("p").html("<h3>사요나라</h3>");
+        });
+    </script>
+</body>
+</html>

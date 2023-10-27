@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function(){
+            // button 태그요소의 click 이벤트 
+            $("button").click(function(){
+                let dog = $("#dog");
+                let src = dog.attr("src");
+                alert("attr : " + src);
+            }); // button click
+            // 아이디값이 propValue인 요소 하나
+            $("#propValue").click(function(){
+                let src = $("#dog").prop("src");
+                alert("prop : " + src);
+            }); // prop value click event end
+
+            $("#dog").click(function(){
+                $(this).attr("src","../img/pome.png");
+            });
+            
+        }); // onload
+    </script>
+</head>
+<body>
+    <image id="dog" src="../img/poodle.png" alt="강아지" width="120" height="100"/>
+    <button>attr 출력</button>
+    <button id="propValue">prop 출력</button>
+</body>
+</html>

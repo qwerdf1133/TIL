@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<script type="text/javascript">
+	/**
+	 * 시점 : button click 시
+	 * 대상 : div(#target) 내부 span 태그
+	 * 기능 : content(text) - span(change me!)를 span(complated) 로 변경 
+	 * 함수 : text()
+	 */
+
+	$(document).ready(function(){ 
+	$("#run").click(function(){
+		$("span").text("span(compleated)")
+		})
+	})
+	
+</script>
+
+</head>
+<body>
+	<div id="target"
+		style="color: rgb(68, 68, 68); width: 180px; height: 100px; float: left; border: 1px solid rgb(34, 34, 34); background-color: rgb(175, 238, 238); margin: 10px; padding: 5px; background-position: initial initial; background-repeat: initial initial;">
+		div#target<br>
+		<br>
+		<br>
+		<span
+			style="color: rgb(240, 240, 240); background-color: rgb(255, 165, 0); margin: 10px; border: 1px solid rgb(34, 34, 34); padding: 5px; background-position: initial initial; background-repeat: initial initial;">span(change
+			me!)</span>
+	</div>
+	<input type="button" id="run" value="run"  /> 
+</body>
+</html>

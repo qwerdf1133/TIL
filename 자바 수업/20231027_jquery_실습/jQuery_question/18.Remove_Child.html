@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+/**
+ * 대상 : div(#target) 의 하위 요소
+ * 기능 : h2를 제외한 모든 하위 요소 삭제
+ * 함수 : children(), not(), remove()
+ * 
+ * 선택된요소목록.not(선택자) - 선택된 요소목록 중에 지정된 선택자가 아닌 요소목록
+ */
+</script>
+
+</head>
+
+<body>
+	<div id="target"
+		style="color: rgb(85, 85, 85); width: 315px; height: 220px; float: left; border: 1px solid rgb(136, 136, 136); background-color: rgb(255, 182, 193); margin: 10px; padding-left: 5px; background-position: initial initial; background-repeat: initial initial;">
+		#target<br
+			style="margin: 5px; background-color: rgb(255, 238, 221); padding: 3px; border: 1px solid rgb(255, 170, 153); background-position: initial initial; background-repeat: initial initial;">
+		<h1
+			style="margin: 5px; background-color: rgb(255, 238, 221); padding: 3px; border: 1px solid rgb(255, 170, 153); background-position: initial initial; background-repeat: initial initial;">h1</h1>
+		<h2
+			style="margin: 5px; background-color: rgb(255, 238, 221); padding: 3px; border: 1px solid rgb(255, 170, 153); background-position: initial initial; background-repeat: initial initial;">h2(DON'T
+			remove me!)</h2>
+		<h3
+			style="margin: 5px; background-color: rgb(255, 238, 221); padding: 3px; border: 1px solid rgb(255, 170, 153); background-position: initial initial; background-repeat: initial initial;">h3</h3>
+		<h4
+			style="margin: 5px; background-color: rgb(255, 238, 221); padding: 3px; border: 1px solid rgb(255, 170, 153); background-position: initial initial; background-repeat: initial initial;">h4</h4>
+		<h5
+			style="margin: 5px; background-color: rgb(255, 238, 221); padding: 3px; border: 1px solid rgb(255, 170, 153); background-position: initial initial; background-repeat: initial initial;">h5</h5>
+	</div>
+	<input type="button" value="run" id="run"/>
+</body>
+</html>

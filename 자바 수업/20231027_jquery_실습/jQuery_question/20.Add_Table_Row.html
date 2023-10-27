@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+		/**
+		 * 대상 : table(#table)
+		 * 기능 : 입력태그에 작성된 #title ,#content, #owner의 value
+		 *        값을 table의 행으로 추가
+		 * 함수 : val(), append()
+		 * 
+		 * 입력태그.val() - 입력태그 요소가 가지고 있는 value 값
+		 */
+	</script>
+</head>
+<body>
+	제목 : <input type="text" name="title"  id="title"/><br />
+	내용 : <input type="text" name="content" id="content" /><br />
+	작성자: <input type="text" name="owner" id="owner" /><br />
+	<input type="button" name="btn" id="btn" value="테이블에추가" />
+	<table id="table" border="1">
+		<tr>
+			<td>제목</td>
+			<td>내용</td>
+			<td>작성자</td>
+		</tr>
+	</table>
+</body>
+</html>

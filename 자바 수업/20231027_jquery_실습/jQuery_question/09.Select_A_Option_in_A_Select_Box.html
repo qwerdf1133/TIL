@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+	/**
+	 * 대상 : div(#target) 내부 select
+	 * 기능 : option 중에서 마지막 item 선택 
+	 * 함수 : prop(), last()
+	 * 
+	 * last() 선택된 요소들 중 마지막 요소
+	 * first() 선택된 요소들 중 첫번째 요소
+	 */
+
+
+</script>
+
+</head>
+
+<body>
+	<div id="target"
+		style="color: rgb(255, 255, 255); width: 140px; height: 100px; float: left; border: 1px solid rgb(34, 34, 34); background-color: rgb(245, 222, 179); margin: 10px; padding: 5px; background-position: initial initial; background-repeat: initial initial;">
+		#target<br>
+		<select size="4" data-role="none"
+			style="margin: 5px; color: rgb(34, 34, 34);">
+			<option>first</option>
+			<option>second</option>
+			<option>third(select me!)</option>
+		</select>
+		<a href="#" id="comment">코멘트</a>
+	</div>
+	<input type="button" value="run" id="run"/>
+</body>
+</html>

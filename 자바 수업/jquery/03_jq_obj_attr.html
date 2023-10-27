@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+    <img/>
+    <img/>
+    <img/>
+    <div>dummy</div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <script>
+        /*
+        $("img").attr("src","../img/pome.png");    
+        $("img").attr("width","120");
+        */
+       //let obj = {속성:값, 속성:값 ...}
+       // JSON - JavaScript Object Notation
+       $("img").attr({
+        alt : '강아지 그림',
+        src : '../img/poodle.png',
+        width : 120,
+        height : 100
+       });
+       /*
+       $(".box").css("width",100);
+       $(".box").css("height",100);
+       $(".box").css("background-color","red");
+       */
+      let obj = {
+        width : 100,
+        height : 100,
+        'background-color' : "red",
+        'margin' : "10px",
+        float : "left"
+      };
+
+      $(".box").css(obj);
+       
+    </script>
+</body>
+</html>

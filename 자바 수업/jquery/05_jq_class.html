@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        .div{
+            border: 1px solid black;
+        }
+
+        .warning{
+            color: white;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" class="div">
+        <p>Hello</p>
+    </div>
+    <button id="add">class 속성 값 추가</button>
+    <button id="remove">class 속성 값 삭제</button>
+    <button id="toggle">class 속성 값 변경</button>
+
+    <script>
+        // 미리 class로 정의 된 디자인 요소로 동적인 화면을 구성하기 위해 제공되는 메소드(함수)
+        $("#add").click(function(){
+            // 지정된 class 속성 값 추가
+            $("#box").addClass("warning");
+        });
+
+        $("#remove").click(function(){
+            // 지정된 class 속성 값 제거
+            $("#box").removeClass("warning");
+        });
+
+        $("#toggle").click(function(){
+            // 지정된 class 속성을 전환 (add<->remove) 
+            $("#box").toggleClass("div");
+        });
+    </script>
+</body>
+</html>

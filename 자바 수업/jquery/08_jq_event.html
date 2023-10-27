@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+    <laber>
+        <input type="radio" name="r1" id="">
+        test1
+    </laber>
+    <laber>
+        <input type="radio" name="r1" id="">
+        test2
+    </laber>
+    <laber>
+        <input type="radio" name="r1" id="">
+        test3
+    </laber>
+
+    <script>
+
+        $("input[type=radio]").on('click',function(e){
+            console.log(e.key);
+            console.log(e.keyCode);
+            // 요소가 가지고 있는 기본 이벤트 무시
+            e.preventDefault();
+        });
+
+    </script>
+
+    <hr/>
+    <input type="password" id="pass"/>
+    <label>
+        <input type="checkbox" id="open" />
+        비밀번호 보기
+    </label>
+
+    <script>
+        
+        $("#open").on("change",function(){
+            
+            console.log("changed");
+            // 해당 요소가 : 지정된 속성
+            // 지정된 속성을 가지고 있는지 확인
+            // 지정된 속성을 가지고 있으면 true
+            /*
+            if($(this).is(":checked")){
+                // 체크
+                $("#pass").attr("type","text");
+            }else{
+                // 체크 해제
+                $("#pass").attr("type","password");
+            }
+            */
+        // 값이 대입될 변수 = (true or false 조건식) ? 참 : 거짓;
+        let type = $(this).is(":checked") ? "text" : "password";
+                   $("#pass").attr("type",type);
+        });
+        
+    </script>
+</body>
+</html>

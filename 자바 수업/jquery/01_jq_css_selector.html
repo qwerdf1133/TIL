@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>selector</title>
+<!-- <script src="js/jquery-3.7.1.js"></script> -->
+<!-- <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script> -->
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+    // jQuery ==  $
+    $(document).ready(function(){
+        console.log('준비완료');
+    });
+    // window.onload = function(){}
+    $(function(){
+        console.log('사용준비 완료');
+        /*
+            $("#header")
+            document.getElementById("header");
+            document.querySelector("#header");
+        */
+        $("#header").css('color','lightgreen');
+        $("#header").css('background-color','yellow');
+        
+        /*
+            $(".header")
+            document.getElementsByClassName("header");
+            document.querySelectorAll(".header");
+        */
+        $(".header").css("color","white")
+        $(".header").css("backgroundColor","red");
+
+        /*
+            $("h1")
+            document.getElementsByTagName("h1");
+            document.quertySelectorAll("h1");
+        */
+        $("h1").css("color","yellow");
+        $("h1").css("background","lightgreen");
+    });
+</script>
+</head>
+<body>
+    <h1 class="header">HEADER - 1</h1>
+    <h1 class="header">HEADER - 2</h1>
+    <h1 id="header" class="header">HEADER - 3</h1>
+    <h1 id="header">HEADER - 4</h1>
+</body>
+</html>
