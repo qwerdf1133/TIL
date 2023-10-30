@@ -4,14 +4,25 @@
 <meta charset="utf-8">
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
-/**
- * 대상 : div(#target) 내부 h2 tag요소
- * 기능 : 태그 변경 (h2 => h3)
- * 함수 : html(), replace(), , replaceAll()
- * 
- * 지정된 문자열.replace('a','b') - 지정된 문자열에서 'a', 를 'b'로 변경
- */
+	/**
+	 * 대상 : div(#target) 내부 h2 tag요소
+	 * 기능 : 태그 변경 (h2 => h3)
+	 * 함수 : html(), replace(), , replaceAll()
+	 * 
+	 * 지정된 문자열.replace('a','b') - 지정된 문자열에서 'a', 를 'b'로 변경
+	 */
 
+	// 풀이
+	$(function(){
+		$("#run").click(function(){
+			let content = $("#target").html();
+			console.log(content);
+			let result = content.replace('h2','h3');
+			console.log(result);
+			result = content.replaceAll('h2','h3');
+			$("#target").html(result);
+		});
+	});
 </script>
 
 </head>

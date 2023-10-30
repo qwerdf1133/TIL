@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+	/**
+	 * 대상 : table(#table)
+	 * 기능 : 입력태그에 작성된 #title ,#content, #owner의 value
+	 *        값을 table의 행으로 추가
+	 * 함수 : val(), append()
+	 * 
+	 * 입력태그.val() - 입력태그 요소가 가지고 있는 value 값
+	 */
+
+		// 풀이
+	$(function(){
+		$("#btn").click(function(){
+			// 입력태그 요소.val();
+			// 입력태그 요소에 작성된 value 값을 읽어온다
+
+			// 입력태그 요소.val(문자열); 
+			// 입력태그 요소의 value 속성에 값을 문자열로 변경한다
+
+			let title = $("#title").val();
+			let content = $("#content").val();
+			let owner = $("#owner").val();
+			console.log(title,content,owner);
+			let result = `<tr><td>${title}</td><td>${content}</td><td>${owner}</td></tr>`;
+			console.log(result)
+			$("#table").append(result);
+
+			// $("#title").val("");
+			$("input [type='text']").val(null);
+			$("#title").focus();
+		}); //btn click event
+
+		// 문서가 로드완료되고 나면 제목 입력태그에 포커스 부여
+		$("#title").focus();
+		// $("#title").on("keydown",(function(){});
+		$("#title").keydown(function(event){
+			let keyName = event.key;
+			let keyCode = event.keyCode;
+			console.log("keyName",keyName,"keyCode",keyCode);
+			if(keyCode == 13){
+				$("#content").focus();
+			}
+		});
+
+		$("#content").keydown(function(event){
+			if(event.key == "Enter"){
+				$("#owner").focus();
+			}
+		});
+
+		$("#owner").keydown(function(event){
+			if(event.keyCode == 13){
+				$("#btn").click();
+			}
+		});
+
+	}); // onload event end
+</script>
+</head>
+<body>
+	제목 : <input type="text" name="title"  id="title"/><br />
+	내용 : <input type="text" name="content" id="content" /><br />
+	작성자: <input type="text" name="owner" id="owner" /><br />
+	<input type="button" name="btn" id="btn" value="테이블에추가" />
+	<table id="table" border="1">
+		<tr>
+			<td>제목</td>
+			<td>내용</td>
+			<td>작성자</td>
+		</tr>
+	</table>
+</body>
+</html>

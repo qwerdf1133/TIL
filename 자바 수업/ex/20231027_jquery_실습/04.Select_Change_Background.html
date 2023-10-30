@@ -13,7 +13,35 @@
 	 * eq(인덱스) : 0부터 시작해서 1씩 증가하는 인덱스 번호로 지정된 위치의 요소를 검색
 	 */
 
-	
+
+	// 풀이
+	$(function(){
+		$("#run").click(function(){
+/*			eq(인덱스) 이용
+
+			eq(인덱스) : 0 에서 부터 1씩 순차적으로 증가하는 인덱스 번호를 이용해서 요소 선택
+			eq(1) : 1번째 인덱스에 있는 요소
+			eq(-2) : 뒤에서 부터 검색
+*/
+			// $(".target").eq(1).css("background","red"); 또는  
+			// $(".target").eq(-2).css("background","red");
+/* --------------------------------------------------------------------
+/*			구조 선택자를 이용
+			nth-child (순번)
+			순번은 1에서부터 1씩 증가
+*/
+			// $(".target:nth-child(2)").css("background","skyblue");
+/* --------------------------------------------------------------------
+/*			css 선택적 함수
+			eq(인덱스) - 인덱스가 일치하는 요소
+			lt(인덱스) - less then < 인덱스 보다 작은 요소
+			gt(인덱스) - grater then > 인덱스보다 큰 요소
+*/
+			$(".target:lt(2)").css("background","yellow");
+			$(".target:gt(0)").css("background","red");
+			$(".target:eq(1)").css("background","blue");
+		});
+	});
 </script>
 
 </head>

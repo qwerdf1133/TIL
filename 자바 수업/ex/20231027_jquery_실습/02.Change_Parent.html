@@ -12,12 +12,21 @@
 	 * 함수 : text()
 	 */
 
-	$(document).ready(function(){ 
-	$("#run").click(function(){
-		$("span").text("span(compleated)")
+	// $(document).ready(function(){ 
+	// $("#run").click(function(){
+	// 	$("span").text("span(compleated)")
+	// 	})
+	// })
+
+	// 풀이
+	$(function(){
+		// 문서가 모두 로드되어서 사용할 준비가 되었을 때
+		// $("#run").click(function(){});
+		$("#run").on("click",function(){
+			$("#target > span").text("span(compleated)");
 		})
 	})
-	
+
 </script>
 
 </head>

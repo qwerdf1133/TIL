@@ -12,6 +12,16 @@
 	 * size() - 요소의 크기
 	*/
 
+	// 풀이
+	$(function(){
+		$("#run").click(function(){
+			let childs = $("#target > .child");
+			alert(childs.length);
+			
+			childs = $("#target").children(".child");
+			alert(childs.size());
+		});
+	});
 </script>
 
 </head>

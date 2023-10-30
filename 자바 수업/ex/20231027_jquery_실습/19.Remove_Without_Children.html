@@ -4,15 +4,24 @@
 <meta charset="utf-8">
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
-/**
- * 대상 : div(.target)
- * 기능 : 자식 요소가 없는 div(.target) 요소 제거
- * 함수 : not(), :parent, remove()
- * 
- * :parent : 부모요소인가
- * not(':parent') - 부모요소가 아닌요소 - 자식요소가 없는 요소
- */
+	/**
+	 * 대상 : div(.target)
+	 * 기능 : 자식 요소가 없는 div(.target) 요소 제거
+	 * 함수 : not(), :parent, remove()
+	 * 
+	 * :parent : 부모요소인가
+	 * not(':parent') - 부모요소가 아닌요소 - 자식요소가 없는 요소
+	 */
 
+	// 풀이
+	$(function(){
+		$("#run").click(function(){
+			// $("div.target").not(":parent").remove();
+			// $("div.target:not(:parent)").remove();
+			// $("div.target").not(":has(span)").remove();
+			$("span").parent().remove();
+		});
+	});
 </script>
 
 </head>

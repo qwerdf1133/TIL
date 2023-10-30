@@ -11,11 +11,11 @@
 	 * A.clone() : A tag 요소를 복제하여 요소로 반환
 	 */
 		
-	 $(document).ready(function(){
-		$("#run").click(function(){
-			$("#target").clone().after("#target");
-		})
-	 })
+	//  $(document).ready(function(){
+	// 	$("#run").click(function(){
+	// 		$("#target").clone().after("#target");
+	// 	})
+	//  })
 </script>
 
 </head>
@@ -32,5 +32,15 @@
 	</div>
 	<!-- after -->
 	<input type="button" value="run" id="run"/>
+
+	<!-- 풀이 -->
+	<script>
+		$("#run").on("click",function(){
+			// clone이라는 변수에 #target인 요소를 복제
+			let clone = $("#target").clone();
+			// 복제한 요소를 #target요소 뒤에 추가
+			$("#target").after(clone);
+		});
+	</script>
 </body>
 </html>

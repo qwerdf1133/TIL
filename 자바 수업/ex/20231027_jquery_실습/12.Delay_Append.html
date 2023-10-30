@@ -11,7 +11,18 @@
 	 */
 
 	 let str = "<b>문자열</b>";
-
+	// 풀이
+	function run(){
+		// setTimeout(지연시간 후 실행될 함수, 지연시간-ms);
+		setTimeout(function(){
+			// $("#target").append(str); 또는
+			// $("#target").text(str); 또는
+			// $("#target").html(str); 또는
+			let content = $("#target").html();
+			str = content + str;
+			$("#target").html(str);
+		},2000);
+	}
 	 
 </script>
 
@@ -23,6 +34,6 @@
 		#target<br>
 	</div>
 	<!-- onclick="run()"  -->
-	<input type="button" value="run" id="btn"  />
+	<input type="button" value="run" id="btn" onclick="run()"  />
 </body>
 </html>

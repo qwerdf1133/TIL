@@ -6,9 +6,23 @@
 <script type="text/javascript">
 	/**
 	 * 대상 : div(#target)
-	 * 기능 : 크기 변경 
-	 * 함수 : css() / width(), height()
+	 * 기능 : div#target 1.5초에 걸쳐 크기 변경 (애니메이션 효과) 
+	 * 함수 : animate() - css속성의 변화를 시간에 따라 표현하는 함수
 	 */
+
+	// 풀이
+	$(function(){
+		$("#run").click(function(){
+			// A.animate({변경될 디자인 속성},애니메이션 시간-ms);
+			$("div#target").animate({
+				width : 300,
+				height : 500
+			},1500,function(){
+				// 애니메이션 효과가 끝나고 실행될 함수
+				$(this).css("background","pink");
+			});
+		});
+	});
 </script>
 
 </head>

@@ -4,12 +4,23 @@
 <meta charset="utf-8">
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
-/**
- * 대상 : div(#target) 내부 select
- * 기능 : 홀수 인덱스 option 배경색 변경 
- * 사용 :  nth-child, odd, even
- */
+	/**
+	 * 대상 : div(#target) 내부 select
+	 * 기능 : 홀수 인덱스 option 배경색 변경 
+	 * 사용 :  nth-child, odd, even
+	 */
 
+	// 풀이
+	$(function(){
+		$("#run").click(function(){
+			// 인덱스 번호는 0 1 2 3 4 5 ... 1씩 증가
+			// $("#target select option:nth-child(2n+1)").css("background","red"); 또는 
+			// $("#target select option:nth-child(even)").css("background","red");
+			// even 짝수 순번
+			// odd 홀수 순번
+			$("#target select").find(" option:nth-child(odd)").css("backgroundColor","red");
+		});
+	});
 </script>
 
 </head>

@@ -4,12 +4,31 @@
 <meta charset="utf-8">
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
-/**
- * 대상 : div(#target)
- * 기능 : div#target 1.5초에 걸쳐 크기 변경 (애니메이션 효과) 
- * 함수 : animate() - css속성의 변화를 시간에 따라 표현하는 함수
- */
+	/**
+	 * 대상 : div(#target)
+	 * 기능 : 크기 변경 
+	 * 함수 : css() / width(), height()
+	 */
 
+	// 풀이
+	$(function(){
+		$("#run").click(function(){
+			/*
+			$("#target").css({
+				width : 300,
+				height : 300});
+			*/ 
+				// 또는
+			/*
+			let width = $("#target").width(300);
+			console.log(width);
+			let height = $("#target").height(300);
+			console.log(height)
+			*/
+				// 또는
+			$("#target").width(300).height(300);
+		})
+	})
 </script>
 
 </head>

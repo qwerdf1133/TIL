@@ -13,7 +13,13 @@
 	 * first() 선택된 요소들 중 첫번째 요소
 	 */
 
-
+	// 풀이
+	$(function(){
+		$("#run").click(function(){
+			// $("#target select option:last-child()").prop("#selected",true); 또는
+			$("#target select option").last().attr("selected",true)
+		});
+	});
 </script>
 
 </head>

@@ -9,10 +9,27 @@
 	 * 기능 : 속성을 disabled 로 변경
 	 * 함수 : attr()
 	 */
-	$(document).ready(function(){
-		$("#run").click(function(disabled){
-			$(".target").children("button").attr("disabled",true)
-			})
+	// $(document).ready(function(){
+	// 	$("#run").click(function(disabled){
+	// 		$(".target").children("button").attr("disabled",true)
+	// 		})
+	// })
+
+	// 풀이
+	$(function(){
+		$("#run").click(function(){
+			// disabled checked selected readonly autofocus
+			// $("button") , $("button[data-role=none]") ,
+			// 속성값을 읽어온다
+			// (1)
+			// $(".target > button").attr("disabled"); 
+			// (2)
+			// 속성을 부여 disabled = 'disabled'
+			// $(".target > button").attr("disabled","disabled");
+			// (3)
+			// true 속성이므로 false 이면 활성화
+			$(".target > button").attr("disabled",true);
+		})
 	})
 </script>
 </head>

@@ -4,13 +4,21 @@
 <meta charset="utf-8">
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
-/**
- * 대상 : div(#target) 의 하위 요소
- * 기능 : h2를 제외한 모든 하위 요소 삭제
- * 함수 : children(), not(), remove()
- * 
- * 선택된요소목록.not(선택자) - 선택된 요소목록 중에 지정된 선택자가 아닌 요소목록
- */
+	/**
+	 * 대상 : div(#target) 의 하위 요소
+	 * 기능 : h2를 제외한 모든 하위 요소 삭제
+	 * 함수 : children(), not(), remove()
+	 * 
+	 * 선택된요소목록.not(선택자) - 선택된 요소목록 중에 지정된 선택자가 아닌 요소목록
+	 */
+
+	// 풀이
+	$(function(){
+		$("#run").click(function(){
+			// $("#target").children().not("h2").remove();
+			$("#target").children(":not(h2)").remove();
+		});
+	});
 </script>
 
 </head>
