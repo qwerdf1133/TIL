@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+       
+    </script>
+    <style>
+        
+        #login{
+            width: 400px;
+            height: 50px;
+            background-color: black;
+            color: white;
+        }
+
+        .key{
+            width: 90px;
+            height: 50px;
+        }
+
+        .input{
+            width: 200px;
+        }
+
+       table{
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        border-bottom: 1px solid black;
+       }
+
+       td{
+        display: flex;
+        justify-content: space-between;
+        margin: 3px;
+       }
+    </style>
+    
+</head>
+<body>
+    <table>
+        <tr>
+            <th colspan="2" id="login">로그인</th>
+        </tr> 
+        <tr>
+            <td>아이디 <input type="text" class="input" id="userid" tabindex="1"></td>
+            <th rowspan="2"><input type="button" value="로그인" class="key" id="userlg" tabindex="4"> </td>
+        </tr>
+        <tr>
+            <td>패스워드 <input type="password" class="input" id="userpw" tabindex="2"> </td>
+        </tr>
+        <tr>
+            <td>
+                <label>
+                    <input type="checkbox" id="userme" tabindex="3"> 로그인 정보 기억
+                </label>
+            </td>
+        </tr>
+    </table>
+    
+</body>
+</html>
