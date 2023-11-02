@@ -1,0 +1,61 @@
+package com.bitc.test;
+
+/**
+ *  문서 주석
+ *  이 클래스는 기본 타입의 변수 사용법을 알아봅니다
+ *  @since 2023-11-02
+ */
+public class VariableTest {
+	/*
+		프로그램 동작의 시작과 끝은
+		main method에서 이루어진다.
+	*/
+
+	public static void main(String[] args) {
+		// TODO 변수 다시 확인
+		// 선언부
+		int num;
+		//	num = "최기근"; // int형 정수만 사용 가능
+		//		프린트 L N
+		// 초기화 전에는 해당 변수를 사용할 수 없다.
+		// 컴파일 오류
+		// System.out.printlt(num);
+		// 0B 바이너리 - 뒤에 오는 값은 이진수
+		byte bNum = 0B00001010; 
+		System.out.println("bNum : " + bNum);
+		// 앞에 0이 붙으면 8진수 임을 의미한다.
+		byte oNum = 012;
+		// (8^1 * 1> + (8^0 == 1 * 2) = 10;
+		System.out.println("oNum : " + oNum);
+		
+		// 앞에 0X가 붙으면 16진수임을 의미
+		// 0 ~ 9 A B C D E F
+		byte xNum = 0X34;
+		System.out.println("xNum : " + xNum);
+		
+		byte b1 = -128;
+		b1 = 127;
+		// 저장 볌위를 벗어나는 데이터가 대입되면 컴파일 오류
+		// b1 = -129; 
+		// ' ' = 한개의 문자
+		// " " == 문자열
+		// Character 
+		char c = 'A';
+		// c = 'AB';
+		// c = "A";
+		c = 65;
+		c = 65535;
+		// c = -1; // 음수를 표현하지 않음 0 ~ 65535 양의 정수로 문자 표현
+		System.out.println("c : " + c);
+		
+		// 2byte의 정수값을 저장 하는 short
+		short s = -30000;
+		
+		int i = 210000000;
+		// 4byte
+		// 	[	1	][	 1	 ][	  1	  ][    1	]
+		
+		long l = 10000000000; // 100억
+	}
+
+}
