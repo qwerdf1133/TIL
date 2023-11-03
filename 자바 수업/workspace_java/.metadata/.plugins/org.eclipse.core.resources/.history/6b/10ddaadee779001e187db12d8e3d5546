@@ -1,0 +1,27 @@
+package com.bitc.operator;
+
+public class Operator00ArithmeticTest {
+
+	public static void main(String[] args) {
+		System.out.println("- main 프로그램 실행");
+				
+		int num1 = 10;
+		int num2 = 20;
+		
+		System.out.println(+num1); // (+1 * num1)
+		System.out.println(-num2); // (-1 * num2)
+		System.out.println(num2);
+		num2 = -num2;
+		System.out.println(num2);
+		
+		
+		
+		
+		System.out.println("-----------------------------");
+		
+		
+		System.out.println("- main 프로그램 종료");
+	}
+	
+	
+}

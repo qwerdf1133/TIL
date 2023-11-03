@@ -1,0 +1,21 @@
+package com.bitc.iteration_statement;
+
+import java.util.Scanner;
+
+public class whileExample {
+
+	public static void main(String[] args) {
+		// Scanner Class import 추가
+		Scanner sc = new Scanner(System.in);
+		boolean isRUn = true;
+		
+		while(isRUn) {
+			
+			System.out.println("구구단 단수를 정수로 입력 > ");
+			isRun = sc.hasNextInt();
+			
+		} // end while
+		
+	} // end main
+
+} // end class

@@ -1,0 +1,10 @@
+package com.bitc.operator;
+
+public class Operator00ArithmeticTest {
+
+	public static void main(String[] args) {
+		
+	}
+	
+	
+}

@@ -1,0 +1,9 @@
+package com.bitc.conditional_statement;
+
+public class if_switchExample {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

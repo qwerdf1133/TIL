@@ -1,0 +1,10 @@
+package com.bitc.iteration_statement;
+
+public class whileExample {
+
+	public static void main(String[] args) {
+		// Scanner Class import 추가
+		Scanner sc = new Scanner(System.in);
+	}
+
+}

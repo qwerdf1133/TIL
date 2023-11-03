@@ -1,0 +1,62 @@
+package com.bitc.conditional_statement;
+
+import java.util.Scanner;
+
+public class IFExample {
+	
+	public static void main(String[] args) {
+		
+		int num1 = 10;
+		int num2 = 20;
+		
+		if(true) {
+			System.out.println("무조건 실행");
+		}
+		
+		if(num1 < num2) {
+			System.out.println("num1 이 num2 보다 작습니다.");
+		}
+		
+		if(num1 < num2) {
+			System.out.println("num1 이 num2 보다 작습니다.");
+		}else if(num1 > num2) {
+			System.out.println("num1 이 num2 보다 큽니다.");
+		}else {
+			System.out.println("num1 이 num2 와 같습니다.");
+		}
+		
+		// 나중에 배우게 될 객체
+		java.util.Scanner sc = new java.util.Scanner(System.in);
+		System.out.println("정수값을 입력해 주세요 > ");
+		// Scanner.nextInt(); // console을 통해서 정수값을 입력받아 반환
+		int a = sc.nextInt();
+		System.out.println(a);
+		// Scanner.next(); // console을 통해서 한단어를 입력받아 반환
+		System.out.println("단어를 입력해 주세요");
+		String str = sc.next();
+		System.out.println(str);
+		
+		System.out.println("실수를 입력해주세요");
+		double r = sc.nextDouble();
+		System.out.println(r);
+		
+		System.out.println("실행 여부를 작성해 주세요 true or false");
+		boolean isRun = sc.nextBoolean();
+		System.out.println(isRun);
+		
+		System.out.println("boolean 타입으로 값을 입력받아 저장");
+		System.out.println("지정된 타입으로 값이 입력되었는지 여부를 boolean 타입으로 반환");
+		isRun = sc.hasNextBoolean();
+		//boolean 타입의 값인지 여부 확인
+		if(isRun) {
+			System.out.println("boolean 타입의 값이 정삭적으로 입력");
+			boolean isResult = sc.nextBoolean();
+			System.out.println(isResult);
+		}else {
+			System.out.println("boolean 타입의 값이 아닙니다");
+			String dummy = sc.next();
+			System.out.println("잘못된 값을 꺼내와서 제거 : " + dummy);
+		}
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.bitc.operator.Operator00ArithmaticTest&apos; to &apos;Operator00ArithmeticTest&apos;&#x0D;&#x0A;- Original project: &apos;c02_operators&apos;&#x0D;&#x0A;- Original element: &apos;com.bitc.operator.Operator00ArithmaticTest&apos;&#x0D;&#x0A;- Renamed element: &apos;com.bitc.operator.Operator00ArithmeticTest&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Operator00ArithmaticTest&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.bitc.operator{Operator00ArithmaticTest.java[Operator00ArithmaticTest" matchStrategy="1" name="Operator00ArithmeticTest" qualified="false" references="true" similarDeclarations="false" stamp="1698973852966" textual="false" version="1.0"/>
+</session>

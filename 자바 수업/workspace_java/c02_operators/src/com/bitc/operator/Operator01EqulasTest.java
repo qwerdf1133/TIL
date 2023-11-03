@@ -1,0 +1,94 @@
+package com.bitc.operator;
+
+public class Operator01EqulasTest {
+
+	public static void main(String[] args) {
+		// 크기 비교 연산자
+		// >, >=, <, <=
+		// 동등 비교 연산자
+		// !=, ==
+		// 논리 비교 연산자
+		// &&, ||, ^, &, |
+		
+		int num1 = 10, num2= 20;
+		/*
+		 * num1에 저장된 값이 num2보다 크면 true
+		 * 같거나 작으면 				  false
+		 */
+		boolean result = num1 > num2;
+		System.out.println("result : " + result);
+		/*
+		 * num1 에 저장된 값과 num2에 저장된 값이 일치하면 true 아니면 false 
+		 */
+		result = num1 == num2;
+		System.out.println("result : " + result);
+		/*
+		 * num1 에 저장된 값과 num2에 저장된 값이 일치하지 않으면 true 일치하면 false 
+		 */
+		result = num1 != num2;
+		System.out.println("result : " + result);
+		
+		/*
+		 * 10 이진법
+		 * [0] [0] [0] [0] [1] [0] [1] [0] 
+		 * 부호 2^6 2^5 2^4 2^3 2^2 2^1 2^0
+		 * 	   64  32  16   8   4   2   1
+		 * 
+		 * 22 이진법
+		 * [0] [0] [0] [1] [0] [1] [1] [0] 
+		 * 부호 2^6 2^5 2^4 2^3 2^2 2^1 2^0
+		 * 	   64  32  16   8   4   2   1
+		 */
+		num1 = 10;
+		num2 = 22;
+		// 각 비트의 자리수를 곱하여 결과를 도출
+		int op = num1 & num2; 	// 논리 곱
+		System.out.println("& op : " + op);
+		
+		// 각 비트의 자리수를 더하여 결과를 도출
+		op = num1 | num2; 		//논리 합
+		System.out.println("| op : " + op);
+		
+		// 베타XOR 연산자 - 두 비트의 값이 틀려야 참, 같으면 거짓
+		op = num1 ^ num2;
+		System.out.println("^ op : " + op);
+		
+		// && 논리 곱
+		// 좌변 우변 둘 다 참일때만 참, 나머지는 거짓
+		boolean boolResult = (num1 < 0) && (num2++ > 0);
+		System.out.println(boolResult);
+		System.out.println("num1 : " + num1);
+		System.out.println("num2 : " + num2);
+		
+		// || 논리 합
+		// 둘 중에 하나라도 참이면 true
+		// 둘 다 거짓일때 만 false
+		num1 = num2 = 0;
+		result = (++num1 > 0) || (num2++ > 0);
+		//        연산 전에 더해짐   더해지지 않은 상태
+		System.out.println(result);
+		System.out.println("num1 : " + num1);
+		System.out.println("num2 : " + num2);
+		
+		// shift 연산자, <<, >>, >>>
+		// 피연산자의 비트열을 이동시켜 값을 도출해내는 연산자
+		byte num = 5;
+		/*
+		* [0] [0] [0] [0] [0] [1] [0] [1]
+		* 부호 2^6 2^5 2^4 2^3 2^2 2^1 2^0
+		*	  64  32  16   8   4   2   1
+		*/
+		int resultShift = (num >> 2);
+		// >> 2
+		// [0] [0] [0] [0] [0] [0] [0] [1]
+		System.out.println(resultShift);
+		/*
+		* [0] [0] [0] [1] [0] [1] [0] [0]
+		* 부호 2^6 2^5 2^4 2^3 2^2 2^1 2^0
+		*	  64  32  16   8   4   2   1
+		*/
+		resultShift = (num << 2);
+		System.out.println(resultShift);
+	}
+	
+}

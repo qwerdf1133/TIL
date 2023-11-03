@@ -1,0 +1,12 @@
+package com.bitc.operator;
+
+public class Operator00ArithmeticTest {
+
+	public static void main(String[] args) {
+		System.out.println("- main 프로그램 실행");
+		
+		System.out.println("- main 프로그램 종료");
+	}
+	
+	
+}

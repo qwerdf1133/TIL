@@ -1,0 +1,61 @@
+package com.bitc.conditional_statement;
+
+import java.util.Scanner;
+
+// import java.util.Scanner;
+
+public class if_switchExample {
+	
+	public static void main(String[] args) {
+		// ctrl + shift + o : 자동 import
+		Scanner sc = new Scanner(System.in);
+		
+		/*
+		 * "사용자에게 점수를 입력해 주세요 >"
+		 * 	라고 출력한 뒤 정수값을 입력받는다.
+		 * 	변수 선언 및 정수값 입력
+		 * 
+		 * 	90 ~ 100 점은 "A학점"
+		 *  80 ~ 89  점은 "B학점"
+		 *  70 ~ 79  점은 "C학점"
+		 *  60 ~ 69  점은 "D학점"
+		 *  0 ~ 100점이 아니거나 59점 이하면 나머지는 "F학점" 출력 	
+		 */
+				
+//		System.out.println("점수를 입력하세요");
+//		int a = sc.nextInt();
+//		
+//		switch(a) {
+//			case 90,91,92,93,94,95,96,97,98,99,100 :
+//				System.out.println("A학점");
+//				break;
+//			case 80,81,82,83,84,85,86,87,88,89 :
+//				System.out.println("B학점");
+//				break;
+//			case 70,71,72,73,74,75,76,77,78,79 :
+//				System.out.println("C학점");
+//				break;
+//			case 60,61,62,63,64,65,66,67,68,69 :
+//				System.out.println("D학점");
+//				break;
+//			default:
+//				System.out.println("F학점");	
+//		}
+		
+		System.out.println("사용자에게 점수를 입력해 주세요 >");
+		int score = sc.nextInt();
+		if(score <= 100 && score >= 90) {
+			System.out.println("A학점");
+		}else if(score >= 80) {
+			System.out.println("B학점");
+		}else if(score >= 70) {
+			System.out.println("C학점");
+		}else if(score >= 60) {
+			System.out.println("D학점");
+		}else {
+			System.out.println("F학점");
+		}
+		
+	}
+
+}

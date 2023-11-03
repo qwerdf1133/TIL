@@ -1,0 +1,9 @@
+package com.bitc.iteration_statement;
+
+public class ForStatementExample {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

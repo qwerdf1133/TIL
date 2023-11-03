@@ -1,0 +1,18 @@
+package com.bitc.conditional_statement;
+
+import java.util.Scanner;
+
+// import java.util.Scanner;
+
+public class if_switchExample {
+	
+	public static void main(String[] args) {
+		// ctrl + shift + o : 자동 import
+		Scanner sc = new Scanner(System.in);
+		
+		/*
+		 * 	"사용자에게 점수를 입력해 주세요 >"
+		 */
+	}
+
+}

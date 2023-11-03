@@ -1,0 +1,15 @@
+package com.bitc.conditional_statement;
+
+public class IFExample {
+	
+	public static void main(String[] args) {
+		
+		int num1 = 10;
+		int num2 = 20;
+		
+		if(true) {
+			System.out.println("무조건 실행");
+		}
+	}
+
+}

@@ -1,0 +1,15 @@
+package com.bitc.iteration_statement;
+
+/**
+ * 반복문(Iteration Statement, Repetitive Statement)
+ * - 하나 이상의 실행문장을 여러번 실행시키는 구문
+ * 	 반드시 초기화, 비교판단, 증가치 등 반복문 탈출에 필요한 구문이 있어야함
+ */
+
+public class ForStatementExample {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}
