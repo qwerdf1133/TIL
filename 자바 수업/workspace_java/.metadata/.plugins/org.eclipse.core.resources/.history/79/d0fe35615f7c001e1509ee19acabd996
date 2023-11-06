@@ -1,0 +1,12 @@
+import java.util.Scanner;
+
+public class Practice06GuGuDan {
+	
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		
+	}
+
+}

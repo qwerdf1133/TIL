@@ -1,0 +1,25 @@
+
+public class Practice06GuGuDan {
+	
+	public static void main(String[] args) {
+		
+		for(int i = 9; i > 1; i--) {
+			System.out.print(9+" * "+i+" = "+ (9*i)+"\t");
+		}
+		System.out.println();
+		for(int i = 9; i > 1; i--) {
+			System.out.print(8+" * "+i+" = "+ (8*i)+"\t");
+		}
+		System.out.println();
+		System.out.println("====================================================================");
+		
+		for() {
+			for(int i = 9; i > 1; i--) {
+				System.out.print(9+" * "+i+" = "+ (9*i)+"\t");
+			}
+			System.out.println();
+		}
+		
+	}
+
+}

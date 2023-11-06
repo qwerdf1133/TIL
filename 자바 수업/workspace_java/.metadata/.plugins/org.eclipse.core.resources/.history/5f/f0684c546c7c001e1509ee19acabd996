@@ -1,0 +1,28 @@
+package c04_type_cast_array;
+
+public class TypeCastExample {
+	
+	public static void main(String[] args) {
+		
+		byte b = 100;
+		// 자동 타입 변환
+		// byte -> int
+		int i = b;
+		// 강제 타입 변환 (타입변환을 명시)
+		// int -> byte 
+		byte result = (byte)i;
+		
+		int eng = 99;
+		int math = 90;
+		int kor = 85;
+		int subjectCount = 3;
+		
+		int sum = eng + math + kor;
+		double avg = sum / (double)subjectCount;
+		System.out.println(avg);
+		
+		char c1 = 97;
+		
+	}
+
+}

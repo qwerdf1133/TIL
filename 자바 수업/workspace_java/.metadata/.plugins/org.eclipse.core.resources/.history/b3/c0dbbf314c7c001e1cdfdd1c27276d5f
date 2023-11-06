@@ -1,0 +1,22 @@
+
+public class Practice03ControlTest {
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int odd = 0; // 홀수의 총합을 저장할 변수
+		for(int i = 1; i <= 100; i+=2) {
+			System.out.println(i+" ");
+			odd = odd + i;
+		}
+		System.out.println();
+		System.out.println("홀수의 총합은 : " + odd);
+		
+		//짝수의 총합
+		int even = 0;
+		for(int i = 100; i >= 1; i -= 2) {
+			System.out.println(i+" ");
+		}
+	}
+
+}

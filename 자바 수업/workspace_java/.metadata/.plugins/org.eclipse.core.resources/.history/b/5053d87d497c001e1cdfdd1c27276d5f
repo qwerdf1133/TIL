@@ -1,0 +1,11 @@
+
+public class Practice02ArtihemeticTest {
+	
+	public static void main(String[] args) {
+		// 원의 면적을 구하시오
+		// 반지름 * 반지름 * 원주율
+		// 원주율은 3.14
+		
+	}
+
+}

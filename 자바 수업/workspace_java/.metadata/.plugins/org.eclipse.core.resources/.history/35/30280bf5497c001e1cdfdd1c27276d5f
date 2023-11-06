@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Practice02ArtihemeticTest {
+	
+	public static void main(String[] args) {
+		// 원의 면적을 구하시오
+		// 반지름 * 반지름 * 원주율
+		// 원주율은 3.14
+		
+		double radius area;
+		System.out.println("반지름을 입력해 주세요 : ");
+		
+		java.util.Scanner sc = new Scanner(System.in);
+		radius = sc.nextDouble();
+		// 원주율
+		double pi = 3.14;
+		// 원의 면적
+		area = radius * radius * pi;
+	}
+
+}

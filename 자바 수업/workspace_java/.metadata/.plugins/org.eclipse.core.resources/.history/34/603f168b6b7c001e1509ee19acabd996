@@ -1,0 +1,15 @@
+package c04_type_cast_array;
+
+public class TypeCastExample {
+	
+	public static void main(String[] args) {
+		
+		byte b = 100;
+		// 자동 타입 변환
+		// byte -> int
+		int i = b;
+		
+		byte result = i;
+	}
+
+}
