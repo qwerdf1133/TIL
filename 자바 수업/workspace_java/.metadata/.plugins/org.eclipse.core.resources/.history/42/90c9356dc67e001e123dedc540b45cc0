@@ -1,0 +1,11 @@
+package b_field;
+
+public class FieldExample {
+	
+	// main() 가 포함되는 실행 가능한 class
+	// 실행 class
+	public static void main(String[] args) {
+		Field f = new Field();
+	}
+
+}

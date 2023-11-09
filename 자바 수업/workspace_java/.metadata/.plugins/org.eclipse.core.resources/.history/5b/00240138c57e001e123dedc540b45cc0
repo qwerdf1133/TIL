@@ -1,0 +1,17 @@
+package b_field;
+
+public class Field {
+	
+	// attribute 속성
+	// property 재산, 소유물
+	// field - 실제메모리에 확보된 공간
+	
+	int intField;
+	
+	boolean booleanField;
+	
+	double doubleField;
+	
+	String stringField;
+
+}

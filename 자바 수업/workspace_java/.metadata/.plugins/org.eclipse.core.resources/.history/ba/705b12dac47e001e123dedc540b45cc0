@@ -1,0 +1,12 @@
+package b_field;
+
+public class Field {
+	
+	int intField;
+	boolean booleanField;
+	
+	double doubleField;
+	
+	String stringField;
+
+}

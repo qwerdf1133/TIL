@@ -1,0 +1,13 @@
+package a_declaration;
+
+public class StudentExample {
+	
+	public static void main(String[] args) {
+		Student s1; // 변수 선언
+		s1 = new Student();
+		System.out.println("Student class를 참조하여 s1객체 생성 : " + s1);
+		Student s2 = new Studunt();
+		System.out.println("Student class를 참조하여 s1객체 생성 : " + s2);
+	}
+
+}

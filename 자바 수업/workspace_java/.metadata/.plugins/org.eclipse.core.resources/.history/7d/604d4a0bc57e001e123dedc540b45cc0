@@ -1,0 +1,16 @@
+package b_field;
+
+public class Field {
+	
+	// attrbute 속성
+	// property
+	
+	int intField;
+	
+	boolean booleanField;
+	
+	double doubleField;
+	
+	String stringField;
+
+}

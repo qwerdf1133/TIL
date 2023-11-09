@@ -1,0 +1,9 @@
+package b_field;
+
+public class FieldExample {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

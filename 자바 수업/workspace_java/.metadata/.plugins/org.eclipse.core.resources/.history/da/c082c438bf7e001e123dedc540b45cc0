@@ -1,0 +1,9 @@
+package a_declaration;
+
+public class StudentExample {
+	
+	public static void main(String[] args) {
+		Student s1; //
+	}
+
+}

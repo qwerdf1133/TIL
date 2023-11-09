@@ -1,0 +1,8 @@
+package a_declaration;
+
+// class 선언 block
+
+// public class Student {
+	class Student{
+	
+}

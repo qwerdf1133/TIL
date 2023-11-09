@@ -1,0 +1,10 @@
+package a_declaration;
+
+public class StudentExample {
+	
+	public static void main(String[] args) {
+		Student s1; // 변수 선언
+		s1 = new Student();
+	}
+
+}
