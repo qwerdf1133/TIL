@@ -15,6 +15,7 @@ public class Account {
 		this.ano = ano;
 		this.owner = owner;
 		this.balance = balance;
+		this.password = password;
 	}
 
 	public String toString() {
