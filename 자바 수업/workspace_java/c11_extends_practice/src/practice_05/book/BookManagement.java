@@ -61,17 +61,69 @@ public class BookManagement {
 		String title = getData("등록할 도서의 제목을 입력해 주세요 >");
 		String author = getData("등록할 도서의 저자를 입력해 주세요 >");
 		
+		for(int i = 0; i < books.length; i++) {
+			if(books[i] == null) {
+				books[i] = new Book(count, title, author);
+				/*
+				books[i] = new Book();
+				books[i].setTitle(title);
+				books[i].setAuthor(author);
+				books[i].setNum(count);
+				*/
+				System.out.println("등록 완료");
+				count++;
+				break;
+			}
+		}
+		
 	}
 	
 	// 도서 목록 출력
 	public void selectBook() {
 		System.out.println("2. 도서목록");
+		for(Book book : books) {
+			if(book != null) {
+				System.out.println(book);
+			}
+		}
 	}
 
 	// 도서 정보 수정
 	public void updateBook() {
 		System.out.println("3. 도서수정");
 		int bookNum = getSelectNum("수정 하실 책의 관리번호를 입력해주세요.");
+		
+		// 도서 관리 번호가 일치하는 책 정보를 반환
+		Book book = findBook(bookNum);
+		
+		if(book == null) {
+			System.out.println("입력하신 번호의 책이 존재하지 않습니다.");
+			return;
+		}
+		
+		while(true) {
+			System.out.println("=======================");
+			System.out.println("1.제목 | 2.저자 | 3. 종료");
+			System.out.println("=======================");
+			
+			selectNo = getSelectNum("번호 입력 > ");
+			
+			if(selectNo == 1) {
+				System.out.println("제목 수정");
+				String title = getData("수정할 제목 입력 > ");
+				book.setTitle(title);
+				System.out.println("제목 수정 완료");
+			}else if (selectNo == 2) {
+				System.out.println("저자 수정");
+				book.setAuthor(getData("수정할 저자 입력 > "));
+				System.out.println("저자 수정 완료");
+			}else if (selectNo == 3) {
+				System.out.println("수정 완료");
+				break;
+			}else {
+				System.out.println("등록된 메뉴가 아닙니다.");
+			}
+		}
 		
 		
 	}
@@ -80,10 +132,38 @@ public class BookManagement {
 	public void deleteBook() {
 		System.out.println("4. 도서삭제");
 		int bookNum = getSelectNum("삭제할 도서의 관리번호를 입력해주세요.");
+		
+		Book book = findBook(bookNum);
+		
+		/*
+		for(Book b : books) {
+			if(b == book) {
+				b = null;
+				return;
+				
+			}
+		}
+		*/
+		
+		for(int i = 0; i < books.length; i++) {
+			if(books[i] == book) {
+				books[i] = null;
+				System.out.println(bookNum + "번 도서 삭제 완료");
+				return;
+			}
+		}
+		
+		
 	}
+	
 	
 	// 도서관리번호로 책 정보 찾기
 	public Book findBook(int num) {
+		for(Book book : books) {
+			if(book != null && book.getNum() == num) {
+				return book;
+			}
+		}
 		return null;
 	}
 	

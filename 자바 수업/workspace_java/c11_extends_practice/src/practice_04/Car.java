@@ -1,45 +1,24 @@
 package practice_04;
 
 public class Car {
-	
-	String color;
-	int speed;
-	int speedUp;
-	int speedDown;
-	private int changeGear;
-	
-	public Car() {}
-	
-	public Car(String color, int speed, int changeGear, int speedUp, int speedDown) {
-		this.color = color;
-		this.speed = speed;
-		this.changeGear = changeGear;
-		this.speedUp = speedUp;
-		this.speedDown = speedDown;
-	}
-	
-	
-	public String toString() {
-		return "Car [ color = "+this.color+", speed = "+this.speed+", gear = "+this.changeGear+"]";
-	}
 
-	public void speedUp() {
-		// TODO Auto-generated method stub
-		
-	}
-
+	public String color;
+	public int speed;
+	int gear;
+	
 	public void changeGear(int i) {
-		// TODO Auto-generated method stub
-		
+		this.gear = i;
 	}
-
+	public void speedUp() {
+		this.speed += 10;
+	}
 	public void speedDown() {
-		// TODO Auto-generated method stub
-		
+		this.speed -= 10;
 	}
-
-
 	
-
+	@Override
+	public String toString() {
+		return "Car [color=" + color + ", speed=" + speed + ", gear=" + gear + "]";
+	}
 	
 }

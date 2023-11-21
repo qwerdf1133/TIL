@@ -5,6 +5,38 @@ package practice_06;
  * Bank Class 를 상속 받는 BadBank, NormalBank, GoodBank class 작성 
  *
  */
+
+abstract class Bank{
+	abstract double getInterestRate();
+}
+
+class BadBank extends Bank{
+
+	@Override
+	double getInterestRate() {
+		return 10;
+	}
+	
+}
+
+class NormalBank extends Bank{
+
+	@Override
+	double getInterestRate() {
+		return 5;
+	}
+	
+}
+
+class GoodBank extends Bank{
+
+	@Override
+	double getInterestRate() {
+		return 3;
+	}
+	
+}
+
 public class BankTest {
 
 	public static void main(String[] args) {
