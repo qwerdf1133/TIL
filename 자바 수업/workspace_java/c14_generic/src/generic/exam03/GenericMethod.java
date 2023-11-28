@@ -8,6 +8,9 @@ public class GenericMethod {
 	 * printArray method 정의 
 	 * 
 	 */
+	public static <T> void printArray(T[] t){
+		System.out.println(Arrays.toString(t));
+	}
 	
 	public static void main(String[] args) {
 		Integer[] iArray = {10,20,30,40,50};
