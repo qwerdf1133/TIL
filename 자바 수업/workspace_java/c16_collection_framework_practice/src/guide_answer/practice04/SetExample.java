@@ -23,20 +23,20 @@ public class SetExample {
 		} // end while
 		
 		// set에 항목이 존재하는지 체크
-		// if(set.size() == 0) {
-		if(set.isEmpty()) {
+		if(set.size() == 0) {
 			System.out.println("수가 하나도 없음");
 			System.out.println("시스템 종료");
 			return;
 		}
 		
-		// Integer는 treeset에 저장될 때 오름 차순으로 정렬되어 저장
+		// Integer는 treeset에 저장될대 오름 차순으로 정렬되어 저장
 		int min = set.first();		// 최소값
 		int max = set.last();		// 최대값
 		System.out.println("가장 큰 수는 : " + max);
 		System.out.println("가장 작은 수는 : " + min);
 		System.out.println(set);
 		System.out.println("시스템 종료");
+		
 		
 		sc.close();
 	}

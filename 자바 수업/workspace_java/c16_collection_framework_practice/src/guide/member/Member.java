@@ -1,5 +1,8 @@
 ﻿package guide.member;
- 
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * 회원에 대한 정보를 회원별로 저장할 class
  */
@@ -85,9 +88,11 @@ public class Member {
 	 * 2020-10-23 12:11:21 형식의 문자열이 반환 하도록 변경
 	 * SimpleDateFormat 객체 활용
 	 */
-	
 	public String getReg() {
-		return null;
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		Date date = new Date(this.reg);
+		String reg = sdf.format(date);
+		return reg;
 	}
 
 	/**
@@ -104,6 +109,12 @@ public class Member {
 	
 	@Override
 	public boolean equals(Object o) {
+		if(o instanceof Member) {
+			Member m = (Member)o;
+			if(this.mId.equals(m.getmId()) && this.mPw.equals(m.getmPw())) {
+				return true;
+			}
+		}
 		return false;
 	}
 
@@ -113,3 +124,13 @@ public class Member {
 	}
 
 }
+
+
+
+
+
+
+
+
+
+

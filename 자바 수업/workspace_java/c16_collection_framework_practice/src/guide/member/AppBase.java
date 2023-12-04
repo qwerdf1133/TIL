@@ -76,7 +76,7 @@ public abstract class AppBase {
 			selectNo = getNumberData("메뉴 선택 >");
 			
 			switch(selectNo) {
-			case 1 :
+			case 1 : 
 				System.out.println("== 회원가입 == ");
 				join();
 				break;
@@ -120,7 +120,6 @@ public abstract class AppBase {
 	/**
 	 * 로그인 - 회원 목록에서 일치하는 회원을 찾아 loginMember Field에 저장
 	 */
-	
 	protected abstract void login();
 
 	/**
