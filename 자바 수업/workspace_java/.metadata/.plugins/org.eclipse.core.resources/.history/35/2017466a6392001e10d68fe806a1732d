@@ -1,0 +1,11 @@
+package f03_input;
+
+public class ReadWriteExample {
+
+	public static void main(String[] args) {
+		
+		File file = new File("src\\f03_input\\ReadExample.java");
+
+	}
+
+}

@@ -1,0 +1,5 @@
+package t05_state_control.notify_wait;
+
+public class ConsumerThread extends Thread {
+
+}

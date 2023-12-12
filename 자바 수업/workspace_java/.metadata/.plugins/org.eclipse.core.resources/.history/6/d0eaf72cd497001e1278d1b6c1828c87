@@ -1,0 +1,24 @@
+package n2_socket;
+
+import java.io.IOException;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+// 클라이언트 프로그램
+public class ClientExample {
+
+	public static void main(String[] args) {
+		
+		try {
+			System.out.println("[ Server에 연결 요청 ]");
+			Socket socket = new Socket("10.100.205.231", 5001);
+			System.out.println("[ Server와 연결 성공 ]");
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}

@@ -1,0 +1,11 @@
+package t03_state;
+
+// 상태를 확인할 스레드
+public class TargetThread extends Thread{
+
+	@Override
+	public void run() {
+		
+	}
+	
+}

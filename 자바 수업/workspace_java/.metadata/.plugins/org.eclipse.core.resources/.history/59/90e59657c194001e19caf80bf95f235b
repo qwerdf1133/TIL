@@ -1,0 +1,13 @@
+package t01_create_thread;
+
+public class MultiThreadExample {
+
+	public static void main(String[] args) {
+		System.out.println("Main 시작");
+		
+		System.out.println("Main 종료");
+		
+
+	}
+
+}

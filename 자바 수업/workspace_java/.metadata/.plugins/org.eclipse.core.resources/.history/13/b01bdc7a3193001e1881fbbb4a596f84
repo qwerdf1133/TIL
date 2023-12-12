@@ -1,0 +1,16 @@
+package f09_object.serializable;
+
+public class Person {
+
+	public static void main(String[] args) {
+		
+		private String name;
+		private int age;
+		private String id;
+		private String pw;
+		
+		
+
+	}
+
+}

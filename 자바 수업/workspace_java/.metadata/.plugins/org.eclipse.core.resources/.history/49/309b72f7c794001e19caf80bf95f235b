@@ -1,0 +1,10 @@
+package t02_priority_name;
+
+public class CalcThread extends Thread{
+	
+	// 생성자의 매개변수로 Thread 이름 전달
+	public CalcThread(String name) {
+		
+	}
+
+}

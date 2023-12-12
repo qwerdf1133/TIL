@@ -1,0 +1,35 @@
+package ex02_nasted_interface;
+
+public class Button {
+	
+	interface onClickListener{
+		void onClick();
+	}
+	
+	private String title;
+	
+	public Button(String title) {
+		this.title = title;
+	}
+	
+	void setOnClickListener(onClickListener listener) {
+		this.title = title;
+	}
+	
+	private OnClickListener listener;
+	
+	void setOnClickListener(OnClickListener listener) {
+		this.listener = listener;
+	}
+	
+	// 버튼이 클릭 되었을 때 수행 할 기능
+	public void osTouch() {
+		
+	}
+
+	@Override
+	public String toString() {
+		return "Button [title=" + title + "]";
+	}
+
+}

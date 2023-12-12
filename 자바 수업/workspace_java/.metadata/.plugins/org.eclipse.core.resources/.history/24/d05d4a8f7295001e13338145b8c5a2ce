@@ -1,0 +1,12 @@
+package t05_state_control;
+
+public class JoinExample {
+
+	public static void main(String[] args) {
+		
+		// join이 호출된 thread가 종료 될 때 까지
+		// 다른 thread를 일시 정지 시킴
+
+	}
+
+}

@@ -1,0 +1,5 @@
+package t02_priority_name;
+
+public class CalcThread extends Thread{
+
+}

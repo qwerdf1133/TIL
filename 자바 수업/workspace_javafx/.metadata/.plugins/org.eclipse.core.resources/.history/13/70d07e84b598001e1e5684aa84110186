@@ -1,0 +1,9 @@
+package application;
+
+public class LifeCycleMain {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

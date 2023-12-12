@@ -1,0 +1,9 @@
+package t05_state_control.stop;
+
+public class InterruptExample {
+
+	public static void main(String[] args) {
+
+	}
+
+}

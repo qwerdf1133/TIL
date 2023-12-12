@@ -1,0 +1,10 @@
+package ex04_class;
+
+public class Person {
+	
+	public static String address;
+	private String name;
+	private int age;
+	
+
+}

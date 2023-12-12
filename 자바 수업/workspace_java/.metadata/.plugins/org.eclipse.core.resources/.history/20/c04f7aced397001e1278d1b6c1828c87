@@ -1,0 +1,15 @@
+package n2_socket;
+
+import java.net.Socket;
+
+// 클라이언트 프로그램
+public class ClientExample {
+
+	public static void main(String[] args) {
+		
+		System.out.println("[ Server에 연결 요청 ]");
+		Socket socket = new Socket("10.100.205.231", 5001);
+
+	}
+
+}

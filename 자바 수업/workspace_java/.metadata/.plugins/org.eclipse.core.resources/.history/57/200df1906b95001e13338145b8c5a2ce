@@ -1,0 +1,29 @@
+package t04_sync;
+
+public class WithDrawThread implements Runnable{
+
+	Account account;
+	
+	public WithDrawThread(Account account) {
+		this.account = account;
+	}
+	
+	@Override
+	public void run() {
+		
+		while(account.getBalance() > 0) {
+			// 1000 ~ 5000
+			int money = (int)(Math.random() * 5 + 1) * 1000;
+			boolean isDenied = false;
+			
+			isDenied = account.withDraw(money);
+			
+			if(isDenied) {
+				System.out.printf("%s 출금 : %d원 남은 금액 : %d원 %n",Thread.currentThread().getName(),money,account.getBalance());
+			}
+					
+		}
+	}
+	
+
+}

@@ -1,0 +1,17 @@
+package t01_create_thread;
+
+public class SingleThreadExample {
+
+	// main method
+	// JVM(자바 가상기계)가 프로그램 실행 시 생성한 main thread에서 호출되는 함수
+	// 싱글 스레드 환경
+	public static void main(String[] args) {
+		System.out.println("Main 시작");
+		// 현재 실행문이 작업 중인 thread 객체를 반환
+		Thread t = Thread.currentThread();
+		
+		System.out.println("Main 종료");
+
+	}
+
+}

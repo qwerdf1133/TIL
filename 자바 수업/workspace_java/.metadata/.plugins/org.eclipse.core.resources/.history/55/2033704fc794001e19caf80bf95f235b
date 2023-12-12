@@ -1,0 +1,14 @@
+package t02_priority_name;
+
+public class PriorityNameExample {
+
+	public static void main(String[] args) {
+		// priority - 우선순위
+		// 현재 실행문이 실행되는 스레드의 정보를 객체로 반환
+		Thread t = Thread.currentThread();
+		System.out.println(t);
+	
+
+	}
+
+}

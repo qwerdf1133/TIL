@@ -1,0 +1,13 @@
+package n1_address_url;
+
+import java.net.InetSocketAddress;
+
+public class InetSocketAddressExample {
+
+	public static void main(String[] args) {
+		InetSocketAddress isa = new InetSocketAddress("192.168.111.1", 5001);
+		System.out.println(isa.getHostString());
+
+	}
+
+}

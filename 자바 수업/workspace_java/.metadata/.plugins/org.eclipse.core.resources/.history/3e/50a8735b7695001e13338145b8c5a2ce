@@ -1,0 +1,7 @@
+package t05_state_control.notify_wait;
+
+public class DataBox {
+	
+	private String data
+
+}

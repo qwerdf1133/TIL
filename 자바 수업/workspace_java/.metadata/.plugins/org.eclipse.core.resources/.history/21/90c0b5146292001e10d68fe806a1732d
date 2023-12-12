@@ -1,0 +1,18 @@
+package f03_input;
+
+import java.io.*;
+import java.util.Arrays;
+
+public class ReadExample2 {
+
+	public static void main(String[] args) throws IOException{
+		
+		InputStream is = new FileInputStream("C:\\Temp\\file2.txt");
+		byte[] bytes = new byte[100];
+		int readBytes = is.read(bytes);
+		System.out.println(Arrays.toString(bytes));
+		System.out.println(readBytes);
+
+	}
+
+}

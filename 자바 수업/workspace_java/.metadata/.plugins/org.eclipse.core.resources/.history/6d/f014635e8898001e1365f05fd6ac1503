@@ -1,0 +1,49 @@
+package server;
+
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.util.Hashtable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class ChatServer {
+
+	public static final String IP = "192.168.111.1";
+	public static final int PORT = 5001;
+	
+	/*
+	 * port 할당 및 client 연결 요청 처리
+	 */
+	ServerSocket serverSocket;
+	
+	/*
+	 * 연결된 클라이언트의 스레드를 관리할 스레드 풀
+	 */
+	static ExecutorService serverOll;
+	
+	/*
+	 * 연결된 클라이언트의 정보를 저장
+	 * key (닉네임), value(client 출력 스트림)
+	 */
+	static Hashtable<String, PrintWriter> ht;
+	
+	/*
+	 * 생성자를 통해서 필드 초기화 및 
+	 * 클라이언트 연결 수락 및 정보 관리
+	 */
+	public ChatServer() {
+	
+		serverPool = Executors.newFixedThreadPool(10);
+		
+	}
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		new ChatServer();
+
+	}
+
+}

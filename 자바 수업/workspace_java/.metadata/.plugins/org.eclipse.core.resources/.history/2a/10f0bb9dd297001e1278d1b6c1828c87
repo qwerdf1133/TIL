@@ -1,0 +1,14 @@
+package n2_socket;
+
+import java.net.ServerSocket;
+
+// 서버 프로그램
+public class ServerExample {
+
+	public static void main(String[] args) {
+		
+		ServerSocket server = null;
+		
+	}
+
+}

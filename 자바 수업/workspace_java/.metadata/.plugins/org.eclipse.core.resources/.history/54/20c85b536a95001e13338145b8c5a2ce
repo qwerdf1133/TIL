@@ -1,0 +1,20 @@
+package t04_sync;
+
+public class Account {
+	
+	private int balance = 10000;
+	
+	// 현재 저장된 금액
+	public int getBalance() {
+		return this.balance;
+	}
+	
+	// 출금
+	public boolean withDraw(int money) {
+		if(balance >= money) {
+			
+		}
+	}
+	
+
+}

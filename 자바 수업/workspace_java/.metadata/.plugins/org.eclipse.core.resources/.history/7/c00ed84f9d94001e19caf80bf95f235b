@@ -1,0 +1,20 @@
+package ex02_nasted_interface;
+
+public class Button {
+	
+	private String title;
+	
+	public Button(String title) {
+		this.title = title;
+	}
+	// 버튼이 클릭 되었을 때 수행 할 기능
+	public void osTouch() {
+		
+	}
+
+	@Override
+	public String toString() {
+		return "Button [title=" + title + "]";
+	}
+
+}

@@ -1,0 +1,17 @@
+package t07_daemon_thread;
+
+/*
+ Daemon 프로그램 이란
+ 사용자가 직접적으로 제어하지 않고, 백그라운드에서 돌면서 여러작업을 하는 프로그램
+ 
+ Daemon thread - 주 스레드에서 자동으로 관리되는 스레드
+ */
+public class DaemonExample {
+
+	public static void main(String[] args) {
+		
+		
+
+	}
+
+}

@@ -1,0 +1,11 @@
+package f09_object.serializable;
+
+import java.io.ObjectOutputStream;
+
+public class ObjectAppendStream extends ObjectOutputStream{
+	
+	public ObjectAppendStream(OutputStream out) throws IOException{
+		super(out);
+	}
+
+}

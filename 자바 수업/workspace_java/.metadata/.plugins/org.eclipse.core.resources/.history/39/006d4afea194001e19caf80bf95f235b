@@ -1,0 +1,20 @@
+package ex03_lambda_expression;
+
+public class LambdaExample {
+	
+	public static void main(String[] args) {
+		MyInterface myInterface = new MyInterface() {
+			@Override
+			public void method() {
+				System.out.println("myInterface method");
+			}
+			
+		};
+		myInterface.method();
+		
+		myInterface = ()-> System.out.println("rambda method 호출");
+		
+		myInterface.method();
+	}
+
+}

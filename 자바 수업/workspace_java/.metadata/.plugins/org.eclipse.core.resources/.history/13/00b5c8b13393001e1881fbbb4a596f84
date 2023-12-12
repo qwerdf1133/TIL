@@ -1,0 +1,9 @@
+package f09_object.serializable;
+
+public class SerializeInputExample {
+
+	public static void main(String[] args) {
+
+	}
+
+}

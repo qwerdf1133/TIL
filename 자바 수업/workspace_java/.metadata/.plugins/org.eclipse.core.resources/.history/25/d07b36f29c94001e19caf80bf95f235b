@@ -1,0 +1,9 @@
+package ex02_nasted_interface;
+
+public class ButtonExample {
+
+	public static void main(String[] args) {
+
+	}
+
+}

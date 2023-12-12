@@ -1,0 +1,19 @@
+package n4_udp;
+
+import java.net.DatagramSocket;
+import java.net.SocketException;
+
+public class UDPServerExample {
+
+	public static void main(String[] args) {
+		
+		try {
+			DatagramSocket datagramSocket = new DatagramSocket(5002);
+		} catch (SocketException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}

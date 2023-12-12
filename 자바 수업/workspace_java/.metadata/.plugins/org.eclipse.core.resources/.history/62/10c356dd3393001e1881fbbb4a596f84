@@ -1,0 +1,15 @@
+package f09_object.serializable;
+
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+
+public class SerializeInputExample {
+
+	public static void main(String[] args) {
+		
+		ObjectInputStream ois
+			= new ObjectInputStream(new BUfferedInputStream(new FileInputStream("person.dat")));
+
+	}
+
+}

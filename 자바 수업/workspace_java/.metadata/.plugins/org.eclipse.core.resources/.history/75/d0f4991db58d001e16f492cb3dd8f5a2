@@ -1,0 +1,28 @@
+package c2_set;
+
+import java.util.HashSet;
+import java.util.Iterator;
+
+public class HashSetExample {
+
+	public static void main(String[] args) {
+		HashSet<String> s1 = new HashSet<>();
+		s1.add("A");
+		// s1.add(0,"B"); 순서가 없음 - index번호도 없음
+		s1.add("D");
+		s1.add("B");
+		s1.add("C");
+		
+		boolean isAdd = s1.add("C");
+		System.out.println(s1);
+		System.out.println("isAdd : " + isAdd);
+		
+		// 반복자 내부에 저장하고 있는 데이터를 token 처럼 꺼내옴
+		Iterator<String> iterator = s1.iterator();
+		while(iterator.hasNext()) {
+			String s = iterator.next();
+		}
+		
+	}
+
+}

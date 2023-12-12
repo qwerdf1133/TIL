@@ -1,0 +1,21 @@
+package t01_create_thread;
+
+public class MultiThreadExample {
+
+	public static void main(String[] args) {
+		System.out.println("Main 시작");
+		
+		// 1. Thread 상속
+		Thread t = new BeepThread();	// 스레드 객체 생성
+		// t.run(); // 스레드 생성 X 인스턴스의 메소드 호출
+		t.start(); // 새로운 작업 스레드 생성 및 run() 호출 실행
+		
+		// 2. Runnable 인터페이스 구현 - 스레드가 처리할 작업을 정의하는 interface
+		Runnable run = new PrintTask();
+		
+		System.out.println("Main 종료");
+		
+
+	}
+
+}

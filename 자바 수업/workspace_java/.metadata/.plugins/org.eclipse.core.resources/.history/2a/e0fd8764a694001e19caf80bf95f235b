@@ -1,0 +1,34 @@
+package ex03_lambda_expression.return_type;
+
+import java.util.Set;
+import java.util.TreeSet;
+
+@FunctionalInterface
+interface MyInterface{
+	int method(int x, int y, String s);
+}
+
+public class LambdaReturnExample {
+
+	public static void main(String[] args) {
+		MyInterface i = new MyInterface() {
+
+			@Override
+			public int method(int x, int y, String s) {
+				return 0;
+			}
+		};
+		int result = i.method(10, 5, "곱셉연산");
+		System.out.println("result : " + result);
+		
+		i = (a,b,s)->{
+			System.out.println(s+"-");
+			return a + b;
+		};
+		result = i.method(10, 20, "덧셈 연산");
+		System.out.println("result : " + result);
+		
+		Set<Integer> set = new TreeSet<>();
+	}
+
+}

@@ -1,0 +1,5 @@
+package ex02_nested_interface;
+
+public class CallListener {
+
+}

@@ -1,0 +1,17 @@
+package f03_input;
+
+import java.io.FileInputStream;
+import java.io.InputStream;
+
+public class ReadExample {
+
+	public static void main(String[] args) {
+		
+		InputStream is = new FileInputStream("C:\\temp\\fule2.txt");
+		int readBytes = 0;
+		int size = is.available();
+		System.out.println(size);
+
+	}
+
+}

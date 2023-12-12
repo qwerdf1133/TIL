@@ -1,0 +1,29 @@
+package ex01_nested_class;
+
+// 외부 클래스
+public class A {
+
+	A(){
+		System.out.println("A 객체 생성");
+	}
+	
+	void methodA() {
+		System.out.println("A class의 methodA");
+	}
+	
+	// 인스턴스 멤버 클래스 B
+	public class B {
+		
+		B(){
+			System.out.println("B 객체 생성");
+		}
+		
+		int filedB;
+		
+		void methodB() {
+			System.out.println("B method");
+			methodA();
+		}
+	} // end B
+	
+} // end A

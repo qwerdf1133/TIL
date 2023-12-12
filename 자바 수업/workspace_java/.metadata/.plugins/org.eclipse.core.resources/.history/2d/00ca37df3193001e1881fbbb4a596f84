@@ -1,0 +1,11 @@
+package f09_object.serializable;
+
+public class SerializableOutputExample {
+
+	public static void main(String[] args) {
+		
+		Person.nation = "대한민국";
+
+	}
+
+}

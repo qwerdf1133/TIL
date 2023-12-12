@@ -1,0 +1,25 @@
+package n1_address_url;
+
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
+public class InetAddressURLExample {
+
+	public static void main(String[] args) {
+		
+		try {
+			InetAddress address = InetAddress.getLocalHost();
+			System.out.println(address);
+			
+			// 내 컴퓨터 아이디 주소 - 192.168.111.1
+			System.out.println(address.getHostAddress());
+			// 호스트 이름
+			System.out.println(address.getHostName());
+			InetAddress naver = InetAddress.getByName("www.naver.com");
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}

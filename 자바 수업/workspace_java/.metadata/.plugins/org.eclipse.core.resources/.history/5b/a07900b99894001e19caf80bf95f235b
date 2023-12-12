@@ -1,0 +1,39 @@
+package ex01_nested_class;
+
+// 외부 클래스
+public class A {
+
+	A(){
+		System.out.println("A 객체 생성");
+	}
+	
+	void methodA() {
+		System.out.println("A class의 methodA");
+	}
+	
+	// 인스턴스 멤버 클래스 B
+	public class B {
+		
+		B(){
+			System.out.println("B 객체 생성");
+		}
+		
+		int filedB;
+		
+		void methodB() {
+			System.out.println("B method");
+			methodA();
+		}
+		
+		// 일반 내부 클래스에서는 정적 멤버를 사용할 수 없음
+		// static void method2() {}
+	} // end B
+	
+	
+	
+	// 정적 멤버 class
+	static public class C {
+		int filed1;
+		static int field2;
+	} // end C
+} // end A

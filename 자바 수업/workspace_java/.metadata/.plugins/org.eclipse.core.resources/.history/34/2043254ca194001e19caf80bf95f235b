@@ -1,0 +1,5 @@
+package ex03_lambda_expression;
+
+public interface MyInterface {
+
+}

@@ -1,0 +1,9 @@
+package t03_state;
+
+// target thread의 상태를 출력할 스레드
+public class StatePrintThread extends Thread{
+
+	Thread targetThread;
+	
+	public
+}

@@ -1,0 +1,13 @@
+package n4_udp;
+
+import java.net.DatagramSocket;
+
+public class UDPClientExample {
+
+	public static void main(String[] args) {
+		// 수신 발신 역할을 담당하는 객체 - 실제 전송할 데이터의 정보는 datagramPacket 객체가 담당
+		DatagramSocket datagramSocket = new DatagramSocket();
+		
+	}
+
+}

@@ -1,0 +1,63 @@
+package n2_socket;
+
+import java.io.IOException;
+import java.io.OutputStream;
+import java.net.InetSocketAddress;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+// 서버 프로그램
+public class ServerExample {
+
+	public static void main(String[] args) {
+		
+		ServerSocket server = null;
+		
+		try {
+			server = new ServerSocket(5001);
+			
+			while(true) {
+				// 연결이 수락된 client와 연결된 socket
+				System.out.println("Client 연결 대기중");
+				Socket client = server.accept();
+				// server output => client
+				// server input <= client
+				System.out.println("Client 연결 수락");
+				
+				InetSocketAddress isa
+				= (InetSocketAddress)client.getRemoteSocketAddress();
+				System.out.println("Client - " + isa.getHostString());
+				System.out.println("client port : " + isa.getPort());
+				
+				byte[] bytes = null;
+				String message = null;
+				
+				
+				OutputStream os = client.getOutputStream();
+				
+			}
+		} catch (IOException e) {
+			try {
+				if(server != null)server.close();
+			} catch (IOException e1) {}
+		}
+		
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

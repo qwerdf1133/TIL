@@ -1,0 +1,25 @@
+package f09_object.serializable;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+
+public class SerializableOutputExample {
+
+	public static void main(String[] args) {
+		
+		Person.nation = "대한민국";
+		
+		File file = new File("person.dat");
+		
+		ObjectOutputStream oos = null;
+		
+		oos = new ObjectOutputStream(
+			new BufferedOutpuStream(
+				new FileOutputStream(file,true)
+			)
+		);
+
+	}
+
+}

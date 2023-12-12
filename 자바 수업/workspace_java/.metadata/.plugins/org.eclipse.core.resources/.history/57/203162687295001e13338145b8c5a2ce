@@ -1,0 +1,9 @@
+package t05_state_control;
+
+public class JoinExample {
+
+	public static void main(String[] args) {
+
+	}
+
+}

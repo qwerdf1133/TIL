@@ -1,0 +1,16 @@
+package ex03_lambda_expression.return_type;
+
+@FunctionalInterface
+interface MyInterface{
+	int method(int x, int y, String s);
+}
+
+public class LambdaReturnExample {
+
+	public static void main(String[] args) {
+		MyInterface i = new MyInterface() {
+			
+		}
+	}
+
+}

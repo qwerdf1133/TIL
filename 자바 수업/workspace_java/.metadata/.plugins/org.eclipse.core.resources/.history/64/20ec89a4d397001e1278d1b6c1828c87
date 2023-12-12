@@ -1,0 +1,13 @@
+package n2_socket;
+
+// 클라이언트 프로그램
+public class ClientExample {
+
+	public static void main(String[] args) {
+		
+		System.out.println("[ Server에 연결 요청 ]");
+		Socket socket = new Socket();
+
+	}
+
+}

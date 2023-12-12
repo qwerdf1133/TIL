@@ -1,0 +1,9 @@
+package n2_socket;
+
+public class ClientExample {
+
+	public static void main(String[] args) {
+
+	}
+
+}

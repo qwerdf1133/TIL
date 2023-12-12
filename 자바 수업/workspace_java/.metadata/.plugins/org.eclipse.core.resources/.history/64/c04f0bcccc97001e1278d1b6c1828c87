@@ -1,0 +1,57 @@
+package n1_address_url;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.InetAddress;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.UnknownHostException;
+
+public class InetAddressURLExample {
+
+	public static void main(String[] args) {
+		
+		try {
+			InetAddress address = InetAddress.getLocalHost();
+			System.out.println(address);
+			
+			// 내컴퓨터 아이디 주소 - 192.168.111.1
+			System.out.println(address.getHostAddress());
+			// 호스트 이름 - DESKTOP-O5FM22E
+			System.out.println(address.getHostName());
+			InetAddress naver = InetAddress.getByName("www.naver.com");
+			System.out.println(naver);
+			
+			InetAddress[] iar = InetAddress.getAllByName("www.naver.com");
+			for(InetAddress remote : iar) {
+				System.out.println("naver ip 주소 : " + remote.getHostAddress());
+			}
+			
+			URL url = new URL("https://www.naver.com");
+			
+			InputStream is = url.openStream();
+			InputStreamReader isr = new InputStreamReader(is);
+			BufferedReader br = new BufferedReader(isr);
+			
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		} catch (MalformedURLException e) {
+			System.out.println("기형적인 URL 형식에 어긋난 요청");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

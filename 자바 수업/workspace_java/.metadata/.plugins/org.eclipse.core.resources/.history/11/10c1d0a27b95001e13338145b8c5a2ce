@@ -1,0 +1,21 @@
+package t05_state_control.stop;
+
+class InterruptThread extends Thread{
+	
+	@Override
+	public void run() {
+		while(true) {
+			System.out.println("실행 중 1");
+		}
+	}
+}
+
+public class InterruptExample {
+
+	public static void main(String[] args) {
+		
+		
+
+	}
+
+}

@@ -1,0 +1,5 @@
+package t06_thread_group;
+
+public class WorkThread extends Thread{
+
+}

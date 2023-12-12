@@ -1,0 +1,21 @@
+package f03_input;
+
+import java.io.*;
+
+public class ReadWriteExample {
+
+	public static void main(String[] args) {
+		
+		File file = new File("src\\f03_input\\ReadExample.java");
+		System.out.println(file.length());
+		
+		try {
+			InputStream is = new FileInputStream(file);
+			int data;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}

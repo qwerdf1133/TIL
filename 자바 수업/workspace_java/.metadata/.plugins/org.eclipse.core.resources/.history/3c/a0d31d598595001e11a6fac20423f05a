@@ -1,0 +1,19 @@
+package t06_thread_group;
+
+public class WorkThread extends Thread{
+
+	@Override
+	public void run() {
+		while(true) {
+			
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				System.out.println(getName()+"-interrupted");
+			}
+			
+		}
+		System.out.println(getName()+"종료");
+	}
+	
+}

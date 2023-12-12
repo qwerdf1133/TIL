@@ -1,0 +1,16 @@
+package c2_set;
+
+import java.util.HashSet;
+
+public class HashSetExample {
+
+	public static void main(String[] args) {
+		HashSet<String> s1 = new HashSet<>();
+		s1.add("A");
+		// s1.add(0,"B"); 순서가 없음 - index번호도 없음
+		s1.add("D");
+		s1.add("B");
+		s1.add("C");
+	}
+
+}

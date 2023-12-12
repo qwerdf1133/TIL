@@ -1,0 +1,5 @@
+package f09_object.serializable;
+
+public class ObjectAppendStream extends ObjectOutputStream{
+
+}

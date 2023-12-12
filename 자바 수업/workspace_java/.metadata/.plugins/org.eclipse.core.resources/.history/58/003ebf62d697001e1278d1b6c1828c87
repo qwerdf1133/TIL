@@ -1,0 +1,48 @@
+package n2_socket;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+// 클라이언트 프로그램
+public class ClientExample {
+
+	public static void main(String[] args) {
+		
+		try {
+			System.out.println("[ Server에 연결 요청 ]");
+			Socket socket = new Socket("192.168.111.1", 5001);
+			// client outPut => server
+			// client inPut <= server
+			System.out.println("[ Server와 연결 성공]");
+			
+			InputStream is = socket.getInputStream();
+			
+			byte[] bytes = new byte[100];
+			String message = "";
+			
+			// 서버에서 출력된 데이터를 입력받기위해 데이터가 수신 될 때 까지 blocking 
+			System.out.println("Blocking");
+			int readBytes = is.read(bytes);
+			message = new String(bytes);
+			
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

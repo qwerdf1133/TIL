@@ -1,0 +1,5 @@
+package t01_create_thread;
+
+public class BeepThread {
+
+}

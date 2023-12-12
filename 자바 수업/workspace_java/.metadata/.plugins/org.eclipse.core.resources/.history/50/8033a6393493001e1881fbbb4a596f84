@@ -1,0 +1,29 @@
+package f09_object.serializable;
+
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.util.ArrayList;
+import java.util.List;
+
+public class SerializeInputExample {
+
+	public static void main(String[] args) {
+		
+		try {
+			ObjectInputStream ois
+				= new ObjectInputStream(new BufferedInputStream(new FileInputStream("person.dat")));
+			
+				List<Person> list = new ArrayList<>();
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}

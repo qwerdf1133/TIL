@@ -1,0 +1,19 @@
+package f03_input;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+
+public class ReadExample {
+
+	public static void main(String[] args) {
+		
+		try {
+			InputStream is = new FileInputStream("C:\\temp\\fule2.txt");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}

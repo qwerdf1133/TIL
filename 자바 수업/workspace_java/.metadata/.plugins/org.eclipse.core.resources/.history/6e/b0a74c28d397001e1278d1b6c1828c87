@@ -1,0 +1,27 @@
+package n2_socket;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+
+// 서버 프로그램
+public class ServerExample {
+
+	public static void main(String[] args) {
+		
+		ServerSocket server = null;
+		
+		try {
+			server = new ServerSocket();
+			
+			while(true) {
+				Socket client = server.accept();
+			}
+			
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+		
+	}
+
+}

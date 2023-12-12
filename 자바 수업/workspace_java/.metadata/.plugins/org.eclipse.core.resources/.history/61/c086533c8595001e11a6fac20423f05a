@@ -1,0 +1,19 @@
+package t06_thread_group;
+
+public class WorkThread extends Thread{
+
+	@Override
+	public void run() {
+		while(true) {
+			
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+	}
+	
+}

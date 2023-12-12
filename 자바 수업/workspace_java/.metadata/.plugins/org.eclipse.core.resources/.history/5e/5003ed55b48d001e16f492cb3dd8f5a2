@@ -1,0 +1,11 @@
+package c2_set;
+
+import java.util.HashSet;
+
+public class HashSetExample {
+
+	public static void main(String[] args) {
+		HashSet<String> s1 = new HashSet<>();
+	}
+
+}

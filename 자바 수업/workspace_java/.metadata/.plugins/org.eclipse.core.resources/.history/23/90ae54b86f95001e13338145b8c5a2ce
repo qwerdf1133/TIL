@@ -1,0 +1,29 @@
+package t04_sync;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class VectorExample {
+
+	public static void main(String[] args) {
+		System.out.println("Main 시작");
+		List<String> array = new ArrayList<>();
+		Thread t1 = new Thread(() ->{
+			// run method
+			for(int i = 0; i < 10000; i++) {
+				array.add("최기근");
+			}
+			System.out.println("t1 종료");
+		});
+		t1.start();
+		
+		System.out.println("==========================");
+		
+		Thread t2 = new Thread(()->{
+			
+		})
+		
+		System.out.println("Main 종료");
+	}
+
+}

@@ -1,0 +1,43 @@
+package t05_state_control.stop;
+
+class PrintThread extends Thread{
+	
+	private boolean isRun = true;
+	
+	public void setIsRun(boolean isRun) {
+		this.isRun = isRun;
+	}
+	
+	@Override
+	public void run() {
+		long sum = 0;
+		int i = 0;
+		while(isRun) {
+			
+			sum += i;
+			i++;
+			
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {}
+			
+		}
+		System.out.println("자원정리 : " + sum);
+		System.out.println("스레드 종료");
+	}
+}
+
+public class StopFlagExample {
+
+	public static void main(String[] args) {
+		PrintThread t = new PrintThread();
+		t.start();
+		
+		Scanner sc = new Scanner(System.in);
+		while() {
+			System.out.println("");
+		}
+
+	}
+
+}

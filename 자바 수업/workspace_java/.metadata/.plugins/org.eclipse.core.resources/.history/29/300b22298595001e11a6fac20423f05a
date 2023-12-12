@@ -1,0 +1,10 @@
+package t06_thread_group;
+
+public class WorkThread extends Thread{
+
+	@Override
+	public void run() {
+		
+	}
+	
+}

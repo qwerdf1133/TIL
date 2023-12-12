@@ -1,0 +1,20 @@
+package f03_input;
+
+import java.io.FileInputStream;
+import java.io.InputStream;
+
+public class ReadExample {
+
+	public static void main(String[] args) {
+		
+		InputStream is = new FileInputStream("C:\\temp\\fule2.txt");
+		int readBytes = 0;
+		// 연결된 파일에서 읽어 들일 수 있는 데이터 크기 (byte 크기)
+		
+		int size = is.available();
+		is.close();
+		System.out.println(size);
+
+	}
+
+}

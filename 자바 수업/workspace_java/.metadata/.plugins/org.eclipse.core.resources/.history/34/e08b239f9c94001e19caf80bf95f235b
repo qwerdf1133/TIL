@@ -1,0 +1,15 @@
+package ex02_nasted_interface;
+
+public class Button {
+	
+	private String title;
+	
+	public Button(String title) {
+		this.title = title;
+	}
+	
+	public void osTouch() {
+		
+	}
+
+}

@@ -1,0 +1,13 @@
+package n4_udp;
+
+import java.net.DatagramSocket;
+
+public class UDPServerExample {
+
+	public static void main(String[] args) {
+		
+		DatagramSocket datagramSocket = new DatagramSocket(5002);
+
+	}
+
+}

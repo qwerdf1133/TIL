@@ -1,0 +1,32 @@
+package n2_socket;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+// 서버 프로그램
+public class ServerExample {
+
+	public static void main(String[] args) {
+		
+		ServerSocket server = null;
+		
+		try {
+			server = new ServerSocket();
+			
+			while(true) {
+				// 연결이 수락된 client와 연결된 socket
+				System.out.println("Client 연결 대기중");
+				Socket client = server.accept();
+				System.out.println("Client 연결 수락");
+			}
+			
+		} catch (IOException e) {
+			try {
+				server.close();
+			} catch (IOException e1) {}
+		}
+		
+	}
+
+}

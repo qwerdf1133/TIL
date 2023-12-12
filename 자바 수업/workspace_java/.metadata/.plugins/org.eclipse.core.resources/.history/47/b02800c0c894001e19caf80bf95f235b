@@ -1,0 +1,25 @@
+package t02_priority_name;
+
+public class PriorityNameExample {
+
+	public static void main(String[] args) {
+		// priority - 우선순위
+		// 현재 실행문이 실행되는 스레드의 정보를 객체로 반환
+		Thread t = Thread.currentThread();
+		System.out.println(t);
+		// 스레드 이름
+		System.out.println(t.getName());
+		// 스레드 우선순위
+		System.out.println(t.getPriority());
+		
+		System.out.println(Thread.MAX_PRIORITY);
+		System.out.println(Thread.NORM_PRIORITY);
+		System.out.println(Thread.MIN_PRIORITY);
+		
+		System.out.println("--------------------");
+		for(int i = 1; i <= 10; i++) {
+			Thread calc = new CalcThread("CalcThread");
+		}
+	}
+
+}

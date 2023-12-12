@@ -1,0 +1,13 @@
+package t01_create_thread;
+
+import java.awt.Toolkit;
+
+// 방법 1. Thread를 상속 받아 수행할 작업 재정의
+public class BeepThread extends Thread{
+
+	@Override
+	public void run() {
+		Toolkit tool = Toolkit.getDefaultToolkit();
+	}
+
+}

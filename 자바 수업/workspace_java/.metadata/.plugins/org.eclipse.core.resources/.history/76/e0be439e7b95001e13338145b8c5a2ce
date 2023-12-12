@@ -1,0 +1,19 @@
+package t05_state_control.stop;
+
+class InterruptThread extends Thread{
+	
+	@Override
+	public void run() {
+		
+	}
+}
+
+public class InterruptExample {
+
+	public static void main(String[] args) {
+		
+		
+
+	}
+
+}

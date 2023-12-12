@@ -1,0 +1,14 @@
+package f03_input;
+
+import java.io.IOException;
+import java.io.InputStream;
+
+public class ReadExample2 {
+
+	public static void main(String[] args) throws IOException{
+		
+		InputStream is = new FileInputStream();
+
+	}
+
+}

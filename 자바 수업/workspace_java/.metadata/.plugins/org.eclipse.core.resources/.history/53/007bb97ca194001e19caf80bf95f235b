@@ -1,0 +1,9 @@
+package ex03_lambda_expression;
+
+public class LambdaExample {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

@@ -1,0 +1,9 @@
+package t04_sync;
+
+public class VectorExample {
+
+	public static void main(String[] args) {
+
+	}
+
+}

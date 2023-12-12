@@ -1,0 +1,50 @@
+package ex02_nested_interface;
+
+public class ButtonExample {
+
+	public static void main(String[] args) {
+		
+		/*
+			document.getElementById("btnId").onclick = function(){
+			// click 이벤트 발생 시 수행 할 작업
+			}
+		 */
+		
+		Button callButton = new Button("전화걸기");
+		callButton.setOnClickListener(new CallListener());
+		callButton.onTouch();
+		
+		Button messageButton = new Button("메세지");
+		messageButton.setOnClickListener(new MessageListener());
+		messageButton.onTouch();
+		
+		Button powerButton = new Button("전원");
+		Button.OnClickListener powerListener = new Button.OnClickListener() {
+			
+			@Override
+			public void onClick() {
+				System.out.println("전원을 끕니다");
+			}
+		};
+		powerButton.setOnClickListener(powerListener);
+		powerButton.onTouch();
+		
+		Button intereButton = new Button("Google");
+		intereButton.setOnClickListener(new Button.OnClickListener() {
+			
+			@Override
+			public void onClick() {
+				System.out.println("구글 브라우저를 엽니다");
+			}
+		});
+		intereButton.onTouch();
+		
+		Button btn2 = new Button("kakao");
+		btn2.setOnClickListener(()->{
+			System.out.println("kakaotalk을 켭니다");
+		});
+		btn2.onTouch();
+	}
+	
+
+}
