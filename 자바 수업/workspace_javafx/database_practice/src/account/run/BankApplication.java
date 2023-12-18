@@ -5,6 +5,7 @@ import java.util.Scanner;
 import account.dao.AccountDAO;
 import account.dao.pstmt.AccountPSTMTDAOImpl;
 import account.dto.AccountDTO;
+import utils.DBUtill;
 
 public class BankApplication {
 	
@@ -48,6 +49,7 @@ public class BankApplication {
 				// 종료
 				isRun = false;
 				sc.close();
+				DBUtill.close(DBUtill.getConnection());
 			}
 		}
 		System.out.println("프로그램 종료");
