@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>과일 선택</title>
+</head>
+<body>
+	<!--  method="get" form 태그에 전송방식 미지정 시 default == GET -->
+	<form action="choiceFruit" method="get">
+		<label>
+			<input type="checkbox" name="fruits" value="apple.png"/> 사과 
+		</label>
+		<label>
+			<input type="checkbox" name="fruits" value="banana.png"/> 바나나 
+		</label>
+		<label>
+			<input type="checkbox" name="fruits" value="apple.png"/> 사과 
+		</label>
+	</form>
+</body>
+</html>

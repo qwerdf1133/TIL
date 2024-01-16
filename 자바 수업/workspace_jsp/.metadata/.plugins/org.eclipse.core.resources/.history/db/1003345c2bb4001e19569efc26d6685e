@@ -1,0 +1,30 @@
+package first;
+
+import java.io.IOException;
+import java.io.InputStream;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class LoginServlet extends HttpServlet{
+
+	private static final long serialVersionUID = -8591970279891007344L;
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("login GET 방식 요청");
+		InputStream is = req.getInputStream();
+		Bufferedreader reader = new BufferedReader(new InputStreamReader(is));
+				
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("login POST 방식 요청");
+	}
+
+	
+
+}

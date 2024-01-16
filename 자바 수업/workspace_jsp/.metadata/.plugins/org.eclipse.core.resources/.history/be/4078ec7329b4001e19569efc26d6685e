@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
+  <display-name>00_first</display-name>
+  <welcome-file-list>
+  <welcome-file>home.html</welcome-file>
+  </welcome-file-list>
+  
+  <!--  LoginServlet 등록 -->
+  <servlet>
+  		<servlet-name>loginServlet</servlet-name>
+  		<servlet-class>first.LoginServlet</servlet-class>
+  </servlet>
+  
+  <!--  loginServlet 이라는 이름으로 등록된 Servlet의 처리 요청 url 등록 -->
+  <servlet-mapping>
+  		<servlet-name>LoginServlet</servlet-name>
+  		<url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+</web-app>

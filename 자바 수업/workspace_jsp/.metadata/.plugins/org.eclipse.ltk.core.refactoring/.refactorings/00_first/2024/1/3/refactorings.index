@@ -1,0 +1,6 @@
+1705373345870	Move 'home.html' to 'webapp'
+1705380761826	Move 'web.xml' to 'webapp'
+1705380764069	Move 'web.xml' to 'lib'
+1705380768893	Move 'web.xml' to 'WEB-INF'
+1705382895252	Delete element
+1705384563553	Rename type 'choiceFruit'
