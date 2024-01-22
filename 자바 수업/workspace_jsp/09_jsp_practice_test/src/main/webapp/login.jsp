@@ -14,20 +14,19 @@
 	 				<input type="text" name="id" data-msg="아이디"/>
 				</td>
 	 		</tr>
-	 		<!-- 로그인 상태 유지 기능 추가 -->
-	 		<tr>
-	 			<td colspan="2">
-	 				<label><input type="checkbox" name="rememberMe" value="true"/>
-	 				로그인 상태 유지
-	 				</label>
-	 			</td>
-	 		</tr>
 	 		<tr>
 	 			<td>비밀번호</td>
 	 			<td>
 	 				<input type="password" name="pass" data-msg="비밀번호"/>
 				</td>
 	 		</tr>
+	 		<tr>
+				<td colspan="2">
+					<label>
+						<input type="checkbox" name="rememberMe" /> 로그인 상태 유지
+					</label>
+				</td>
+			</tr>
 	 		<tr>
 	 			<td colspan="2">
 	 				<button>로그인</button>
@@ -37,6 +36,7 @@
 	 </form>
 </section>
 <%@ include file="common/footer.jsp"  %>
+ 
  
  
  
