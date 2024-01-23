@@ -1,6 +1,8 @@
 use develop_jsp;
-
+-- 실행할 쿼리 문 블럭 지정 후 alt + x or alt + c
+-- 또는 우클릭 
 show tables;
+
 -- member_test.sql
 CREATE TABLE IF NOT EXISTS member(
 		num INT PRIMARY KEY auto_increment,
