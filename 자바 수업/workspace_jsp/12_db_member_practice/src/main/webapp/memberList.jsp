@@ -1,11 +1,103 @@
+<%@page import="util.PageMaker"%>
+<%@page import="util.Criteria"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" %>
 <!-- memberList.jsp -->
 <%@ include file="common/header.jsp" %>
+<%@ include file="checkAdmin.jsp" %>
+<%
+	Connection conn = JDBCUtil.getConnection();
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+	// 검색된 회원 목록을 저장할 리스트 
+	List<MemberVO> memberList = new ArrayList<>();
+	
+	// 사용자가 요청한 게시물의 페이지 번호
+	String strPage = request.getParameter("page");
+	// 페이지당 보여줄 게시물 개수
+	String paramPerPageNum = request.getParameter("perPageNum");
+	
+	int pageNum = 0, perPageNum = 0;
+	if(strPage != null && !strPage.equals("")){
+		pageNum = Integer.parseInt(strPage);
+	}
+	
+	if(paramPerPageNum != null && !paramPerPageNum.equals("")){
+		perPageNum = Integer.parseInt(paramPerPageNum);
+	}
+	
+	Criteria cri = new Criteria(pageNum, perPageNum);
+	
+	try{
+		String sql = "SELECT * FROM test_member ORDER BY num DESC";
+		sql = "SELECT * FROM test_member ORDER BY num DESC limit ?, ?";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, cri.getStartRow());
+		pstmt.setInt(2, cri.getPerPageNum());
+		rs = pstmt.executeQuery();
+		while(rs.next()){
+			MemberVO m = new MemberVO(
+				rs.getInt(1),				// num
+				rs.getString(2),			// id
+				rs.getString(3),			// pass
+				rs.getString(4),			// name
+				rs.getString(5),			// addr
+				rs.getString(6),			// phone
+				rs.getString(7),			// gender
+				rs.getInt(8)				// age
+			);
+			memberList.add(m);
+		}
+	}catch(Exception e) {
+		e.printStackTrace();
+	}finally{
+		JDBCUtil.close(rs,pstmt,conn);
+	}
+	
+	// 페이징 블럭 출력을 위한 클래스 선언
+	PageMaker pm = null;
+	
+	// paging block 처리
+	try{
+		conn = JDBCUtil.getConnection();
+		String sql = "SELECT count(*) FROM test_member";
+		pstmt = conn.prepareStatement(sql);
+		rs = pstmt.executeQuery();
+		int totalCount = 0;
+		if(rs.next()){
+			totalCount = rs.getInt(1);
+		}
+		pm = new PageMaker(cri, totalCount, 10);
+	}catch(Exception e){
+		e.printStackTrace();
+	}finally{
+		JDBCUtil.close(rs,pstmt,conn);
+	}
+	
+	
+%>
+
 <section>
 <table border=1 class="list">
 	<tr>
-		<th colspan="7"><h1>회원목록</h1></th>
+		<th colspan="7">
+			<h1>회원목록</h1>
+			<%=pm%>
+		</th>
+	</tr>
+	<tr>
+		<td colspan="7">
+			<form>
+				<input type="hidden" name="page" value="<%=cri.getPage()%>"/>
+				<select name="perPageNum" onchange="form.submit();">
+					<%for(int i = 5; i <= 50; i+=5){ %>
+					<option value="<%=i%>" <%=cri.getPerPageNum() == i ? "selected" : "" %>><%=i%> 개씩 보기</option>
+					<%} %>
+				</select>
+			</form>
+		</td>
 	</tr>
 	<tr>
 		<th>번호</th>
@@ -16,21 +108,34 @@
 		<th>성별</th>
 		<th>나이</th>
 	</tr>
+	<%
+		if(!memberList.isEmpty()){
+			for(MemberVO m : memberList){
+	%>
 	<!-- 회원 목록 출력 -->
-	
+			<tr title="<%=m.getName()%>님의 회원 정보" onclick="moveInfo('<%=m.getNum()%>');">
+				<td><%=m.getNum()%></td>
+				<td><%=m.getId()%></td>
+				<td><%=m.getName()%></td>
+				<td><%=m.getAddr()%></td>
+				<td><%=m.getPhone()%></td>
+				<td><%=m.getGender()%></td>
+				<td><%=m.getAge()%></td>
+			</tr>
+	<%
+			} // end for
+		}else{
+	%>
 	<!-- 등록된 회원이 없을 시 출력 -->
 	<tr><th colspan="7">등록된 회원이 없습니다.</th></tr>
+	<%}%>
 </table>
 </section>
+<script>
+	// 전달 받은 회원 번호의 회원정보를 확인하는 memberInfo.jsp 이동 함수
+	function moveInfo(num){
+		location.href='memberInfo.jsp?num='+num;
+	}
+</script>
 <%@ include file="common/footer.jsp" %>
-
-
-
-
-
-
-
-
-
-
 

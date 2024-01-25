@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- context.xml -->
+<Context>
+	<Resource 
+		name="java/MySQL_DBCP" 
+	  	auth="container" 
+	 	type="javax.sql.DataSource" 
+	 	factory="org.apache.tomcat.jdbc.pool.DataSourceFactory" 
+	 	driverClassName="com.mysql.cj.jdbc.Driver"  
+	 	url="jdbc:mysql://localhost:3306/develop_jsp" 
+	 	username="developer" 
+	 	password="12345"  
+	 	initialSize="10" 
+	 	maxActive="200" 
+	 	maxIdle="100"   
+	 	minIdle="10" 
+	 	maxWait="600000" />
+	 	
+	 	<!-- 
+	 	 	IDLE :"프로세스가 실행하고 있지 않은 상태". 
+	 		프로세스 : 동작중인 프로그램, 운영체제가 관리하는 실행 단위.
+	 		initialSize	커넥션풀 생성 시 최초 생성한 Connection 객체의 수 (기본값 0)
+	 		initialSize : 서버 실행 시 생성 할 connection 개수
+	 		
+	 		maxActive 동시에 사용할 수 있는 최대 커넥션 개수(기본값 : 8)
+	 		
+	 		maxActive가 10, maxIdle이 8일 경우
+	 		10개까지 connection을 생성하여 사용하다가 
+	 		pool에 커넥션이 8개 일 경우 maxIdle을 벗어난 2개는 즉시 메모리에서 해제된다.
+	 		maxIdle  커넥션 풀에 반납할때 최대로 유지될 수 있는 커넥션 개수(기본값:8)
+	 			
+			사용되지 않고 풀에 저장될 수 있는 최소 커넥션 갯수.
+	 		minIdle 최소한으로 유지할 커넥션 개수(기본값 : 0)
+	 		
+	 		maxWait (millis) 할당받을 Connection 객체가 없을 때 스레드를 블럭시킬 시간
+	 		0보다 작을 경우 무한 대기 (기본값은 -1)
+	 	 -->
+	 	 
+</Context>
+
+
+
+
+
+
+
+
+

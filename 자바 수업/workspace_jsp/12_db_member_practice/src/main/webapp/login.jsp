@@ -12,7 +12,7 @@
 		<tr>
 			<td>아이디</td>
 			<td>
-				<input type="text" name="id" data-msg="아이디"/>
+				<input type="text" name="id" data-msg="아이디" autofocus autocomplete="off"/>
 			</td>
 		</tr>
 		<tr>
