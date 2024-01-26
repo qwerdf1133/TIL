@@ -63,16 +63,17 @@
 <head>
 <meta charset="UTF-8">
 <title>index.jsp</title>
-<link href="css/header.css" rel="stylesheet" type="text/css" />
-<link href="css/footer.css" rel="stylesheet" type="text/css" />
-<link href="css/common.css" rel="stylesheet" type="text/css" />
+<% String path = request.getContextPath(); %>
+<link href="<%=path%>/css/header.css" rel="stylesheet" type="text/css" />
+<link href="<%=path%>/css/footer.css" rel="stylesheet" type="text/css" />
+<link href="<%=path%>/css/common.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<header>
 		<div>
 			<ul>
-				<li><a href="index.jsp">home</a></li>
-				<li><a href="#">공지사항</a></li>
+				<li><a href="<%=path%>/index.jsp">home</a></li>
+				<li><a href="<%=path%>/board/notice/notice_list.jsp">공지사항</a></li>
 				<li><a href="#">질문과답변</a></li>
 			</ul>
 		</div>
@@ -80,19 +81,19 @@
 			<ul>
 				<% if(loginMember == null){ %>
 				<!-- 비 로그인시용자 -->
-				<li><a href="login.jsp">로그인</a></li>
-				<li><a href="join.jsp">회원가입</a></li>
+				<li><a href="<%=path%>/login.jsp">로그인</a></li>
+				<li><a href="<%=path%>/join.jsp">회원가입</a></li>
 				<%}else{ %>
 				<!-- 로그인 된 사용자 -->
 				<li>
-					<a href="info.jsp"> <!-- 회원이름 -->
+					<a href="<%=path%>/info.jsp"> <!-- 회원이름 -->
 					<%=loginMember.getName()%>	
 					</a>님 방가방가
 				</li>
-				<li><a href="logout.jsp">로그아웃</a></li>
+				<li><a href="<%=path%>/logout.jsp">로그아웃</a></li>
 				<!-- 관리자 로그인일 경우 -->
 					<% if(loginMember.getId().equals("admin")){ %>
-				<li><a href="memberList.jsp">회원관리</a></li>
+				<li><a href="<%=path%>/memberList.jsp">회원관리</a></li>
 					<%}%>
 				<%}%>
 			</ul>
