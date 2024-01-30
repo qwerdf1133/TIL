@@ -16,7 +16,7 @@
 	
 	String sql = "UPDATE qna_board SET qna_re_seq = qna_re_seq + 1 WHERE qna_re_ref = ? AND qna_re_seq > ? ";
 	
-	String insertSql = "INSERT INTO qna_board VALUES(null,?,?,?,?,?,?,?,0,now())";
+	String insertSql = "INSERT INTO qna_board VALUES(null,?,?,?,?,?,?,?,0,now(),'N')";
 	
 	try{
 		conn.setAutoCommit(false);	

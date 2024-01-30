@@ -116,6 +116,18 @@ SELECT LAST_INSERT_ID();
 
 rollback;
 
+SELECT qna_re_ref AS qna_board_ref, qna_re_lev, qna_re_seq FROM qna_board;
 
+-- qna_board 게시판의 게시물이 삭제 요청된 게시글 인지 여부를 저장
+ALTER TABLE qna_board ADD COLUMN qna_delete char(1) DEFAULT 'N' AFTER qna_date;
 
+DESC qna_board;
+
+SELECT qna_delete FROM qna_board;
+
+-- qna_board.qna_writer_num 참조 무결성 - 외래키 추가
+-- test_member.num
+
+ALTER TABLE qna_board ADD CONSTRAINT fk_qna_writer
+FOREIGN KEY(qna_writer_num) REFERENCES test_member(num);
 

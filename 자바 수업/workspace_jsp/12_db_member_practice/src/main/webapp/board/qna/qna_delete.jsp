@@ -9,6 +9,7 @@
 	PreparedStatement pstmt = null;
 	
 	String sql = "DELETE FROM qna_board WHERE qna_num = ?";
+	sql = "UPDATE qna_board SET qna_delete = 'Y' qna_num = ? ";
 	
 	try{
 		pstmt = conn.prepareStatement(sql);
