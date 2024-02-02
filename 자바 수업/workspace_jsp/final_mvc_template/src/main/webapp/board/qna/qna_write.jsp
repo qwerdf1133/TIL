@@ -4,12 +4,13 @@
 <%@ include file="/common/header.jsp"  %>
 <section class="wrap">
 	<h1> 글 작성</h1>
-	<form action="#" method="POST">
+	<form action="qnaSubmit.qna" method="POST">
+		<input type="hidden" name="qna_writer_num" value="${member.num}"/>
 		<table>
 			<tr>
 				<td>작성자</td>
 				<td>
-					<input type="text" name="qna_name" value="" required />
+					<input type="text" name="qna_name" value="${member.name}" required readonly/>
 				</td>
 			</tr>
 			<tr>

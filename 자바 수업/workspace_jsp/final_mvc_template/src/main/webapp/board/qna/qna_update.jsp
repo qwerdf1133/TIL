@@ -4,6 +4,8 @@
 <section class="wrap">
 <!-- qna_update.jsp -->
 	<form action="#" method="POST">
+		<input type="hidden" name="qna_num" value="$(qna.qna_num)"/>
+		<input type="hidden" name="qna_writer_num" value="${member.num}"/>
 		<table>
 			<tr>
 				<th colspan="2"><h1>게시글 수정</h1></th>
