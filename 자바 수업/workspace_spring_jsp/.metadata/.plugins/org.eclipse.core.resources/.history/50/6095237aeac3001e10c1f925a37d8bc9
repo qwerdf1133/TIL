@@ -1,0 +1,33 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="false" %>
+<html>
+<head>
+	<title>Home</title>
+</head>
+<body>
+<h1>
+	Hello world! - ${sessionScope.test}  
+</h1>
+<h2>
+	model : ${requestScope.modelTest}
+</h2>
+<h3><a href="doA">doA</a></h3>
+<h3><a href="doB">doB</a></h3>
+<h3><a href="doC?msg=helloSpring">doC</a></h3>
+<h3><a href="doD?msg=helloSpring">doD</a></h3>
+<h3><a href="doD?msg=helloSpring">doD</a></h3>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

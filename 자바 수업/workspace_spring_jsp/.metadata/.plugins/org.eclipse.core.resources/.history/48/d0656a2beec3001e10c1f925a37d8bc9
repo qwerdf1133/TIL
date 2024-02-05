@@ -1,0 +1,29 @@
+package com.bitce.vo;
+
+/**
+ * 상품 정보를 저장하는 객체
+ */
+public class ProductVO {
+
+	private String name;
+	private int price;
+	
+	public ProductVO() {
+		System.out.println("기본 생성자 호출");
+	}
+	
+	public ProductVO(String name, int price) {
+		this.name = name;
+		this.price = price;
+	}
+	
+	
+	
+	
+}
+
+
+
+
+
+
