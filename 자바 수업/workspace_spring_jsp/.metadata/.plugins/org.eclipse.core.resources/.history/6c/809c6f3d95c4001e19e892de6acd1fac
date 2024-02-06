@@ -1,0 +1,18 @@
+package com.bitc.lombok;
+
+import org.junit.After;
+import org.junit.Before;
+
+public class LombokTest {
+
+	@Before
+	public void befor() {
+		System.out.println("test method 실행 전 처리되는 메소드");
+	}
+	
+	@After
+	public void after() {
+		
+	}
+	
+}

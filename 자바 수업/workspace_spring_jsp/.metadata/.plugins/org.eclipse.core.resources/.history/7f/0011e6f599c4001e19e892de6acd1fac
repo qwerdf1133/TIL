@@ -1,0 +1,36 @@
+package com.bitc.lombok;
+
+import java.util.Date;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+public class LombokTest {
+
+	@Before
+	public void befor() {
+		System.out.println("test method 실행 전 처리되는 메소드");
+	}
+	
+	@Test // 이 method가 junit이 테스트 하기 위한 기능이다
+	public void lombokTest() {
+		log.info("lombok library test");
+		UserVO user = new UserVO("id001","pw001","최기근");
+		user.setUid("id001");
+		user.setUpw("pw001");
+		user.setUname("최기근:");
+		user.setUno(1);
+		user.setRegdate(new Date());
+		log.info("test user info : {} {}", user, "입니다");
+	}
+	
+	@After
+	public void after() {
+		log.warn("test method 실행 후 처리되는 메소드");
+	}
+	
+}

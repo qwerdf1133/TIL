@@ -1,0 +1,9 @@
+package com.bitc.di.vo;
+
+public class TestBoardVO {
+
+	private int num;
+	private String title;
+	private String content;
+	
+}

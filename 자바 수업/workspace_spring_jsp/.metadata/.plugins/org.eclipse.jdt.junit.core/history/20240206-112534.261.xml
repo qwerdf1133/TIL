@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="LombokTest" project="mvc_part01_lombok" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.bitc.lombok.LombokTest" time="0.246">
+    <testcase name="lombokTest" classname="com.bitc.lombok.LombokTest" time="0.246"/>
+  </testsuite>
+</testrun>

@@ -1,0 +1,15 @@
+package com.bitc.di.vo;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+public class TestBoardVO {
+
+	private int num;
+	private String title;
+	private String content;
+	private int writer;
+	
+}

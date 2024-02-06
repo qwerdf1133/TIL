@@ -1,0 +1,38 @@
+package com.bitc.lombok;
+
+import java.util.Date;
+import java.util.List;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter
+import lombok.Setter;;
+import lombok.NoArgsConstructor;
+
+// @Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+public class UserVO {
+	
+	private int uno;
+	private String uid;
+	private String upw;
+	private String uname;
+	private Date regdate;
+	private List<String> friendList;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

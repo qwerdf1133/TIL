@@ -1,0 +1,15 @@
+package com.bitc.lombok;
+
+import java.util.Date;
+import java.util.List;
+
+public class UserVO {
+
+	private int uno;
+	private String uid;
+	private String upw;
+	private Sring uname;
+	private Date regdate;
+	private List<String> friendList;
+	
+}

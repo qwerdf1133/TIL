@@ -1,0 +1,17 @@
+package com.bitc.di;
+
+import org.springframework.stereotype.Controller;
+
+/*
+ * Component-scan 으로 Bean으로 등록되는 annotation
+ */
+
+@Controller
+public class HomeController {
+	
+	@GetMapping("/")
+	public String home() {
+		return "home";
+	}
+	
+}

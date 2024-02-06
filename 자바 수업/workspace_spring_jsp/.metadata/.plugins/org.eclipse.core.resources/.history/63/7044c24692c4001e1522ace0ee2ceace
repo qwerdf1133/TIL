@@ -1,0 +1,27 @@
+package com.bitc.lombok;
+
+import java.util.Date;
+
+@Data
+public class UserVO {
+	
+	private int uno;
+	private String uid;
+	private String upw;
+	private String uname;
+	private Date regdate;
+	private List<String> friendList;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

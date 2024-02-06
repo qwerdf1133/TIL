@@ -1,0 +1,8 @@
+package com.bitc.di.dao;
+
+@Service
+public interface TestDAO {
+
+	void select(String message);
+	
+}

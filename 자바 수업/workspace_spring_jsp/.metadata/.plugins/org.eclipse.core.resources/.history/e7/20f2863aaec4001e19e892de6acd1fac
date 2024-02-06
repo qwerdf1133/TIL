@@ -1,0 +1,5 @@
+package com.bitc.di.dao;
+
+public interface TestDAO {
+
+}

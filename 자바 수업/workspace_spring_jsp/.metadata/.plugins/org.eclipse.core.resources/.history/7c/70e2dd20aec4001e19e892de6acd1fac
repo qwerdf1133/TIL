@@ -1,0 +1,5 @@
+package com.bitc.di.service;
+
+public interface TestService {
+
+}

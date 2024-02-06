@@ -1,0 +1,20 @@
+package com.bitc.di;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+/**
+ * context:component-scan 으로 Bean으로 등록되는 annotation
+ * @Controller : Presentation Layer 에서 controller를 명시하기 위해서 사용
+ * @Service : Business Layer 에서 Service를 명시하기 위해서 사용
+ */
+
+@Controller
+public class HomeController {
+	
+	@GetMapping("/")
+	public String home() {
+		return "home";
+	}
+	
+}

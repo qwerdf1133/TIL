@@ -1,0 +1,10 @@
+package com.bitc.di.dao;
+
+public class TestDBCPDAOImpl implements TestDAO {
+
+	@Override
+	public void select(String message) {
+		System.out.println("TestDAO DBCP : " + message);
+	}
+
+}

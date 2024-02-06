@@ -1,0 +1,11 @@
+package com.bitc.di.dao;
+
+public class TestDBCPDAOImpl implements TestDAO {
+
+	@Override
+	public void select(String message) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
