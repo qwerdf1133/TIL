@@ -1,0 +1,17 @@
+package com.bitc.db_test.dao;
+
+import com.bitc.db_test.vo.MemberVO;
+
+public class MemberDAO {
+
+	int insertMember (MemberVO member);
+	
+	/*
+	 * @param userid - 등록될 회원 정보
+	 * @param userpw
+	 * @return - 삽입된 회원 행 개수
+	 */
+	MemberVO readMemberWithPass(String userid, String userpw);
+	
+	
+}

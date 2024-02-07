@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MemberMapper">
+	
+	<!--
+	 	검색 select 
+	 	삽입 insert
+	 	수정 update
+	 	삭제 delete
+	 	쿼리 작업을 수행 하기 위해서 필요한 파라미터 타입 parameterType
+	 	사용할 Statement 객체 타입 - statementType default = PREPARED
+	 	쿼리작업 수행 후 반환할 결과 타입 - resultType
+	 -->
+	 
+	<insert statementType="STATEMENT"></insert>
+</mapper>

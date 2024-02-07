@@ -1,0 +1,5 @@
+package com.bitc.di.controller.home;
+
+public class MainController {
+
+}

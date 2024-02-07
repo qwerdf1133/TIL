@@ -1,0 +1,6 @@
+package com.bitc.di.controller.second;
+
+@Controller
+public class SecondController {
+
+}

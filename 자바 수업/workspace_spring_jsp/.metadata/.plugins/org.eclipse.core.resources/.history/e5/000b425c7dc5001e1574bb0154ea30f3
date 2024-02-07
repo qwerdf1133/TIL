@@ -1,0 +1,62 @@
+package com.bitc.db_test.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
+import javax.sql.DataSource;
+
+import org.springframework.stereotype.Repository;
+
+import com.bitc.db_test.vo.MemberVO;
+
+@Repository
+public class MemberDAOImpl implements MemberDAO {
+	// 필수 인자 생성자를 통해 외존성 주입 - 객체 생성 이후 필드 변경 불가
+	private final DataSource ds;
+	
+	private Connection conn;
+	private PreparedStatement pstmt;
+	private ResultSet rs;
+	
+	@Override
+	public int insertMember(MemberVO member) {
+		int result = 0;
+		try {
+			conn = ds.getConnection();
+			String sql = "INSERT INTO tbl_member(userid, userpw, username) VALUES(?,?,?,";
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+
+	@Override
+	public MemberVO readMember(String userid) {
+		return null;
+	}
+
+	@Override
+	public MemberVO readMemberWithPass(String userid, String userpw) {
+		return null;
+	}
+
+	@Override
+	public List<MemberVO> readMemberList() {
+		return null;
+	}
+
+	@Override
+	public int updateMember(MemberVO member) {
+		return 0;
+	}
+
+	@Override
+	public int removeMember(int uno) {
+		return 0;
+	}
+
+}

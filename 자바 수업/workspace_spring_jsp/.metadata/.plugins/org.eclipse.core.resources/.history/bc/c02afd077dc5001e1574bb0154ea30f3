@@ -1,0 +1,50 @@
+package com.bitc.db_test.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.bitc.db_test.vo.MemberVO;
+
+@Repository
+public class MemberDAOImpl implements MemberDAO {
+
+	private Connection conn;
+	private PreparedStatement pstmt;
+	private ResultSet rs;
+	
+	@Override
+	public int insertMember(MemberVO member) {
+		
+		return 0;
+	}
+
+	@Override
+	public MemberVO readMember(String userid) {
+		return null;
+	}
+
+	@Override
+	public MemberVO readMemberWithPass(String userid, String userpw) {
+		return null;
+	}
+
+	@Override
+	public List<MemberVO> readMemberList() {
+		return null;
+	}
+
+	@Override
+	public int updateMember(MemberVO member) {
+		return 0;
+	}
+
+	@Override
+	public int removeMember(int uno) {
+		return 0;
+	}
+
+}

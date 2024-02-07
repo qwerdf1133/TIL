@@ -1,0 +1,11 @@
+package com.bitc.db_test;
+
+import org.springframework.test.context.ContextConfiguration;
+
+@ContextConfiguration(
+	locations = {"classpath:context/root-context.xml"}
+)
+
+public class DataSourceTest {
+	
+}

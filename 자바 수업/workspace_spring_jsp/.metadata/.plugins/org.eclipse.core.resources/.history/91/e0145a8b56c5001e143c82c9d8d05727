@@ -1,0 +1,14 @@
+package com.bitc.di.controller.second;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class SecondController {
+
+	@GetMapping("main")
+	public void doMain() {
+		log.info("second controller do main »£√‚")
+	}
+	
+}

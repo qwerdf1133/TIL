@@ -1,0 +1,25 @@
+package com.bitc.di.controller.home;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.bitc.di.service.TestService;
+
+@Controller
+public class MainController {
+
+	@Autowired
+	private final TestService ts;
+	
+	public MainController(TestService ts) {
+		this.ts = ts;
+	}
+	
+	@GetMapping("main")
+	public String main() {
+		System.out.println("MainController ts : " + ts);
+		return "main";
+	}
+	
+}

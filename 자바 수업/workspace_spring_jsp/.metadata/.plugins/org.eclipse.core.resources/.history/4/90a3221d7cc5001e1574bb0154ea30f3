@@ -1,0 +1,14 @@
+package com.bitc.db_test.dao;
+
+import com.bitc.db_test.vo.MemberVO;
+
+public class MemberDAO {
+
+	
+	/*
+	 * @param member - 등록될 회원 정보
+	 * @return - 삽입된 회원 행 개수
+	 */
+	
+	
+}

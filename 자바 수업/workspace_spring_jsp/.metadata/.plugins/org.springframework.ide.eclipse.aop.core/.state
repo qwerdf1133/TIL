@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
-<aop-project name="mvc_part01_lombok"/>
-<aop-project name="mvc_part01_strucure"/>
+<aop-project name="mvc_part01_05_db_test"/>
+<aop-project name="mvc_part01_01_strucure"/>
+<aop-project name="mvc_part01_02_controller"/>
+<aop-project name="mvc_part01_03_lombok"/>
+<aop-project name="mvc_part01_04_DI_IOC"/>
 </aop-reference-model>

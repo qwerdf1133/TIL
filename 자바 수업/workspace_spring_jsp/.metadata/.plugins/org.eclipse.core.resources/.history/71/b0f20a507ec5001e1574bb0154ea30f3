@@ -1,0 +1,24 @@
+package com.bitc.db_test;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import com.bitc.db_test.vo.MemberVO;
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(
+	locations = {"classpath:context/root-context.xml"}
+)
+
+public class MemberDAOTest {
+	
+	
+	
+	@Test
+	public void testInsertMember() {
+		MemberVO member = new MemberVO();
+		member.setUserid("id001");
+	}
+}

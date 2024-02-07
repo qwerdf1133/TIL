@@ -1,0 +1,39 @@
+package com.bitc.db_test.dao;
+
+import java.util.List;
+
+import com.bitc.db_test.vo.MemberVO;
+
+public class MemberDAOImpl implements MemberDAO {
+
+	@Override
+	public int insertMember(MemberVO member) {
+		return 0;
+	}
+
+	@Override
+	public MemberVO readMember(String userid) {
+		return null;
+	}
+
+	@Override
+	public MemberVO readMemberWithPass(String userid, String userpw) {
+		return null;
+	}
+
+	@Override
+	public List<MemberVO> readMemberList() {
+		return null;
+	}
+
+	@Override
+	public int updateMember(MemberVO member) {
+		return 0;
+	}
+
+	@Override
+	public int removeMember(int uno) {
+		return 0;
+	}
+
+}

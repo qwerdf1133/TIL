@@ -1,0 +1,10 @@
+package com.bitc.di.controller.home;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class MainController {
+
+	private TestService ts;
+	
+}

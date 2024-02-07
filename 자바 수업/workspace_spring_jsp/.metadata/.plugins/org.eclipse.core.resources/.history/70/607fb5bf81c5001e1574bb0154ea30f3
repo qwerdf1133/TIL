@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- Connection Pool 커넥션 풀이 커넥션 생성 제거 제어 할 수 있도록 필수 정보 제공 -->
+	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/develop_spring"/>
+		<property name="username" value="developer" />
+		<property name="password" value="12345" />
+	</bean>	
+	
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" />
+	</bean>
+	
+	<context:component-scan base-package="com.bitc.db_test.dao" />
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

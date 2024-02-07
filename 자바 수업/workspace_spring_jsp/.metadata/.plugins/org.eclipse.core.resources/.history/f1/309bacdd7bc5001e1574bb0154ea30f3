@@ -1,0 +1,10 @@
+package com.bitc.db_test.dao;
+
+public class MemberDAO {
+
+	/*
+	 * @param member - 등록될 회원 정보
+	 * 
+	 */
+	
+}

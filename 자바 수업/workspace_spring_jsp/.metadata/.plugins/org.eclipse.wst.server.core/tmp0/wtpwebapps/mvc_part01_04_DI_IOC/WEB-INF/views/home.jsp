@@ -5,10 +5,25 @@
 	<title>Home</title>
 </head>
 <body>
-<h1>
-	Hello world!  
-</h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+<img src="imgs/camera.png"/> <br/>
+<hr/>
+<img src="resources/file.png" /> <br/><hr/>
+<h3><a href="second/main">second-main</a></h3>
+<h3><a href="main">appServlet-main</a></h3>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+package com.bitc.db_test.dao;
+
+import com.bitc.db_test.vo.MemberVO;
+
+public class MemberDAO {
+
+	int insertMember (MemberVO member);
+	
+	/*
+	 * @param userid - 검색할 사용자 아이디
+	 * @param userpw - 검색할 사용자 비밀번호
+	 * @return - 아이디와 패스워드가 일치하는 사용자 정보 - 없으면 null
+	 */
+	MemberVO readMemberWithPass(String userid, String userpw);
+	
+	
+}

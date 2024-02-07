@@ -1,0 +1,13 @@
+package com.bitc.di.controller.second;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class SecondController {
+
+	@GetMapping("main")
+	public void doMain() {
+		
+	}
+	
+}

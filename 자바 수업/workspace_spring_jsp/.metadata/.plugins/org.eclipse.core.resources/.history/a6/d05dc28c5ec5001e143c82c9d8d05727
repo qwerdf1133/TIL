@@ -1,0 +1,14 @@
+package com.bitc.di.controller.home;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.bitc.di.service.TestService;
+
+@Controller
+public class MainController {
+
+	@Autowired
+	private finalTestService ts;
+	
+}
