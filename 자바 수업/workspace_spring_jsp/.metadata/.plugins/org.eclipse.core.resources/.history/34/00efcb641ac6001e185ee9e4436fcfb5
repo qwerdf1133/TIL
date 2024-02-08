@@ -1,0 +1,45 @@
+package com.bitc.db_test.dao;
+
+import java.util.List;
+
+import com.bitc.db_test.vo.MemberVO;
+
+public class MemberMyBatisDAOImpl implements MemberDAO {
+
+	@Override
+	public int insertMember(MemberVO member) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public MemberVO readMember(String userid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public MemberVO readMemberWithPass(String userid, String userpw) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<MemberVO> readMemberList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int updateMember(MemberVO member) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int removeMember(int uno) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

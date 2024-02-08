@@ -14,9 +14,14 @@
 		<property name="password" value="12345" />
 	</bean>	
 	
-	<bean class="org.mybatis.spring.SqlSessionFactoryBean">
+	<bean id ="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="ds"/>
 		<property name="configLocation" value="classpath:/mybatis/mybatisConfig.xml"/>
+	</bean>
+	
+	<!-- SqlSession bean 등록 -->
+	<bean class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
 	
 	<context:component-scan base-package="com.bitc.db_test.dao" />

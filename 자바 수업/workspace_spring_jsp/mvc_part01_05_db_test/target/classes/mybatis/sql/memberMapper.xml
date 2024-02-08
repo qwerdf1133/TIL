@@ -20,10 +20,43 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		INSERT INTO tbl_member(userid,userpw,username) 
 		VALUES(#{userid},#{userpw},#{username})
 	</insert>
+	
 	<!-- userid로 사용자 정보 검색 -->
 	<!-- java.lang.String -> String or string, java.lang.Integer -> int -->
-	<select id="read" parameterType="String" resultType="com.bitc.db_test.vo.MemberVO">
-		SELECT * FROM tbl_member WHERE userid = ${userid}
+	<select id="read" parameterType="String" resultType="member">
+		SELECT * FROM tbl_member WHERE userid = #{userid}
 	</select>
+	
+	<!-- id와 pass로 사용자 정보 검색 -->
+	<select id="readPass" parameterType="member" resultType="member">
+		SELECT * FROM tbl_member WHERE userid = #{userid} AND userpw = #{userpw}
+	</select>
+	
+	<!-- java.util.Map -->
+	<select id="readWithPass" parameterType="Map" resultType="member">
+		SELECT * FROM tbl_member WHERE userid = #{id} AND userpw = #{pw}
+	</select>
+	
+	<!-- 
+		tbl table에 저장된 회원 목록을 List로 반환
+		selectList일 경우 resultType에는 List에 저장할 generic type만 지정 
+	-->
+	<select id="memberList" resultType="member" statementType="STATEMENT">
+		SELECT * FROM tbl_member ORDER BY regdate DESC
+	</select>
+	
+	<!-- 회원 정보 수정 -->
+	<update id="updateMember" parameterType="member">
+		UPDATE tbl_member SET 
+		userpw = #{userpw} , 
+		updatedate = now()  
+		WHERE uno = #{uno}
+	</update>
+	
+	<!-- 회원 정보 삭제 -->
+	<!--  java.lang.Integer -->
+	<delete id="remove" parameterType="int">
+		DELETE FROM tlb_member WHERE uno = ${uno}
+	</delete>
 	
 </mapper>

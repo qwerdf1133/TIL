@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	src/main/resources/MyBatisConfig.xml
+	mybatis 환경 설정 파일
+	DTD(문서 타입 정의) - Document Type Definition
+	XML 문서의 구조 및 해당 문서에서 사용할 수 있는 적법한 요소와 속성을 정의
+ -->
+<!DOCTYPE configuration 
+PUBLIC "-//mybatis.org//DTD config 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.bitc.board.vo.BoardVO" alias="boardVO"/>
+		<typeAlias type="com.bitc.board.util.Criteria" alias="cri"/>
+	</typeAliases>
+	<mappers>
+		<mapper resource="mybatis/sql/boardMapper.xml"/>
+	</mappers>
+</configuration> 
+
+
+
+
+
+
+
+
+
+
+
+
