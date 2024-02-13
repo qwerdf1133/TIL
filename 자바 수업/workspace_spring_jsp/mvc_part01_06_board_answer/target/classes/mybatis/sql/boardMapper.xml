@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bitc.board.dao.BoardDAO">
+	
+	<insert id="create" parameterType="com.bitc.board.vo.BoardVO">
+		INSERT INTO tbl_board(title,content,writer)
+		VALUES(#{title},#{content},"#{writer}")
+	</insert>	
+	
+	<select id="read" parameterType="int" resultType="BoardVO">
+		SELECT * FROM tbl_board WHERE bno = #{bno}
+	</select>
+	
+	<!-- 게시글 정보 수정 -->
+	<update id="update" parameterType="boardVO">
+		UPDATE tbl_board SET
+		title = #{title} ,
+		content = #{content} ,
+		writer = #{writer}
+		WHERE bno = #{bno}
+	</update>
+	
+	<!-- 게시글 삭제 -->
+	<delete id="delete" parameterType="int">
+		DELETER FROM tbl_board WHERE bno = #{bno}
+	</delete>
+	
+	<!-- 조회수 증가 -->
+	<update id="updateCnt" parameterType="int">
+		UPDATE tbl_board SET viewcnt = viewcnt + 1
+		WHERE bno = #{bno}
+	</update>
+	
+	<!-- 전체 게시물 조회 -->
+	<select id="listAll" resultType="boardVO">
+		SELECT * FROM tbl_board
+	</select>
+	
+	<!-- 저장된 전체 게시물 개수 -->
+	<select id="totalCount" resultType="int">
+		SELECT count(*) FROM tbl_board;
+	</select>
+	
+	<!-- Criteria 정보로 게시글 목록을 페이징 처리해서 검색 -->
+	<select id="listCriteria" parameterType="com.bitc.board.util.Criteria" resultType="boardVO">
+		SELECT * FROM tbl_board 
+		ORDER BY bno DESC
+		limit #{startRow}, #{perPageNum}
+	</select>
+	
+</mapper>
+
