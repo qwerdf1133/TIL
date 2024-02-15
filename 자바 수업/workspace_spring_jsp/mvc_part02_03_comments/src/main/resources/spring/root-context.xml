@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<context:property-placeholder location="classpath:prop/db.properties"/>
+	
+	<!-- hikari cp 를 사용하기 위한 설정 정보를 저장하는 객체 -->
+	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+		<property name="driverClassName" value="${jdbc.driver}"/>
+		<property name="jdbcUrl" value="${jdbc.url}"/>
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<!-- 최대로 생성 할 수 있는 connection 객체 수 default=10 -->
+		<property name="maximumPoolSize" value="20" />
+		<!-- 일을 하지 않아도 풀에 유지되는 connection 객체 수 default=maximumPoolSize -->
+		<property name="minimumIdle" value="20" />
+		<!-- pool에서 connection 정보를 가져오기 위해 대기하는 시간 default="250ms" -->
+		<property name="connectionTimeout" value="300000"/>
+		<!-- 일을 하지 않는 connection 객체를 제거하기 위해 대기(유지)하는 시간 default="60000ms" -->
+		<property name="idleTimeout" value="200000"/>
+	</bean>	
+	
+	<bean id="ds" class="com.zaxxer.hikari.HikariDataSource">
+		<constructor-arg ref="hikariConfig"/>	
+	</bean>
+	
+	<!-- MyBatis sqlSession Factory -->
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="ds"/>
+	</bean>
+	
+	<mybatis-spring:scan base-package="com.bitc.rest.comment.repository"/>
+	
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
