@@ -11,8 +11,10 @@ public class HomeController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
+		/*
 		Criteria cri = new Criteria();
 		System.out.println(cri);
+		*/
 		return "home";
 	}
 	

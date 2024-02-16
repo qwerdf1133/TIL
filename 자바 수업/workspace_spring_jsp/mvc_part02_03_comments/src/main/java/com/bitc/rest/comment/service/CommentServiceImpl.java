@@ -1,11 +1,13 @@
 package com.bitc.rest.comment.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
 import com.bitc.board.util.Criteria;
+import com.bitc.board.util.PageMaker;
 import com.bitc.rest.comment.model.CommentVO;
 import com.bitc.rest.comment.repository.CommentMapper;
 
@@ -28,23 +30,39 @@ public class CommentServiceImpl implements CommentService {
 		String message = result == 0 ? "요청 처리 실패" : "요청 처리 성공";
 		return message;
 	}
-
+	
 	@Override
 	public String updateComment(CommentVO vo) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		int result = mapper.update(vo);
+		return getResult(result);
 	}
 
 	@Override
 	public String deleteComment(int cno) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return getResult(mapper.delete(cno));
+	}
+	
+	private String getResult(int result) {
+		return result == 0 ? "요청 처리 실패" : "요청 처리 성공";
 	}
 
 	@Override
 	public Map<String, Object> commentListPage(int bno, Criteria cri) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		Map<String, Object> map = new HashMap<>();
+		List<CommentVO> list = mapper.listPage(bno, cri);
+		map.put("list", list);
+		
+		PageMaker pm = new PageMaker();
+		pm.setCri(cri);
+		
+		int totalCount = mapper.totalCount(bno);
+		pm.setTotalCount(totalCount);
+		map.put("pm", pm);
+		return map;
 	}
 
 }
+
+
+
+
