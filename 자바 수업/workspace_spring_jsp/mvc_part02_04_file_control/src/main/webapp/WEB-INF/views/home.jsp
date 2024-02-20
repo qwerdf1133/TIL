@@ -8,9 +8,9 @@
 </head>
 <body>
 	<h3>File Upload Download Control home</h3>
-	<a href="uploadForm">Form Tag Data Transfer</a>
-	<a href="uploadAjax">AJAX Data Transfer</a>
-	<a href="profile">Profile template Image</a>
+	<a href="uploadForm">Form Tag Data Transfer</a> <br/>
+	<a href="uploadAjax">AJAX Data Transfer</a> <br/>
+	<a href="profile">Profile template Image</a> <br/>
 </body>
 </html>
 
