@@ -9,8 +9,10 @@ import javax.servlet.ServletContext;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.FileCopyUtils;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -53,6 +55,27 @@ public class AjaxController {
 		}
 		System.out.println(saves);
 		return new ResponseEntity<>(saves,HttpStatus.CREATED);
+	}
+	
+	@GetMapping("displayFile")
+	public ResponseEntity<byte[]> displayFile(
+				String fileName			// download 또는 출력할 파일 이름
+			) throws Exception{
+		return new ResponseEntity<>(FileUtil.getBytes(realPath, fileName),
+									// FileUtil.getHeaders(fileName),
+									FileUtil.getOctetHeaders(fileName),
+									HttpStatus.OK);
+	}
+	
+	// 첨부파일 삭제 요청
+	@DeleteMapping(value="deleteFile", produces="text/plain;charset=utf-8")
+	public ResponseEntity<String> deleteFile(
+				@RequestBody String fileName
+			)throws Exception{
+		System.out.println(fileName);
+		boolean isDeleted = FileUtil.deleteFile(realPath, fileName);
+		String message = isDeleted ? "삭제 성공" : "삭제 실패";
+		return new ResponseEntity<>(message,HttpStatus.OK);
 	}
 	
 }

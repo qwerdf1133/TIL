@@ -3,9 +3,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
@@ -14,8 +16,6 @@
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
-	<!-- upload된 파일은 직접 접근 제거 -->
-	<!-- <resources mapping="/upload/**" location="/upload/" /> -->
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -23,23 +23,23 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.bitc.file" />
+	<context:component-scan base-package="com.bitc.controller" />
+	<context:component-scan base-package="com.bitc.service"/>
+	<context:component-scan base-package="com.bitc.aop"/>
 	
-	<beans:bean id="uploadPath" class="java.lang.String" >
-		<beans:constructor-arg value="c:\\Temp\\upload"/>
-	</beans:bean>
-	
-	<beans:bean id="uploadDir" class="java.lang.String">
-		<beans:constructor-arg value="upload"/>
-	</beans:bean>
-	
-	<!-- MultipartServletRequest 정보를 읽기 위한 multipartResolver 등록 -->
-	<!-- multipartRequest 처리용 빈으로 id값이 변경되면 안됨 이름으로 빈정보 검색 -->
-	<beans:bean
-		id="multipartResolver" 
-		class="org.springframework.web.multipart.support.StandardServletMultipartResolver"/>
+	<!-- annotation 기반으로 scan된 Aspect class의 Proxy 객체 생성 -->
+	<aop:aspectj-autoproxy />
 	
 </beans:beans>
+
+
+
+
+
+
+
+
+
 
 
 
