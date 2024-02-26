@@ -95,6 +95,7 @@
 					getMessageList();
 				},
 				error : function(res){
+					alert("error");
 					alert(res.responseText);
 				}
 			});

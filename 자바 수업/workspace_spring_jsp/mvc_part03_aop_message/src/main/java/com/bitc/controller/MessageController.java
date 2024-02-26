@@ -47,7 +47,7 @@ public class MessageController {
 		} catch (Exception e) {
 			HttpHeaders header = new HttpHeaders();
 			header.add("Content-Type","text/plain;charset=utf-8");
-			entity = new ResponseEntity<>(e.getMessage(),header,HttpStatus.OK);
+			entity = new ResponseEntity<>("error 입니다.",header,HttpStatus.BAD_REQUEST);
 		}
 		return entity;
 	}
