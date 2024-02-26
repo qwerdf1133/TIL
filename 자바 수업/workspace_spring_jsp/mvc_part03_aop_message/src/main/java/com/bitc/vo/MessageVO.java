@@ -16,16 +16,3 @@ public class MessageVO {
 	private Date opendate;
 	private Date senddate;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

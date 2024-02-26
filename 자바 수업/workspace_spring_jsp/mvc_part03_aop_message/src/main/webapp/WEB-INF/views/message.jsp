@@ -53,13 +53,32 @@
 						opendate = "미확인";
 					}
 					console.log(opendate);
-					str += `<li>`;
+					str += `<li onclick='readMessage(\${msg.mno}, "\${msg.targetid}", this)'>`;
 					str += `\${msg.mno} | 수신자 : \${msg.targetid} | 발신자 : \${msg.sender} <br/>`;
 					str += `\${msg.message} <br/> 수신확인 :  \${opendate} | 발신시간 : \${senddate}`;
 					str += `</li>`;
 				}
 				$("#messageList").html(str);
 			});		
+		}
+		
+		// 수신 요청 처리 함수
+		function readMessage(mno, uid, element){
+			console.log(mno, uid, element);
+			$.ajax({
+				type : "PATCH",
+				url : "messages/read/"+mno+"/"+uid,
+				dataType : "JSON",
+				success : function(msg){
+					// msg == 수신확인된 MessageVO 정보
+					let str = `\${msg.mno} | 수신자 : \${msg.targetid} | 발신자 : \${msg.sender} <br/>`;
+					str += `\${msg.message} <br/> 수신확인 :  \${getDate(msg.opendate)} | 발신시간 : \${getDate(msg.senddate)}`;
+					$(element).html(str);
+				},
+				error : function(res){
+					alert(res.responseText);
+				}
+			});
 		}
 		
 		function getDate(date){

@@ -12,28 +12,26 @@ import com.bitc.mapper.MessageMapper;
 import com.bitc.vo.MessageVO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(
-	locations = {"classpath:/context/root-context.xml"}
-)
+@ContextConfiguration(locations = { "classpath:/context/root-context.xml" })
 public class MessageMapperTest {
 
 	@Autowired
 	MessageMapper mapper;
-	
+
 	// @Test
-	public void testMapper() throws Exception{
+	public void testMapper() throws Exception {
 		MessageVO vo = new MessageVO();
 		vo.setTargetid("id002");
 		vo.setSender("id001");
 		vo.setMessage("니가 토르냐");
 		mapper.create(vo);
 	}
-	
+
 	// @Test
-	public void test1Update() throws Exception{
+	public void test1Update() throws Exception {
 		mapper.updateMessage(1);
 	}
-	
+
 	@Test
 	public void test2List() throws Exception {
 		List<MessageVO> list = mapper.list();
@@ -41,19 +39,5 @@ public class MessageMapperTest {
 		MessageVO read = mapper.readMessage(1);
 		System.out.println(read);
 	}
-	
-	
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

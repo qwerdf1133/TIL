@@ -32,9 +32,33 @@ SELECT * FROM tbl_user;
 SELECT * FROM tbl_message;
 
 /*
+ 
    1 id001 pw001 IRON MAN        0
    2 id002 pw002 THOR            0
    3 id003 pw003 DR.strange      0
+   --------------------------------------------------------
+   1 id001 pw001 IRON MAN       10
+   2 id002 pw002 THOR            0
+   3 id003 pw003 DR.strange      0
+   ---------------------------------------------------------
+   1 id001 pw001 IRON MAN       30
+   2 id002 pw002 THOR            0
+   3 id003 pw003 DR.strange      0
+   ----------------------------------------------------------
+   ROLLBACK
+   1 id001 pw001 IRON MAN       30
+   2 id002 pw002 THOR            0
+   3 id003 pw003 DR.strange      0
+   --------------------------------------------
+   COMMIT
+   1 id001 pw001 IRON MAN       40
+   2 id002 pw002 THOR            0
+   3 id003 pw003 DR.strange      0
+
+
+
+
+   
  */
 
 

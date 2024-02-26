@@ -13,7 +13,3 @@ public class UserVO {
 	private String uname;
 	private int upoint;
 }
-
-
-
-
