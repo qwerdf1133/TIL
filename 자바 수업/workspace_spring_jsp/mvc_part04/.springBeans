@@ -9,6 +9,7 @@
 	<configs>
 		<config>src/main/resources/context/root/root-context.xml</config>
 		<config>src/main/resources/context/mvc/servlet-context.xml</config>
+		<config>src/main/resources/context/mvc/interceptor-context.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
