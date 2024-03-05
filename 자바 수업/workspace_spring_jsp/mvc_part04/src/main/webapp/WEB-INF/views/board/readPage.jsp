@@ -24,6 +24,38 @@
  	</tr>
  </table>
  <hr/>
+ <!-- 첨부파일 목록 추가 -->
+ <div>
+ 	<!-- 게시글 : board, 첨부파일 : board.files -->
+ 	<c:if test="${!empty board.files}">
+	 	<ul class="uploadList">
+	 		<c:forEach var="file" items="${board.files}">
+	 			<li>
+	 				<c:choose>
+	 					<c:when test="${fn:contains(file,'s_')}">
+	 						<img src="${path}/displayFile?fileName=${file}"/>
+	 						<div>
+	 							<a href="${path}/displayFile?fileName=${fn:replace(file,'s_','')}" target="_blank">
+	 								${fn:substringAfter(fn:replace(file,'s_',''),'_')}
+	 							</a>
+	 						</div>
+	 					</c:when>
+	 					<c:otherwise>
+	 						<!-- 일반파일 -->
+	 						<img src="${path}/resources/img/file.png" />
+	 						<div>
+	 							<a href="${path}/displayFile?fileName=${file}">
+	 								${fn:substringAfter(file,'_')}
+	 							</a>
+	 						</div>
+	 					</c:otherwise>
+	 				</c:choose>
+	 			</li>
+	 		</c:forEach>	
+	 	</ul>
+ 	</c:if>
+ </div>
+ <hr style="clear:both;"/>
  <div>
 	<input type="button" id="listBtn" value="게시글 목록"/>
 	<!-- login된 사용자를 session에 userInfo -->

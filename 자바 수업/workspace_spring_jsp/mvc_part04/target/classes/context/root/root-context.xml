@@ -13,7 +13,7 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	
-	<context:property-placeholder location="classpath:properties/mysql.properties"/>
+	<context:property-placeholder location="classpath:properties/*.properties"/>
 	
 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 		<property name="driverClassName" value="${jdbc.driver}"/>
@@ -37,6 +37,10 @@
 	<bean id="transactionManager" 
 	class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="uploadPath" class="java.lang.String">
+		<constructor-arg value="${upload.file}"/>
 	</bean>
 
 </beans>

@@ -28,9 +28,16 @@ CREATE TABLE re_tbl_board(
 
 SELECT * FROM re_tbl_board;
 
+-- 첨부파일 저장 table
+CREATE TABLE tbl_attach(
+	fullName VARCHAR(300) NOT NULL,			-- 첨부파일 이름
+	bno INT NOT NULL,						-- 게시글 번호
+	regdate TIMESTAMP NULL DEFAULT now(),	-- 등록 시간
+	CONSTRAINT fk_tbl_attach FOREIGN KEY(bno)
+	REFERENCES re_tbl_board(bno)
+);
 
-
-
+SELECT * FROM tbl_attach;
 
 
 

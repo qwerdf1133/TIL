@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.bitc.board.mapper.AttachmentMapper;
 import com.bitc.board.mapper.BoardMapper;
 import com.bitc.board.vo.BoardVO;
 
@@ -15,6 +16,7 @@ import lombok.RequiredArgsConstructor;
 public class BoardService {
 
 	private final BoardMapper mapper;
+	private final AttachmentMapper attachMapper;
 	
 	/**
 	 * 원번글 등록 처리
@@ -26,13 +28,24 @@ public class BoardService {
 		mapper.register(vo);
 		// 등록된 원본글 번호로 origin 컬럼 번호 수정
 		mapper.updateOrigin();
+		// 첨부된 파일 이름 리스트
+		List<String> files = vo.getFiles();
+		if(files != null && !files.isEmpty()) {
+			for(String fullName : files) {
+				attachMapper.addAttach(fullName);
+			}
+		}
 	}
 
 	/**
 	 * 전체 원본글 목록
 	 */
 	public List<BoardVO> list() throws Exception {
-		return mapper.list();
+		List<BoardVO> list = mapper.list();
+		for(BoardVO vo : list) {
+			vo.setFiles(attachMapper.getAttach(vo.getBno()));
+		}
+		return list;
 	}
 
 	/**
@@ -41,6 +54,9 @@ public class BoardService {
 	 */
 	public BoardVO readBoard(int bno) throws Exception{
 		BoardVO vo = mapper.readBoard(bno);
+		// 첨부파일 목록 추가
+		List<String> fileList = attachMapper.getAttach(bno);
+		vo.setFiles(fileList);
 		return vo;
 	}
 

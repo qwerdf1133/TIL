@@ -29,6 +29,9 @@
 		 								└>
 		 							</c:if>
 		 							${board.title} 
+		 							<c:if test="${!empty board.files}">
+		 								[${board.files.size()}]
+		 							</c:if>
 		 							<c:if test="${board.regdate ne board.updatedate}">
 		 								- [수정된 게시글] 
 		 							</c:if>
