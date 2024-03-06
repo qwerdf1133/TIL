@@ -26,6 +26,8 @@ CREATE TABLE re_tbl_board(
 	INDEX(origin)
 );
 
+ALTER TABLE re_tbl_board MODIFY content MEDIUMTEXT NOT NULL;
+
 SELECT * FROM re_tbl_board;
 
 -- 첨부파일 저장 table

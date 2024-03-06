@@ -30,7 +30,7 @@
  	<c:if test="${!empty board.files}">
 	 	<ul class="uploadList">
 	 		<c:forEach var="file" items="${board.files}">
-	 			<li>
+	 			<li data-src="${file}">
 	 				<c:choose>
 	 					<c:when test="${fn:contains(file,'s_')}">
 	 						<img src="${path}/displayFile?fileName=${file}"/>
@@ -96,9 +96,30 @@
  	});
  
  	$("#deleteBtn").click(function(){
- 		formObj.attr("action","${path}/board/remove");
- 		formObj.attr("method","POST");
- 		formObj.submit();
+ 		// 게시글 삭제전 첨부파일 삭제
+ 		let isDeleted = confirm("첨부된 파일이 모두 삭제됩니다. 삭제하시겠습니까?");
+ 		
+ 		if(isDeleted){
+ 			// 첨부파일 목록 저장할 Array
+ 			let arr = [];	
+ 			
+ 			$(".uploadList li").each(function(){
+ 				// arr 배열에 li요소의 data-src 속성값(파일이름) 저장
+ 				arr.push($(this).attr("data-src"));
+ 			});
+ 			
+ 			console.log(arr);
+ 			
+ 			if(arr.length > 0){
+ 				$.post('${path}/deleteAllfiles',{files : arr}, function(result){
+ 					alert(result);
+ 				});
+ 			}
+ 			
+	 		formObj.attr("action","${path}/board/remove");
+	 		formObj.attr("method","POST");
+	 		formObj.submit();
+ 		}
  	});
  	
  </script>

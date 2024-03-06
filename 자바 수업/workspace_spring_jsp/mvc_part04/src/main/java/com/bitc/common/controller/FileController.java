@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -72,6 +73,18 @@ public class FileController {
 		return new ResponseEntity<>(
 						isDeleted ? "DELETED" : "FAILED",
 						HttpStatus.OK);
+	}
+	
+	// 요청 받은 전체 파일 삭제
+	@PostMapping("/deleteAllfiles")
+	public ResponseEntity<String> deleteAllFiles(
+				@RequestParam("files[]") String[] files
+			) throws Exception{
+		boolean isDeleted = false;
+		for(String file : files) {
+			isDeleted = FileUtil.deleteFile(realPath, file);
+		}
+		return new ResponseEntity<>(isDeleted ?  "DELETED" : "FAILED", HttpStatus.OK);
 	}
 	
 }
