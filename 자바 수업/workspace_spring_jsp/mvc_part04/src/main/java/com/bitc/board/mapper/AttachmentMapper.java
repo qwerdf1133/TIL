@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 public interface AttachmentMapper {
@@ -26,6 +27,11 @@ public interface AttachmentMapper {
 	 */
 	@Delete("DELETE FROM tbl_attach WHERE bno = #{bno}")
 	void deleteAttach(int bno) throws Exception;
+
+	
+	@Insert("INSERT INTO tbl_attach(fullName, bno) "
+			+ "VALUES(#{fullName} , #{bno})")
+	void replaceAttach(@Param("bno") int bno, @Param("fullName")String fullName) throws Exception;
 
 }
 

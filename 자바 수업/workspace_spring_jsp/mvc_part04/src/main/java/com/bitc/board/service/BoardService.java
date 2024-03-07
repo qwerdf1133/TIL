@@ -88,6 +88,16 @@ public class BoardService {
 	public void modify(BoardVO board) throws Exception{
 		// title, content, writer
 		mapper.modify(board);
+		
+		// 수정할려는 게시글 기존에 등록되어있던 첨부파일 정보 전체 삭제
+		attachMapper.deleteAttach(board.getBno());
+		// 변경된 첨부파일 목록 등록.
+		List<String> fileList = board.getFiles();
+		if(fileList != null && !fileList.isEmpty()) {
+			for(String fullName : fileList) {
+				attachMapper.replaceAttach(board.getBno(), fullName);
+			}
+		}
 	}
 
 	

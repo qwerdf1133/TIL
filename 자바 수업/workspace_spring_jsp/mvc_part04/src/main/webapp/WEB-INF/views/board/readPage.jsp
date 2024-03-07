@@ -6,7 +6,9 @@
  <table border="1">
  	<tr>
  		<td>제목</td>
- 		<td>${board.title}</td>
+ 		<td>
+ 			<c:out value="${board.title}"/>
+		</td>
  	</tr>
  	<tr>
  		<td>작성자</td>
@@ -69,6 +71,7 @@
  </div>
  <form id="readForm">
  	<input type="hidden" name="bno" value="${board.bno}"/>
+ 	<input type="hidden" name="csrf_token" value="${csrf_token}"/>
  </form>
  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
  <script>

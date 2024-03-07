@@ -24,7 +24,7 @@
 	 	<tr>
 	 		<td>내용</td>
 	 		<td>
-	 			<textarea id="content" style="width:100%;" name="content" cols="50" rows="20" required></textarea>
+	 			<textarea id="content" name="content" cols="50" rows="20" required></textarea>
 	 		</td>
 	 	</tr>
 	 	<tr>
@@ -51,9 +51,11 @@
 <script>
 tinymce.init({
 	  selector: '#content',
-	  plugins: 'image code',
-	  width : "100%",
-	  toolbar: 'undo redo | link image | code',
+	  plugins: ['link','image'],
+	  width : 600,
+	  height : 700,
+	  menubar : false,
+	  toolbar: 'undo redo fontsize fontfamily blocks | link image forcecolor backcolor | code',
 	  /* enable title field in the Image dialog*/
 	  image_title: true,
 	  /* enable automatic uploads of images represented by blob or data URIs*/

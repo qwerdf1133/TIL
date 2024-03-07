@@ -17,7 +17,22 @@
 			<mapping path="/user/signInPost"/>
 			<beans:bean class="com.bitc.common.interceptor.SignInInterceptor" />
 		</interceptor>
-	
+		
+		<!-- 게시글 권한 체크 -->
+		<interceptor>
+			<mapping path="/board/*"/>
+			<exclude-mapping path="/board/listReply"/>
+			<exclude-mapping path="/board/readPage"/>
+			<exclude-mapping path="/board/read"/>
+			<beans:bean class="com.bitc.common.interceptor.AuthInterceptor"/>
+		</interceptor>
+		
+		<!-- 게시글 상세보기 페이지 요청 시 csrf_token 발급 -->
+		<interceptor>
+			<mapping path="/board/read"/>
+			<beans:bean class="com.bitc.common.interceptor.CreateTokenInterceptor"/>
+		</interceptor>
+		
 	</interceptors>
 
 </beans:beans>
